@@ -1,0 +1,97 @@
+.section {
+  margin-left: 774px;
+  position: relative;
+}
+.wrapper {
+  display: flex;
+  width: 687px;
+}
+.container {
+  margin-top: 10px;
+  padding: 20px;
+  width: 640px;
+  /*  height: 730px; */
+  background-color: #fff;
+  border-radius: 20px;
+  /* display: flex; */
+}
+.input {
+  width: 470px;
+  height: 60px;
+  border: none;
+  border-radius: 20px;
+  margin: 0;
+  padding: 0;
+  padding-left: 20px;
+  margin-right: 10px;
+
+  font-size: 20px;
+}
+
+.list {
+  display: flex;
+}
+
+.btn {
+  padding: 0;
+  margin: 0 10px 0 0;
+  width: 60px;
+  border-radius: 20px;
+  height: 60px;
+}
+
+.buttonBack {
+  margin-top: 0;
+  margin-right: 10px;
+  width: 40px;
+  border-radius: 10px;
+  height: 40px;
+  background-color: #fbe0dc;
+}
+.btnBreeds {
+  margin-top: 0;
+  margin-right: 10px;
+  background-color: #ff868e;
+  color: #fff;
+  font-size: 20px;
+  width: 143px;
+  border-radius: 10px;
+  height: 40px;
+}
+.buttonFilter {
+  margin-top: 0;
+  margin-right: 10px;
+
+  width: 40px;
+  border-radius: 10px;
+  height: 40px;
+}
+.select {
+  margin-right: 10px;
+
+  width: 226px;
+  border-radius: 10px;
+  height: 40px;
+}
+.selectLimit {
+  margin-top: 0;
+  margin-right: 10px;
+
+  width: 101px;
+  border-radius: 10px;
+  height: 40px;
+}
+select {
+  padding: 8px 10px;
+  color: #8c8c8c;
+  font-size: 16px;
+  font-weight: 400;
+}
+.imgCat {
+  min-width: 647px;
+  height: 744px;
+  margin-top: 20px;
+}
+.cont {
+  width: 650px;
+}

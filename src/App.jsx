@@ -1,10 +1,14 @@
 import "./App.css";
-import { HomePage } from "./components/Home/Home";
+import { Voting } from "./components/Voting/Votimg";
+// import { Breeds } from "./components/Breeds/Breeds";
+import { HomePage } from "./pages/Home/Home";
 
 function App() {
   return (
     <>
       <HomePage />
+      <Voting />
+      {/* <Breeds /> */}
     </>
   );
 }

@@ -26,19 +26,19 @@ export const HomePage = () => {
                 <img className={css.imagesTable} src={table} alt="table" />
               </div>
 
-              <button className={css.button}>VOTING</button>
+              <button className={css.buttons}>VOTING</button>
             </li>
             <li className={css.item}>
               <div className={css.containerIm}>
                 <img className={css.imagesCat} src={cat} alt="Cat" />
               </div>
-              <button className={css.button}>BREEDS</button>
+              <button className={css.buttons}>BREEDS</button>
             </li>
             <li className={css.item}>
               <div className={css.containerImPhone}>
                 <img className={css.imagesPhone} src={phone} alt="phone" />
               </div>
-              <button className={css.button}>GALLERY</button>
+              <button className={css.buttons}>GALLERY</button>
             </li>
           </ul>
         </div>
