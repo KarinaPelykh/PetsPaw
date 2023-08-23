@@ -3,16 +3,12 @@ import cat from "../../images/cat.png";
 import phone from "../../images/phone.png";
 import table from "../../images/table.png";
 import css from "./Home.module.css";
-import girl from "../../images/girl.png";
+// import girl from "../../images/girl.png";
+import { Breeds } from "../../components/Breeds/Breeds";
 export const HomePage = () => {
   return (
     <>
-      <section
-        // style={{
-        //   position: "reletiv",
-        // }}
-        className={css.containerHome}
-      >
+      <section className={css.containerHome}>
         <div className={css.wrapper}>
           <svg className={css.logo}>
             <use xlinkHref={icon + "#logo"}></use>
@@ -42,7 +38,8 @@ export const HomePage = () => {
             </li>
           </ul>
         </div>
-        <section
+        <Breeds />
+        {/* <section
           style={{
             position: "relative",
             zIndex: "3",
@@ -60,7 +57,7 @@ export const HomePage = () => {
             alt="Girl"
           />
           <div className={css.containerGallry}></div>
-        </section>
+        </section> */}
       </section>
     </>
   );

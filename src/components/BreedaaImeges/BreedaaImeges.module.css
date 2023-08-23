@@ -1,0 +1,18 @@
+.imgCat {
+  min-width: 647px;
+  margin-top: 20px;
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 20px;
+}

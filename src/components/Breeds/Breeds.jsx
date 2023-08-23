@@ -1,7 +1,15 @@
 import css from "./Breeds.module.css";
 import icon from "../../images/sprite.svg";
+import { useEffect } from "react";
+import { getImages } from "../../redux/operation";
+import { useDispatch } from "react-redux";
+import { BreedaaImeges } from "../BreedaaImeges/BreeadImeges";
 
 export const Breeds = () => {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getImages());
+  }, [dispatch]);
   return (
     <section className={css.section}>
       <form className={css.wrapper}>
@@ -40,7 +48,7 @@ export const Breeds = () => {
       <div className={css.container}>
         <div className={css.cont}>
           <button type="button" className={css.buttonBack}>
-            <svg style={{ width: "20px", height: "20px" }}>
+            <svg style={{ width: "20px", height: "20px", objectFit: "cover" }}>
               <use xlinkHref={icon + "#icon-arrow-left"}></use>
             </svg>
           </button>
@@ -100,9 +108,7 @@ export const Breeds = () => {
           </button>
         </div>
 
-        <div className={css.imgCat}>
-          <img />
-        </div>
+        <BreedaaImeges />
       </div>
     </section>
   );
