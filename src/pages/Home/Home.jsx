@@ -3,8 +3,9 @@ import cat from "../../images/cat.png";
 import phone from "../../images/phone.png";
 import table from "../../images/table.png";
 import css from "./Home.module.css";
-// import girl from "../../images/girl.png";
-import { Breeds } from "../../components/Breeds/Breeds";
+import girl from "../../images/girl.png";
+import { Link } from "react-router-dom";
+// import { Breeds } from "../../components/Breeds/Breeds";
 export const HomePage = () => {
   return (
     <>
@@ -21,13 +22,18 @@ export const HomePage = () => {
               <div className={css.containerImTabl}>
                 <img className={css.imagesTable} src={table} alt="table" />
               </div>
-
+              {/* <Link to="voting" className={css.buttons}>
+                VOTING
+              </Link> */}
               <button className={css.buttons}>VOTING</button>
             </li>
             <li className={css.item}>
               <div className={css.containerIm}>
                 <img className={css.imagesCat} src={cat} alt="Cat" />
               </div>
+              {/* <Link className={css.buttons} to="breeds">
+                BREEDS
+              </Link> */}
               <button className={css.buttons}>BREEDS</button>
             </li>
             <li className={css.item}>
@@ -38,8 +44,8 @@ export const HomePage = () => {
             </li>
           </ul>
         </div>
-        <Breeds />
-        {/* <section
+
+        <section
           style={{
             position: "relative",
             zIndex: "3",
@@ -50,14 +56,13 @@ export const HomePage = () => {
             style={{
               position: "absolute",
               left: "28px",
-              // left: "650px",
               top: "-30px",
             }}
             src={girl}
             alt="Girl"
           />
           <div className={css.containerGallry}></div>
-        </section> */}
+        </section>
       </section>
     </>
   );

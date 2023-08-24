@@ -1,12 +1,7 @@
 .imgCat {
-  min-width: 647px;
+  min-width: 640px;
   margin-top: 20px;
-}
-
-.list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
+  min-height: 770px;
 }
 
 img {
@@ -15,4 +10,13 @@ img {
   height: auto;
   object-fit: cover;
   border-radius: 20px;
+}
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  width: content;
+}
+.item {
+  height: 140px;
 }
