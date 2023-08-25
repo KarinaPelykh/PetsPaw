@@ -1,6 +1,11 @@
+import { Link } from "react-router-dom";
 import icon from "../../images/sprite.svg";
 import css from "./Voting.module.css";
+import { useSelector } from "react-redux";
+import { selectorBreeds } from "../../redux/selector";
 export const Voting = () => {
+  const beeds = useSelector(selectorBreeds);
+  console.log(beeds);
   return (
     <section className={css.section}>
       <form className={css.wrapper}>
@@ -39,9 +44,13 @@ export const Voting = () => {
       <div className={css.container}>
         <div className={css.cont}>
           <button type="button" className={css.buttonBack}>
-            <svg style={{ width: "20px", height: "20px" }}>
-              <use xlinkHref={icon + "#icon-arrow-left"}></use>
-            </svg>
+            <Link to="/">
+              <svg
+                style={{ width: "20px", height: "20px", objectFit: "cover" }}
+              >
+                <use xlinkHref={icon + "#icon-arrow-left"}></use>
+              </svg>
+            </Link>
           </button>
           <button type="button" className={css.btnBreeds}>
             VOTING
@@ -50,8 +59,9 @@ export const Voting = () => {
 
         <div className={css.imgCat}>
           <img
-            style={{ margin: "auto", width: "400px" }}
-            src="https://www.svgrepo.com/show/481277/cat-1.svg"
+            style={{ margin: "auto", width: "400px", height: "300px" }}
+            src={beeds.url}
+            alt={beeds.name}
           />
         </div>
       </div>

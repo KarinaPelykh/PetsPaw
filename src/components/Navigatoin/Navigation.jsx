@@ -1,13 +1,13 @@
-// import { Link } from "react-router-dom";
-// import icon from "../../images/sprite.svg";
-// import cat from "../../images/cat.png";
-// import phone from "../../images/phone.png";
-// import table from "../../images/table.png";
-// import css from "./Navigation.module.css";
+import { Link } from "react-router-dom";
+import icon from "../../images/sprite.svg";
+import cat from "../../images/cat.png";
+import phone from "../../images/phone.png";
+import table from "../../images/table.png";
+import css from "./Navigation.module.css";
 export const Navigation = () => {
   return (
     <>
-      {/* <div className={css.wrapper}>
+      <div className={css.wrapper}>
         <svg className={css.logo}>
           <use xlinkHref={icon + "#logo"}></use>
         </svg>
@@ -19,21 +19,18 @@ export const Navigation = () => {
             <div className={css.containerImTabl}>
               <img className={css.imagesTable} src={table} alt="table" />
             </div>
-            <Link to="voting" className={css.buttons}>
-              VOTING
-            </Link>
-            <button className={css.buttons}>VOTING</button>
+
+            <button className={css.buttons}>
+              <Link to="voting">VOTING</Link>
+            </button>
           </li>
           <li className={css.item}>
             <div className={css.containerIm}>
               <img className={css.imagesCat} src={cat} alt="Cat" />
             </div>
-            <Link className={css.buttons} to="breeds">
-              BREEDS
-            </Link>
-            <button  className={css.buttons}>
-                BREEDS
-              </button>
+            <button className={css.buttons}>
+              <Link to="breeds">BREEDS</Link>
+            </button>
           </li>
           <li className={css.item}>
             <div className={css.containerImPhone}>
@@ -42,7 +39,7 @@ export const Navigation = () => {
             <button className={css.buttons}>GALLERY</button>
           </li>
         </ul>
-      </div> */}
+      </div>
       {/* <ul>
         <li>
           <Link to="/">Home</Link>

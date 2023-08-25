@@ -1,34 +1,39 @@
-import { useSelector } from "react-redux";
 import css from "./BreedaaImeges.module.css";
-import { selectorBreeds } from "../../redux/selector";
+import PropTypes from "prop-types";
 
-export const BreedaaImeges = () => {
-  const breeds = useSelector(selectorBreeds);
+export const BreedaaImeges = ({ images }) => {
+  console.log(images);
   const imageStyles = [
     { width: "200px", height: "300px" },
     { width: "200px", height: "140px" },
     { width: "200px", height: "140px" },
     { width: "200px", height: "140px", marginTop: "160px" },
     { width: "420px", height: "300px" },
-    { width: "200px", height: "140px" },
-    { width: "200px", height: "140px" },
-    { width: "200px", height: "300px" },
-    { width: "420px", height: "300px" },
-    { width: "200px", height: "140px" },
-    { width: "200px", height: "300px" },
-    { width: "200px", height: "140px" },
-    { width: "200px", height: "140px" },
-    { width: "200px", height: "140px" },
-    { width: "420px", height: "300px" },
+    { width: "200px", height: "140px", marginTop: "160px" },
+    { width: "200px", height: "140px", marginTop: "160px" },
+    { width: "200px", height: "300px", marginTop: "160px" },
+    { width: "420px", height: "300px", marginTop: "160px" },
+    { width: "200px", height: "140px", marginTop: "320px" },
+    { width: "200px", height: "300px", marginTop: "320px" },
+    { width: "200px", height: "140px", marginTop: "320px" },
+    { width: "200px", height: "140px", marginTop: "320px" },
+    { width: "200px", height: "140px", marginTop: "320px" },
+    { width: "420px", height: "300px", marginTop: "160px" },
+    { width: "420px", height: "300px", marginTop: "320px" },
+    { width: "200px", height: "140px", marginTop: "320px" },
+    { width: "200px", height: "140px", marginTop: "480px" },
+    { width: "200px", height: "140px", marginTop: "480px" },
+    { width: "200px", height: "300px", marginTop: "320px" },
+    { width: "420px", height: "300px", maginTop: "320px" },
   ];
   return (
     <div className={css.imgCat}>
       <ul className={css.list}>
-        {breeds.map((item, index) => (
+        {images.map((item, index) => (
           <li className={css.item} key={item.id}>
             <img
               style={imageStyles[index % imageStyles.length]}
-              src={item.url}
+              src={item.image.url}
               alt={item.name}
             />
           </li>
@@ -36,4 +41,8 @@ export const BreedaaImeges = () => {
       </ul>
     </div>
   );
+};
+
+BreedaaImeges.propTypes = {
+  images: PropTypes.object,
 };

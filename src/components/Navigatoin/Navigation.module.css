@@ -76,15 +76,6 @@
   margin-bottom: 20px;
 }
 
-.containerGallry {
-  /* border: 4px #c0222294 solid; */
-  z-index: 1;
-  background-color: #fbe0dc;
-  min-width: 680px;
-  min-height: 840px;
-  margin: 0 0 0 137px;
-  border-radius: 20px;
-}
 .buttons {
   font-family: "Jost", sans-serif;
   font-weight: 500;
