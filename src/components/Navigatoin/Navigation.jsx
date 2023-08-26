@@ -20,38 +20,33 @@ export const Navigation = () => {
               <img className={css.imagesTable} src={table} alt="table" />
             </div>
 
-            <button className={css.buttons}>
-              <Link to="voting">VOTING</Link>
-            </button>
+            {/* <button > */}
+            <Link className={css.buttons} to="voting">
+              VOTING
+            </Link>
+            {/* </button> */}
           </li>
           <li className={css.item}>
             <div className={css.containerIm}>
               <img className={css.imagesCat} src={cat} alt="Cat" />
             </div>
-            <button className={css.buttons}>
-              <Link to="breeds">BREEDS</Link>
-            </button>
+            {/* <button className={css.buttons}> */}
+            <Link className={css.buttons} to="breeds">
+              BREEDS
+            </Link>
+            {/* </button> */}
           </li>
           <li className={css.item}>
             <div className={css.containerImPhone}>
               <img className={css.imagesPhone} src={phone} alt="phone" />
             </div>
-            <button className={css.buttons}>GALLERY</button>
+            <Link className={css.buttons} to="gallery">
+              GALLERY
+            </Link>
+            {/* <button className={css.buttons}>GALLERY</button> */}
           </li>
         </ul>
       </div>
-      {/* <ul>
-        <li>
-          <Link to="/">Home</Link>
-        </li>
-
-        <li>
-          <Link to="breeds">BREEDS</Link>
-        </li>
-        <li>
-          <Link to="voting">VOTING</Link>
-        </li>
-      </ul> */}
     </>
   );
 };

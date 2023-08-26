@@ -1,8 +1,15 @@
+import { useSelector } from "react-redux";
 import css from "./BreedaaImeges.module.css";
-import PropTypes from "prop-types";
+// import PropTypes from "prop-types";
+import { selectorBreeds } from "../../redux/selector";
 
-export const BreedaaImeges = ({ images }) => {
-  console.log(images);
+export const BreedaaImeges = () => {
+  const breeds = useSelector(selectorBreeds);
+  // if (images.length === 0) {
+  //   return (
+  //     <div style={{ marginLeft: "80px", marginTop: "120px" }}>Loading...</div>
+  //   );
+  // }
   const imageStyles = [
     { width: "200px", height: "300px" },
     { width: "200px", height: "140px" },
@@ -24,12 +31,12 @@ export const BreedaaImeges = ({ images }) => {
     { width: "200px", height: "140px", marginTop: "480px" },
     { width: "200px", height: "140px", marginTop: "480px" },
     { width: "200px", height: "300px", marginTop: "320px" },
-    { width: "420px", height: "300px", maginTop: "320px" },
+    { width: "420px", height: "300px", marginTop: "320px" },
   ];
   return (
     <div className={css.imgCat}>
       <ul className={css.list}>
-        {images.map((item, index) => (
+        {breeds.map((item, index) => (
           <li className={css.item} key={item.id}>
             <img
               style={imageStyles[index % imageStyles.length]}
@@ -43,6 +50,6 @@ export const BreedaaImeges = ({ images }) => {
   );
 };
 
-BreedaaImeges.propTypes = {
-  images: PropTypes.object,
-};
+// BreedaaImeges.propTypes = {
+//   images: PropTypes.array.isRequired,
+// };

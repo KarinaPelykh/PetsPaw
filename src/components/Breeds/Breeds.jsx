@@ -1,63 +1,31 @@
 import css from "./Breeds.module.css";
 import icon from "../../images/sprite.svg";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { getImages } from "../../redux/operation";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { BreedaaImeges } from "../BreedaaImeges/BreeadImeges";
 import { Link } from "react-router-dom";
-import { selectorBreeds } from "../../redux/selector";
+// import { selectorBreeds } from "../../redux/selector";
 import { Select } from "../Select/Select";
+import { BreedsForm } from "../BreedsForm/BreedsForm";
 
 export const Breeds = () => {
-  const breeds = useSelector(selectorBreeds);
-  const [displayedImages, setDisplayedImages] = useState(breeds.slice(0, 5));
-
-  const hendelImgChange = (event) => {
-    const imgChanges = event.target.value;
-    const dfd = Object.values(breeds).slice(0, imgChanges);
-    setDisplayedImages(dfd);
-  };
+  // const breeds = useSelector(selectorBreeds);
+  // const [displayedImages, setDisplayedImages] = useState();
+  // console.log(displayedImages);
+  // const hendelImgChange = (event) => {
+  //   const imgChanges = event.target.value;
+  //   const dfd = breeds.slice(0, imgChanges);
+  //   setDisplayedImages(dfd);
+  // };
 
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getImages());
-    setDisplayedImages(breeds.slice(0, 5));
-  }, [dispatch, setDisplayedImages]);
+  }, [dispatch]);
   return (
     <section className={css.section}>
-      <form className={css.wrapper}>
-        <input
-          className={css.input}
-          type="text"
-          name="name"
-          id="user-name"
-          placeholder="Search for breeds by name"
-        />
-
-        <ul className={css.list}>
-          <li>
-            <button className={css.btn}>
-              <svg style={{ width: "30px", height: "30px" }}>
-                <use xlinkHref={icon + "#icon-smail"}></use>
-              </svg>
-            </button>
-          </li>
-          <li>
-            <button className={css.btn}>
-              <svg style={{ width: "30px", height: "26px" }}>
-                <use xlinkHref={icon + "#heart"}></use>
-              </svg>
-            </button>
-          </li>
-          <li>
-            <button className={css.btn}>
-              <svg style={{ width: "30px", height: "30px" }}>
-                <use xlinkHref={icon + "#sad"}></use>
-              </svg>
-            </button>
-          </li>
-        </ul>
-      </form>
+      <BreedsForm />
       <div className={css.container}>
         <div className={css.cont}>
           <button type="button" className={css.buttonBack}>
@@ -72,14 +40,9 @@ export const Breeds = () => {
           <button type="button" className={css.btnBreeds}>
             BREEDS
           </button>
-          <Select className={css.select} />
-          {/* <select className={css.select}>
-            <option className={css.option} value="value" selected>
-              All breeds
-            </option>
-            <option value={breeds.name}>Cat</option>
-          </select> */}
-          <select onChange={hendelImgChange} className={css.selectLimit}>
+          <Select />
+
+          <select defaultValue className={css.selectLimit}>
             <option value="5">Limit:5</option>
             <option value="10">Limit:10</option>
             <option value="15">Limit:15</option>
@@ -123,7 +86,7 @@ export const Breeds = () => {
           </button>
         </div>
 
-        <BreedaaImeges images={displayedImages} />
+        <BreedaaImeges />
       </div>
     </section>
   );

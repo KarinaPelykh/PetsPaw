@@ -3,8 +3,9 @@
   position: relative;
 }
 .wrapper {
+  position: relative;
   display: flex;
-  width: 687px;
+  width: 680px;
 }
 .container {
   margin-top: 10px;
@@ -28,7 +29,7 @@
 
 .list {
   display: flex;
-  width: 248px;
+  /* width: 248px; */
 }
 
 .btn {
@@ -65,4 +66,16 @@
 }
 .cont {
   width: 220px;
+
+  display: flex;
+}
+
+.btnSerch {
+  width: 40px;
+  height: 40px;
+  background-color: #fbe0dc;
+  border-radius: 10px;
+  position: absolute;
+  top: 11px;
+  left: 408px;
 }
