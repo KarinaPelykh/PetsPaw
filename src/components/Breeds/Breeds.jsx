@@ -1,54 +1,90 @@
 import css from "./Breeds.module.css";
 import icon from "../../images/sprite.svg";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { getImages } from "../../redux/operation";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { BreedaaImeges } from "../BreedaaImeges/BreeadImeges";
 import { Link } from "react-router-dom";
-// import { selectorBreeds } from "../../redux/selector";
 import { Select } from "../Select/Select";
 import { BreedsForm } from "../BreedsForm/BreedsForm";
+import { selectorBreeds } from "../../redux/selector";
 
 export const Breeds = () => {
-  // const breeds = useSelector(selectorBreeds);
-  // const [displayedImages, setDisplayedImages] = useState();
-  // console.log(displayedImages);
-  // const hendelImgChange = (event) => {
-  //   const imgChanges = event.target.value;
-  //   const dfd = breeds.slice(0, imgChanges);
-  //   setDisplayedImages(dfd);
-  // };
+  const breeds = useSelector(selectorBreeds);
+  const breedsName = [];
+  for (const breed of breeds) {
+    breedsName.push(breed.name);
+  }
+  const filterAlfabetUp = (e) => {
+    e.preventDefault();
+    breedsName.sort();
+    console.log(breedsName.sort());
+  };
+
+  const filterAlfabetDown = (e) => {
+    e.preventDefault();
+    breedsName.sort().reverse();
+
+    console.log(breedsName.sort().reverse());
+  };
+
+  const [limit, setLimit] = useState(5);
+
+  const hendelImgChange = (event) => {
+    const imgChanges = event.target.value;
+    setLimit(imgChanges);
+  };
 
   const dispatch = useDispatch();
+
   useEffect(() => {
-    dispatch(getImages());
-  }, [dispatch]);
+    dispatch(getImages(limit));
+  }, [dispatch, limit]);
+
   return (
     <section className={css.section}>
       <BreedsForm />
       <div className={css.container}>
         <div className={css.cont}>
-          <button type="button" className={css.buttonBack}>
-            <Link to="/">
-              <svg
-                style={{ width: "20px", height: "20px", objectFit: "cover" }}
-              >
-                <use xlinkHref={icon + "#icon-arrow-left"}></use>
-              </svg>
-            </Link>
-          </button>
+          <Link className={css.buttonBack} to="/">
+            <svg
+              style={{
+                position: "absolute",
+                top: "10px",
+                left: "10px",
+                width: "20px",
+                height: "20px",
+                objectFit: "cover",
+              }}
+            >
+              <use xlinkHref={icon + "#icon-arrow-left"}></use>
+            </svg>
+          </Link>
           <button type="button" className={css.btnBreeds}>
             BREEDS
           </button>
           <Select />
 
-          <select defaultValue className={css.selectLimit}>
-            <option value="5">Limit:5</option>
-            <option value="10">Limit:10</option>
-            <option value="15">Limit:15</option>
-            <option value="20">Limit:20</option>
+          <select
+            onChange={hendelImgChange}
+            defaultValue
+            className={css.selectLimit}
+          >
+            <option className={css.optionLimit} value="5">
+              Limit:5
+            </option>
+            <option className={css.optionLimit} value="10">
+              Limit:10
+            </option>
+            <option className={css.optionLimit} value="15">
+              Limit:15
+            </option>
+            <option className={css.optionLimit} value="20">
+              Limit:20
+            </option>
           </select>
           <button
+            onClick={filterAlfabetUp}
             style={{
               position: " relative",
             }}
@@ -67,6 +103,7 @@ export const Breeds = () => {
             </svg>
           </button>
           <button
+            onClick={filterAlfabetDown}
             style={{
               position: "relative",
             }}

@@ -20,21 +20,17 @@ export const Navigation = () => {
               <img className={css.imagesTable} src={table} alt="table" />
             </div>
 
-            {/* <button > */}
             <Link className={css.buttons} to="voting">
               VOTING
             </Link>
-            {/* </button> */}
           </li>
           <li className={css.item}>
             <div className={css.containerIm}>
               <img className={css.imagesCat} src={cat} alt="Cat" />
             </div>
-            {/* <button className={css.buttons}> */}
             <Link className={css.buttons} to="breeds">
               BREEDS
             </Link>
-            {/* </button> */}
           </li>
           <li className={css.item}>
             <div className={css.containerImPhone}>
@@ -43,7 +39,6 @@ export const Navigation = () => {
             <Link className={css.buttons} to="gallery">
               GALLERY
             </Link>
-            {/* <button className={css.buttons}>GALLERY</button> */}
           </li>
         </ul>
       </div>

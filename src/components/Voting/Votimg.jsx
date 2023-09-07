@@ -18,23 +18,21 @@ export const Voting = () => {
       <BreedsForm />
       <div className={css.container}>
         <div className={css.cont}>
-          <button type="button" className={css.buttonBack}>
-            <Link to="/">
-              <svg
-                style={{ width: "20px", height: "20px", objectFit: "cover" }}
-              >
-                <use xlinkHref={icon + "#icon-arrow-left"}></use>
-              </svg>
-            </Link>
-          </button>
+          {/* <button type="button" className={css.buttonBack}> */}
+          <Link className={css.buttonBack} to="/">
+            <svg className={css.svgButton}>
+              <use xlinkHref={icon + "#icon-arrow-left"}></use>
+            </svg>
+          </Link>
+          {/* </button> */}
           <button type="button" className={css.btnBreeds}>
             VOTING
           </button>
         </div>
 
-        <div className={css.imgCat}>
+        <div className={css.containerImgCat}>
           <img
-            style={{ margin: "auto", width: "400px", height: "300px" }}
+            className={css.votingImg}
             src={breeds[0].image.url}
             alt={breeds.name}
           />

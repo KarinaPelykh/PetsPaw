@@ -5,7 +5,7 @@ import { selectorBreeds } from "../../redux/selector";
 
 export const BreedaaImeges = () => {
   const breeds = useSelector(selectorBreeds);
-  // if (images.length === 0) {
+  // if (breeds.length === 0) {
   //   return (
   //     <div style={{ marginLeft: "80px", marginTop: "120px" }}>Loading...</div>
   //   );
@@ -40,7 +40,7 @@ export const BreedaaImeges = () => {
           <li className={css.item} key={item.id}>
             <img
               style={imageStyles[index % imageStyles.length]}
-              src={item.image.url}
+              src={item.image ? item.image.url : item.url}
               alt={item.name}
             />
           </li>

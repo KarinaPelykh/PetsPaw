@@ -3,6 +3,7 @@ import icon from "../../images/sprite.svg";
 import { Link } from "react-router-dom";
 import { BreedaaImeges } from "../BreedaaImeges/BreeadImeges";
 import { BreedsForm } from "../BreedsForm/BreedsForm";
+import { GallerySelect } from "../GallerySelect/GallerySelect";
 
 export const Gallery = () => {
   return (
@@ -11,19 +12,20 @@ export const Gallery = () => {
         <BreedsForm />
         <div className={css.container}>
           <div className={css.cont}>
-            <button type="button" className={css.buttonBack}>
-              <Link to="/">
-                <svg
-                  style={{
-                    width: "20px",
-                    height: "20px",
-                    objectFit: "cover",
-                  }}
-                >
-                  <use xlinkHref={icon + "#icon-arrow-left"}></use>
-                </svg>
-              </Link>
-            </button>
+            <Link className={css.buttonBack} to="/">
+              <svg
+                style={{
+                  position: "absolute",
+                  top: "10px",
+                  left: "10px",
+                  width: "20px",
+                  height: "20px",
+                  objectFit: "cover",
+                }}
+              >
+                <use xlinkHref={icon + "#icon-arrow-left"}></use>
+              </svg>
+            </Link>
             <button type="button" className={css.btnBreeds}>
               GALLERY
             </button>
@@ -37,42 +39,7 @@ export const Gallery = () => {
               UPLOAD
             </button>
           </div>
-          <form className={css.wrappSelect}>
-            <div>
-              <label className={css.labelSelect}>ORDER</label>
-              <select defaultValue className={css.selectGallery}>
-                <option value="5">Random</option>
-              </select>
-              <label className={css.labelSelect}>TYPE</label>
-              <select defaultValue className={css.selectGallery}>
-                <option value="5">Static</option>
-              </select>
-            </div>
-            <div>
-              <label className={css.labelSelect}>BREEDS</label>
-              <select defaultValue className={css.selectGallery}>
-                <option value="5">None</option>
-              </select>
-
-              <label className={css.labelSelect}>LIMIT </label>
-              <div style={{ display: "flex" }}>
-                <select defaultValue className={css.selectGallerypage}>
-                  <option value="5">5 items per page</option>
-                </select>
-                <button className={css.buttonUdate}>
-                  <svg
-                    style={{
-                      width: "18px",
-                      height: "20px",
-                      marginRight: "10px",
-                    }}
-                  >
-                    <use xlinkHref={icon + "#icon-update"}></use>
-                  </svg>
-                </button>
-              </div>
-            </div>
-          </form>
+          <GallerySelect />
           <BreedaaImeges />
         </div>
       </section>

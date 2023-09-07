@@ -1,17 +1,26 @@
 import css from "./BreedsForm.module.css";
 import icon from "../../images/sprite.svg";
+// import { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+import { getCatsImagesByBreed } from "../../redux/operation";
 import { useState } from "react";
 
 export const BreedsForm = () => {
-  const [query, setQuery] = useState("");
-  const handelSumit = (event) => {
-    event.preventDefault();
-    const nameCat = event.target;
-    const name = nameCat.name.value;
+  const dicpatch = useDispatch();
+
+  const [name, setName] = useState("");
+
+  const handelSumit = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const name = form.name.value;
+    dicpatch(getCatsImagesByBreed(name));
+    form.reset();
     console.log(name);
   };
+
   const handelChangeInput = (e) => {
-    setQuery(e.target.value.toLowerCase());
+    setName(e.target.value.trim());
   };
 
   return (
@@ -22,8 +31,8 @@ export const BreedsForm = () => {
           className={css.input}
           type="text"
           name="name"
-          value={query}
-          id="user-name"
+          value={name}
+          id="cat-name"
           placeholder="Search for breeds by name"
         />
         <button type="submit" className={css.btnSerch}>
