@@ -4,7 +4,7 @@ export const catSlice = createSlice({
   name: "cats",
   initialState: {
     breeds: [],
-
+    images: [],
     isLoading: false,
     error: null,
   },
@@ -25,7 +25,7 @@ export const catSlice = createSlice({
         state.error = action.error.message; // Set the error message
       })
       .addCase(getCatsImagesByBreed.fulfilled, (state, action) => {
-        state.breeds = action.payload;
+        state.images = action.payload;
         state.isLoading = false;
       })
       .addCase(getCatsImagesByBreed.pending, (state) => {

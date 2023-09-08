@@ -5,11 +5,7 @@ import { selectorBreeds } from "../../redux/selector";
 
 export const BreedaaImeges = () => {
   const breeds = useSelector(selectorBreeds);
-  // if (breeds.length === 0) {
-  //   return (
-  //     <div style={{ marginLeft: "80px", marginTop: "120px" }}>Loading...</div>
-  //   );
-  // }
+
   const imageStyles = [
     { width: "200px", height: "300px" },
     { width: "200px", height: "140px" },
@@ -38,17 +34,45 @@ export const BreedaaImeges = () => {
       <ul className={css.list}>
         {breeds.map((item, index) => (
           <li className={css.item} key={item.id}>
+            {/* <a className={css.overleyLink}>
+              <div className={css.wrapper}> */}
             <img
+              // className={css.imageStyles}
               style={imageStyles[index % imageStyles.length]}
-              src={item.image ? item.image.url : item.url}
+              src={item.image.url}
               alt={item.name}
             />
+
+            {/* <div className={css.overley}>
+                  <button className={css.textOoverley}>{item.name}</button>
+                </div>
+              </div>
+            </a> */}
           </li>
         ))}
       </ul>
     </div>
   );
 };
+{
+  /* <li class="item-images">
+  <a href="" class="link overley-link item-images-link">
+    <div class="wrapper">
+      <img src="./images/img-11.jpg" alt="car" width="360" />
+      <div class="overley">
+        <p class="text-overley">
+          14 Stylish and User-Friendly App Design Concepts · Task Manager App ·
+          Calorie Tracker App · Exotic Fruit Ecommerce App · Cloud Storage App
+        </p>
+      </div>
+    </div>
+    <div class="container-heading-text">
+      <h2 class="headin-caption">Taxi Service</h2>
+      <p class="headin-text-img">Marketing</p>
+    </div>
+  </a>
+</li>; */
+}
 
 // BreedaaImeges.propTypes = {
 //   images: PropTypes.array.isRequired,

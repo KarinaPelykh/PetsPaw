@@ -20,3 +20,50 @@ img {
 .item {
   height: 140px;
 }
+
+/* .wrapperLi {
+  position: relative;
+  overflow: hidden;
+}
+
+.overley {
+  position: absolute;
+  height: 140px;
+  width: 200px;
+  border-radius: 20px;
+
+  top: 0;
+  left: 0; */
+/* display: block; */
+/* padding: 40px 32px 164px 32px; */
+/* background-color: rgba(255, 134, 142, 0.6);
+
+  transition-property: translateY;
+  transform: translateY(100%);
+
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-property: transform, background-color;
+  transition-duration: 250ms;
+}
+.overleyLink:hover .overley,
+.overleyLink:focus .overley {
+  transform: translateY(0%);
+  background-color: rgba(255, 134, 142, 0.6);
+}
+
+.textOoverley {
+  padding: 5px 42px;
+  border-radius: 10px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.02em;
+  color: #ff868e;
+}
+
+.im {
+  width: 200px;
+  margin-top: 20px;
+  height: 140px;
+} */

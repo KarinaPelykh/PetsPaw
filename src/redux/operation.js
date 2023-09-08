@@ -29,7 +29,7 @@ export const getCatsImagesByBreed = createAsyncThunk(
   async (breeds_id, { rejectWithValue }) => {
     try {
       const { data } = await axios.get(
-        `/images/search? api_key${API_KEY}&breed_ids=${breeds_id}&limit=5`
+        `/images/search? api_key${API_KEY}&breed_ids=${breeds_id}&limit=6`
       );
       console.log(data);
       return data;

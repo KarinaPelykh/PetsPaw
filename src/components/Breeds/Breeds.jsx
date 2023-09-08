@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 import { Select } from "../Select/Select";
 import { BreedsForm } from "../BreedsForm/BreedsForm";
 import { selectorBreeds } from "../../redux/selector";
+import { SlaiderCat } from "../SlaiderCat/SlaiderCat";
 
 export const Breeds = () => {
   const breeds = useSelector(selectorBreeds);
@@ -29,6 +30,14 @@ export const Breeds = () => {
   };
 
   const [limit, setLimit] = useState(5);
+  const [showSliderCat, setShowSliderCat] = useState(false);
+  const [selectedValue, setSelectedValue] = useState(null);
+
+  const handelChangeSelect = (value) => {
+    setShowSliderCat(true);
+    setSelectedValue(value);
+    console.log(value);
+  };
 
   const hendelImgChange = (event) => {
     const imgChanges = event.target.value;
@@ -63,7 +72,7 @@ export const Breeds = () => {
           <button type="button" className={css.btnBreeds}>
             BREEDS
           </button>
-          <Select />
+          <Select onChange={handelChangeSelect} />
 
           <select
             onChange={hendelImgChange}
@@ -122,8 +131,7 @@ export const Breeds = () => {
             </svg>
           </button>
         </div>
-
-        <BreedaaImeges />
+        {selectedValue && showSliderCat ? <SlaiderCat /> : <BreedaaImeges />}
       </div>
     </section>
   );
