@@ -1,28 +1,31 @@
 import { useSelector } from "react-redux";
 import { selectorImages } from "../../redux/selector";
-import css from "./SelectImages.module.css";
+
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Thumbs, Navigation } from "swiper/modules";
+import "./swiper-css.css";
+
 export const SelectIages = () => {
   const images = useSelector(selectorImages);
-  console.log(images);
-  //   if (images.length === 0) {
-  //     return (
-  //       <div style={{ marginLeft: "80px", marginTop: "120px" }}>Loading...</div>
-  //     );
-  //   }
-  const imageStyles = [{ width: "520px", marginTop: "20px" }];
+  const imageStyles = [{ width: "640px", height: "360px", marginTop: "20px" }];
   return (
-    <div className={css.imgCat}>
-      <ul className={css.list}>
-        {images.map((item, index) => (
-          <li className={css.item} key={item.id}>
-            <img
-              style={imageStyles[index % imageStyles.length]}
-              src={item.url}
-              alt={item.name}
-            />
-          </li>
-        ))}
-      </ul>
-    </div>
+    <Swiper
+      loop={true}
+      spaceBetween={10}
+      navigation={true}
+      modules={[Navigation, Thumbs]}
+      grabCursor={true}
+      className="swiper-css"
+    >
+      {images.map((item, index) => (
+        <SwiperSlide key={item.id}>
+          <img
+            style={imageStyles[index % imageStyles.length]}
+            src={item.url}
+            alt={item.name}
+          />
+        </SwiperSlide>
+      ))}
+    </Swiper>
   );
 };

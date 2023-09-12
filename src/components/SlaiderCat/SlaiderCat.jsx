@@ -2,6 +2,10 @@ import { SelectIages } from "../SelectImages/SelectImages";
 import icon from "../../images/sprite.svg";
 import { Link } from "react-router-dom";
 import css from "./SlaiderCat.module.css";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/thumbs";
+import { InfoSliderCat } from "./InfoSliderCat";
 export const SlaiderCat = () => {
   return (
     <>
@@ -25,7 +29,25 @@ export const SlaiderCat = () => {
             BREEDS
           </button>
         </div>
-        <SelectIages />
+        <div
+          style={{
+            marginTop: "20px",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <div
+            style={{
+              width: "640px",
+              height: "360px",
+              padding: "20px",
+            }}
+          >
+            <SelectIages />
+          </div>
+        </div>
+        <InfoSliderCat />
       </div>
     </>
   );
