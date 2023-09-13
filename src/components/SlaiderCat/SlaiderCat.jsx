@@ -12,16 +12,7 @@ export const SlaiderCat = () => {
       <div className={css.container}>
         <div className={css.cont}>
           <Link className={css.buttonBack} to="/">
-            <svg
-              style={{
-                position: "absolute",
-                top: "10px",
-                left: "10px",
-                width: "20px",
-                height: "20px",
-                objectFit: "cover",
-              }}
-            >
+            <svg className={css.svgback}>
               <use xlinkHref={icon + "#icon-arrow-left"}></use>
             </svg>
           </Link>
@@ -29,21 +20,8 @@ export const SlaiderCat = () => {
             BREEDS
           </button>
         </div>
-        <div
-          style={{
-            marginTop: "20px",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-        >
-          <div
-            style={{
-              width: "640px",
-              height: "360px",
-              padding: "20px",
-            }}
-          >
+        <div className={css.containerSwipertImg}>
+          <div className={css.inner}>
             <SelectIages />
           </div>
         </div>

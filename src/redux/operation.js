@@ -29,7 +29,22 @@ export const getCatsImagesByBreed = createAsyncThunk(
   async (breeds_id, { rejectWithValue }) => {
     try {
       const { data } = await axios.get(
-        `/images/search? api_key${API_KEY}&breed_ids=${breeds_id}&limit=6`
+        `/images/search? api_key${API_KEY}&breed_id=${breeds_id}&limit=10`
+      );
+      console.log(data);
+      return data;
+    } catch (error) {
+      return rejectWithValue(error.message);
+    }
+  }
+);
+
+export const infoCat = createAsyncThunk(
+  "images/getinfo",
+  async (breeds_id, { rejectWithValue }) => {
+    try {
+      const { data } = await axios.get(
+        `/images/search?api_key=${API_KEY}&breed_ids=${breeds_id}`
       );
       console.log(data);
       return data;

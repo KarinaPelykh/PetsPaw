@@ -24,6 +24,15 @@
   height: 40px;
   background-color: #fbe0dc;
 }
+.svgback {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 20px;
+  height: 20px;
+  object-fit: cover;
+}
+
 .btnBreeds {
   margin-top: 0;
   margin-right: 10px;
@@ -43,4 +52,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.containerSwipertImg {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.inner {
+  width: 640px;
+  height: 360px;
+  padding: 20px;
 }
