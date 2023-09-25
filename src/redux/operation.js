@@ -7,7 +7,7 @@ const API_KEY =
 axios.defaults.baseURL = "https://api.thecatapi.com/v1";
 
 export const getImages = createAsyncThunk(
-  "images/getAll",
+  "cats/getAll",
   async (limit, { rejectWithValue }) => {
     try {
       const { data } = await axios.get("/breeds", {
@@ -25,7 +25,7 @@ export const getImages = createAsyncThunk(
 );
 
 export const getCatsImagesByBreed = createAsyncThunk(
-  "images/getName",
+  "cats/getName",
   async (breeds_id, { rejectWithValue }) => {
     try {
       const { data } = await axios.get(
@@ -40,7 +40,7 @@ export const getCatsImagesByBreed = createAsyncThunk(
 );
 
 export const infoCat = createAsyncThunk(
-  "images/getinfo",
+  "cats/getinfo",
   async (breeds_id, { rejectWithValue }) => {
     try {
       const { data } = await axios.get(
@@ -53,3 +53,40 @@ export const infoCat = createAsyncThunk(
     }
   }
 );
+export const catImgname = createAsyncThunk(
+  "cats/catImgname",
+  // async (name, { rejectWithValue }) => {
+  //   try {
+  //     const { data } = await axios.get(
+  //       `/images/search?api_key=${API_KEY}&sub_id=${name}`
+  //     );
+  //     console.log(data);
+  //     return data;
+  //   } catch (error) {
+  //     return rejectWithValue(error.message);
+  //   }
+  // }
+
+  async (name, { rejectWithValue }) => {
+    try {
+      const { data } = await axios.get(
+        `/images/search? api_key${API_KEY}&breed_id=${name}&limit=10`
+      );
+      console.log(data);
+      return data;
+    } catch (error) {
+      return rejectWithValue(error.message);
+    }
+  }
+);
+
+// export const sortIncrement = createAsyncThunk(
+//   "sort/Name",
+//   async (_, { rejectWithValue }) => {
+//     try {
+//       const = data
+//     } catch (error) {
+//       return rejectWithValue(error.message);
+//     }
+//   }
+// );

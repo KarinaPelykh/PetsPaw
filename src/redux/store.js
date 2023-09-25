@@ -1,9 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { catReducer } from "./catSlice";
-import { filterReducer } from "./filterCat";
+import { sortReducer } from "./sortCat";
+
 export const store = configureStore({
   reducer: {
     breeds: catReducer,
-    filter: filterReducer,
+    sort: sortReducer,
   },
 });

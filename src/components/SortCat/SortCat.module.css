@@ -1,0 +1,16 @@
+.buttonFilter {
+  margin-top: 0;
+  margin-right: 20px;
+  background-color: none;
+  width: 40px;
+  border-radius: 10px;
+  height: 40px;
+  position: relative;
+}
+.sortSvg {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 0px;
+  left: -1px;
+}

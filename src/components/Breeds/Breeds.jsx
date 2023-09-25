@@ -2,33 +2,15 @@ import css from "./Breeds.module.css";
 import icon from "../../images/sprite.svg";
 import { useEffect, useState } from "react";
 import { getImages } from "../../redux/operation";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { BreedaaImeges } from "../BreedaaImeges/BreeadImeges";
 import { Link } from "react-router-dom";
 import { Select } from "../Select/Select";
 import { BreedsForm } from "../BreedsForm/BreedsForm";
-import { selectorBreeds } from "../../redux/selector";
 import { SlaiderCat } from "../SlaiderCat/SlaiderCat";
+import { SortCat } from "../SortCat/SortCat";
 
 export const Breeds = () => {
-  const breeds = useSelector(selectorBreeds);
-  const breedsName = [];
-  for (const breed of breeds) {
-    breedsName.push(breed.name);
-  }
-  const filterAlfabetUp = (e) => {
-    e.preventDefault();
-    breedsName.sort();
-    console.log(breedsName.sort());
-  };
-
-  const filterAlfabetDown = (e) => {
-    e.preventDefault();
-    breedsName.sort().reverse();
-
-    console.log(breedsName.sort().reverse());
-  };
-
   const [limit, setLimit] = useState(5);
   const [showSliderCat, setShowSliderCat] = useState(false);
   const [selectedValue, setSelectedValue] = useState(null);
@@ -92,44 +74,7 @@ export const Breeds = () => {
               Limit:20
             </option>
           </select>
-          <button
-            onClick={filterAlfabetUp}
-            style={{
-              position: " relative",
-            }}
-            className={css.buttonFilter}
-          >
-            <svg
-              style={{
-                width: "40px",
-                height: "40px",
-                position: "absolute",
-                top: "0px",
-                left: "-1px",
-              }}
-            >
-              <use xlinkHref={icon + "#icon-Group-up"}></use>
-            </svg>
-          </button>
-          <button
-            onClick={filterAlfabetDown}
-            style={{
-              position: "relative",
-            }}
-            className={css.buttonFilter}
-          >
-            <svg
-              style={{
-                width: "40px",
-                height: "40px",
-                position: "absolute",
-                top: "0px",
-                left: "-1px",
-              }}
-            >
-              <use xlinkHref={icon + "#icon-Group-down"}></use>
-            </svg>
-          </button>
+          <SortCat />
         </div>
         {selectedValue && showSliderCat ? <SlaiderCat /> : <BreedaaImeges />}
       </div>

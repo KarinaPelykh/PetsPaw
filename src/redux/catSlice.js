@@ -1,11 +1,17 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { getCatsImagesByBreed, getImages, infoCat } from "./operation";
+import {
+  catImgname,
+  getCatsImagesByBreed,
+  getImages,
+  infoCat,
+} from "./operation";
 export const catSlice = createSlice({
   name: "cats",
   initialState: {
     breeds: [],
     images: [],
     info: [],
+    name: "",
     isLoading: false,
     error: null,
   },
@@ -49,6 +55,11 @@ export const catSlice = createSlice({
       .addCase(infoCat.rejected, (state, action) => {
         state.isLoading = false;
         state.error = action.error.message; // Set the error message
+      })
+      .addCase(catImgname.fulfilled, (state, action) => {
+        state.name = action.payload;
+
+        state.isLoading = false;
       });
   },
 });

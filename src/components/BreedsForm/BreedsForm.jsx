@@ -2,7 +2,7 @@ import css from "./BreedsForm.module.css";
 import icon from "../../images/sprite.svg";
 // import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { getCatsImagesByBreed } from "../../redux/operation";
+import { catImgname, getCatsImagesByBreed } from "../../redux/operation";
 import { useState } from "react";
 
 export const BreedsForm = () => {
@@ -14,7 +14,7 @@ export const BreedsForm = () => {
     e.preventDefault();
     const form = e.target;
     const name = form.name.value;
-    dicpatch(getCatsImagesByBreed(name));
+    dicpatch(catImgname(name));
     form.reset();
     console.log(name);
   };
@@ -29,7 +29,7 @@ export const BreedsForm = () => {
         <input
           onChange={handelChangeInput}
           className={css.input}
-          type="text"
+          type="name"
           name="name"
           value={name}
           id="cat-name"
