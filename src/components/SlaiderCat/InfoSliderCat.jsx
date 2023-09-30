@@ -4,7 +4,6 @@ import css from "./InfoSliderCat.module.css";
 export const InfoSliderCat = () => {
   const info = useSelector(selectorInfo);
   if (!info.length) {
-    // Дані ще не завантажені, можна відобразити заглушку або індікатор завантаження.
     return <div>Loading...</div>;
   }
   const catId = info[0];

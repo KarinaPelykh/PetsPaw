@@ -16,7 +16,7 @@ export const getImages = createAsyncThunk(
           api_key: API_KEY,
         },
       });
-      console.log(data);
+      // console.log(data);
       return data;
     } catch (error) {
       return rejectWithValue(error.message);
@@ -31,7 +31,7 @@ export const getCatsImagesByBreed = createAsyncThunk(
       const { data } = await axios.get(
         `/images/search? api_key${API_KEY}&breed_id=${breeds_id}&limit=10`
       );
-      console.log(data);
+      // console.log(data);
       return data;
     } catch (error) {
       return rejectWithValue(error.message);
@@ -46,7 +46,7 @@ export const infoCat = createAsyncThunk(
       const { data } = await axios.get(
         `/images/search?api_key=${API_KEY}&breed_ids=${breeds_id}`
       );
-      console.log(data);
+      // console.log(data);
       return data;
     } catch (error) {
       return rejectWithValue(error.message);
@@ -55,22 +55,10 @@ export const infoCat = createAsyncThunk(
 );
 export const catImgname = createAsyncThunk(
   "cats/catImgname",
-  // async (name, { rejectWithValue }) => {
-  //   try {
-  //     const { data } = await axios.get(
-  //       `/images/search?api_key=${API_KEY}&sub_id=${name}`
-  //     );
-  //     console.log(data);
-  //     return data;
-  //   } catch (error) {
-  //     return rejectWithValue(error.message);
-  //   }
-  // }
-
   async (name, { rejectWithValue }) => {
     try {
       const { data } = await axios.get(
-        `/images/search? api_key${API_KEY}&breed_id=${name}&limit=10`
+        `/images/search?api_key${API_KEY}&breed_ids=${name}&limit=5`
       );
       console.log(data);
       return data;
@@ -80,13 +68,18 @@ export const catImgname = createAsyncThunk(
   }
 );
 
-// export const sortIncrement = createAsyncThunk(
-//   "sort/Name",
-//   async (_, { rejectWithValue }) => {
-//     try {
-//       const = data
-//     } catch (error) {
-//       return rejectWithValue(error.message);
-//     }
-//   }
-// );
+export const sortIncrement = createAsyncThunk(
+  "sort/Name",
+  async (order, { rejectWithValue }) => {
+    try {
+      const { data } = await axios.get(
+        `/breeds?api_key=${API_KEY}&order=${order}`
+      );
+      console.log(data);
+
+      return data;
+    } catch (error) {
+      return rejectWithValue(error.message);
+    }
+  }
+);

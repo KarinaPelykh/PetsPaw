@@ -2,29 +2,27 @@ import css from "./BreedsForm.module.css";
 import icon from "../../images/sprite.svg";
 // import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { catImgname, getCatsImagesByBreed } from "../../redux/operation";
+import { catImgname } from "../../redux/operation";
 import { useState } from "react";
 
-export const BreedsForm = () => {
+export const BreedsForm = ({ toggle }) => {
   const dicpatch = useDispatch();
 
-  const [name, setName] = useState("");
-
+  const [name, setBreed_ids] = useState("");
   const handelSumit = (e) => {
     e.preventDefault();
     const form = e.target;
     const name = form.name.value;
     dicpatch(catImgname(name));
-    form.reset();
-    console.log(name);
+    setBreed_ids("");
   };
 
   const handelChangeInput = (e) => {
-    setName(e.target.value.trim());
+    setBreed_ids(e.target.value.trim());
   };
 
   return (
-    <>
+    <div>
       <form onSubmit={handelSumit} className={css.wrapper}>
         <input
           onChange={handelChangeInput}
@@ -35,7 +33,12 @@ export const BreedsForm = () => {
           id="cat-name"
           placeholder="Search for breeds by name"
         />
-        <button type="submit" className={css.btnSerch}>
+        <button
+          onClick={toggle}
+          disabled={name === ""}
+          type="submit"
+          className={css.btnSerch}
+        >
           <svg
             style={{
               width: "20px",
@@ -45,6 +48,7 @@ export const BreedsForm = () => {
             <use xlinkHref={icon + "#icon-search"}></use>
           </svg>
         </button>
+
         <ul className={css.list}>
           <li>
             <button className={css.btn}>
@@ -69,6 +73,6 @@ export const BreedsForm = () => {
           </li>
         </ul>
       </form>
-    </>
+    </div>
   );
 };

@@ -1,0 +1,53 @@
+.text {
+  position: relative;
+  top: 161px;
+  left: 10px;
+
+  color: rgb(11, 10, 10);
+
+  transform: translateX(20px);
+  transition-property: transform;
+  transform: translateY(100%);
+  transition-duration: 550ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
+}
+/*
+.box {
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+
+  transition-property: background-color;
+  transition-duration: 1000ms;
+  transition-timing-function: linear;
+  width: 408px;
+  height: 357px;
+  margin: 129px;
+}
+*/
+.box:hover .text {
+  transform: scale(1.5);
+  color: #ff868e;
+}
+
+.listCat {
+  margin-top: 20px;
+  margin-left: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  column-gap: 10px;
+}
+
+.itemCAT {
+  object-fit: cover;
+}
+
+.ImagesCat {
+  width: 300px;
+  height: 300px;
+  display: block;
+  max-width: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+}

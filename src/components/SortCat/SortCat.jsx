@@ -1,37 +1,46 @@
-import { useDispatch, useSelector } from "react-redux";
+// import { useDispatch, useSelector } from "react-redux";
 import icon from "../../images/sprite.svg";
-import { selectorBreeds } from "../../redux/selector";
-import { addSort } from "../../redux/sortCat";
+// import { selectorBreeds } from "../../redux/selector";
 import css from "./SortCat.module.css";
-export const SortCat = () => {
-  const breeds = useSelector(selectorBreeds);
-  const dispatch = useDispatch();
-  const breedsName = [];
+// import { useEffect, useState } from "react";
+// import { sortIncrement } from "../../redux/operation";
 
-  for (const breed of breeds) {
-    breedsName.push(breed.name);
-  }
-  const filterAlfabetUp = (e) => {
-    e.preventDefault();
-    const sortA = [...breedsName].sort();
-    dispatch(addSort(sortA));
-    console.log(sortA);
-  };
+export const SortCat = ({ asc, desc }) => {
+  // const breeds = useSelector(selectorBreeds);
+  // const [order, setOrder] = useState("ASC");
 
-  const filterAlfabetDown = (e) => {
-    e.preventDefault();
-    const sortZ = [...breedsName].sort().reverse();
-    dispatch(addSort(sortZ));
-    console.log(sortZ);
-  };
+  // const dispatch = useDispatch();
+  // useEffect(() => {
+  //   dispatch(sortIncrement(order));
+  // }, [dispatch, order]);
+
+  // const filterAlfabetUp = () => {
+  //   // const sortA = [...breeds].sort();
+  //   dispatch(sortIncrement(sortA));
+  //   // console.log(sortA);
+  // };
+
+  // const filterAlfabetDown = () => {
+  //   // const sortZ = [...breeds].sort().reverse();
+  //   dispatch(sortIncrement(sortZ));
+  //   // console.log(sortZ);
+  // };
+
+  // const asc = () => {
+  //   setOrder("ASC");
+  // };
+
+  // const desc = () => {
+  //   setOrder("DESC");
+  // };
   return (
     <>
-      <button onClick={filterAlfabetUp} className={css.buttonFilter}>
+      <button onClick={asc} className={css.buttonFilter}>
         <svg className={css.sortSvg}>
           <use xlinkHref={icon + "#icon-Group-up"}></use>
         </svg>
       </button>
-      <button onClick={filterAlfabetDown} className={css.buttonFilter}>
+      <button onClick={desc} className={css.buttonFilter}>
         <svg className={css.sortSvg}>
           <use xlinkHref={icon + "#icon-Group-down"}></use>
         </svg>

@@ -1,6 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { catReducer } from "./catSlice";
-import { sortReducer } from "./sortCat";
+import { sortReducer } from "./sortCatSlice";
 
 export const store = configureStore({
   reducer: {

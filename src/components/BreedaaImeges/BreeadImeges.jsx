@@ -5,7 +5,6 @@ import { selectorBreeds } from "../../redux/selector";
 
 export const BreedaaImeges = () => {
   const breeds = useSelector(selectorBreeds);
-
   const imageStyles = [
     { width: "200px", height: "300px" },
     { width: "200px", height: "140px" },
@@ -30,28 +29,30 @@ export const BreedaaImeges = () => {
     { width: "420px", height: "300px", marginTop: "320px" },
   ];
   return (
-    <div className={css.imgCat}>
-      <ul className={css.list}>
-        {breeds.map((item, index) => (
-          <li className={css.item} key={item.id}>
-            {/* <a className={css.overleyLink}>
+    <>
+      <div className={css.imgCat}>
+        <ul className={css.list}>
+          {breeds.map((item, index) => (
+            <li className={css.item} key={item.id}>
+              {/* <a className={css.overleyLink}>
               <div className={css.wrapper}> */}
-            <img
-              // className={css.imageStyles}
-              style={imageStyles[index % imageStyles.length]}
-              src={item.image.url}
-              alt={item.name}
-            />
+              <img
+                // className={css.imageStyles}
+                style={imageStyles[index % imageStyles.length]}
+                src={item.image.url}
+                alt={item.name}
+              />
 
-            {/* <div className={css.overley}>
+              {/* <div className={css.overley}>
                   <button className={css.textOoverley}>{item.name}</button>
                 </div>
               </div>
             </a> */}
-          </li>
-        ))}
-      </ul>
-    </div>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </>
   );
 };
 {
