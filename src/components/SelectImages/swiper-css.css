@@ -6,4 +6,11 @@
   .swiper-button-prev {
     color: #fff;
   }
+
+  .swiper-button-prev:hover {
+    color: #ff868e;
+  }
+  .swiper-button-next:hover {
+    color: #ff868e;
+  }
 }

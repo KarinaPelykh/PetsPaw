@@ -1,7 +1,7 @@
 import css from "./Gallery.module.css";
 import icon from "../../images/sprite.svg";
 import { Link } from "react-router-dom";
-import { BreedaaImeges } from "../BreedaaImeges/BreeadImeges";
+// import { BreedaaImeges } from "../BreedaaImeges/BreeadImeges";
 import { BreedsForm } from "../BreedsForm/BreedsForm";
 import { GallerySelect } from "../GallerySelect/GallerySelect";
 import { useState } from "react";
@@ -52,7 +52,7 @@ export const Gallery = () => {
               </button>
             </div>
             <GallerySelect />
-            <BreedaaImeges />
+            {/* <BreedaaImeges /> */}
           </div>
         )}
       </section>

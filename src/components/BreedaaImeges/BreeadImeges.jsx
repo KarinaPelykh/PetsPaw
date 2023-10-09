@@ -6,34 +6,37 @@ import { selectorBreeds } from "../../redux/selector";
 export const BreedaaImeges = () => {
   const breeds = useSelector(selectorBreeds);
   const imageStyles = [
-    { width: "200px", height: "300px" },
-    { width: "200px", height: "140px" },
-    { width: "200px", height: "140px" },
-    { width: "200px", height: "140px", marginTop: "160px" },
-    { width: "420px", height: "300px" },
-    { width: "200px", height: "140px", marginTop: "160px" },
-    { width: "200px", height: "140px", marginTop: "160px" },
-    { width: "200px", height: "300px", marginTop: "160px" },
-    { width: "420px", height: "300px", marginTop: "160px" },
-    { width: "200px", height: "140px", marginTop: "320px" },
-    { width: "200px", height: "300px", marginTop: "320px" },
-    { width: "200px", height: "140px", marginTop: "320px" },
-    { width: "200px", height: "140px", marginTop: "320px" },
-    { width: "200px", height: "140px", marginTop: "320px" },
-    { width: "420px", height: "300px", marginTop: "160px" },
-    { width: "420px", height: "300px", marginTop: "320px" },
-    { width: "200px", height: "140px", marginTop: "320px" },
-    { width: "200px", height: "140px", marginTop: "480px" },
-    { width: "200px", height: "140px", marginTop: "480px" },
-    { width: "200px", height: "300px", marginTop: "320px" },
-    { width: "420px", height: "300px", marginTop: "320px" },
+    // { width: "200px", height: "300px" },
+    // { width: "200px", height: "140px" },
+    // { width: "200px", height: "140px" },
+    // { width: "200px", height: "140px", marginTop: "160px" },
+    // { width: "420px", height: "300px" },
+    // { width: "200px", height: "140px", marginTop: "160px" },
+    // { width: "200px", height: "140px", marginTop: "160px" },
+    // { width: "200px", height: "300px", marginTop: "160px" },
+    // { width: "420px", height: "300px", marginTop: "160px" },
+    // { width: "200px", height: "140px", marginTop: "320px" },
+    // { width: "200px", height: "300px", marginTop: "320px" },
+    // { width: "200px", height: "140px", marginTop: "320px" },
+    // { width: "200px", height: "140px", marginTop: "320px" },
+    // { width: "200px", height: "140px", marginTop: "320px" },
+    // { width: "420px", height: "300px", marginTop: "160px" },
+    // { width: "420px", height: "300px", marginTop: "320px" },
+    // { width: "200px", height: "140px", marginTop: "320px" },
+    // { width: "200px", height: "140px", marginTop: "480px" },
+    // { width: "200px", height: "140px", marginTop: "480px" },
+    // { width: "200px", height: "300px", marginTop: "320px" },
+    // { width: "420px", height: "300px", marginTop: "320px" },
   ];
   return (
     <>
       <div className={css.imgCat}>
         <ul className={css.list}>
           {breeds.map((item, index) => (
-            <li className={css.item} key={item.id}>
+            <li
+              className={css.item }
+              key={item.id}
+            >
               {/* <a className={css.overleyLink}>
               <div className={css.wrapper}> */}
               <img

@@ -8,15 +8,16 @@ axios.defaults.baseURL = "https://api.thecatapi.com/v1";
 
 export const getImages = createAsyncThunk(
   "cats/getAll",
-  async (limit, { rejectWithValue }) => {
+  async ({ limit, order }, { rejectWithValue }) => {
     try {
       const { data } = await axios.get("/breeds", {
         params: {
+          order,
           limit,
           api_key: API_KEY,
         },
       });
-      // console.log(data);
+      console.log(data);
       return data;
     } catch (error) {
       return rejectWithValue(error.message);
@@ -31,7 +32,7 @@ export const getCatsImagesByBreed = createAsyncThunk(
       const { data } = await axios.get(
         `/images/search? api_key${API_KEY}&breed_id=${breeds_id}&limit=10`
       );
-      // console.log(data);
+
       return data;
     } catch (error) {
       return rejectWithValue(error.message);
@@ -46,7 +47,7 @@ export const infoCat = createAsyncThunk(
       const { data } = await axios.get(
         `/images/search?api_key=${API_KEY}&breed_ids=${breeds_id}`
       );
-      // console.log(data);
+
       return data;
     } catch (error) {
       return rejectWithValue(error.message);
@@ -60,22 +61,6 @@ export const catImgname = createAsyncThunk(
       const { data } = await axios.get(
         `/images/search?api_key${API_KEY}&breed_ids=${name}&limit=5`
       );
-      console.log(data);
-      return data;
-    } catch (error) {
-      return rejectWithValue(error.message);
-    }
-  }
-);
-
-export const sortIncrement = createAsyncThunk(
-  "sort/Name",
-  async (order, { rejectWithValue }) => {
-    try {
-      const { data } = await axios.get(
-        `/breeds?api_key=${API_KEY}&order=${order}`
-      );
-      console.log(data);
 
       return data;
     } catch (error) {
@@ -83,3 +68,20 @@ export const sortIncrement = createAsyncThunk(
     }
   }
 );
+
+// export const sortIncrement = createAsyncThunk(
+//   "sort/Name",
+//   async ({ order, limit }, { rejectWithValue }) => {
+//     c
+//     try {
+//       const { data } = await axios.get("/breeds", {
+//         params: { api_key: API_KEY, order, limit },
+//       });
+//       console.log(data);
+
+//       return data;
+//     } catch (error) {
+//       return rejectWithValue(error.message);
+//     }
+//   }
+// );

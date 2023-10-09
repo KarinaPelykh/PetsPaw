@@ -1,7 +1,7 @@
 import css from "./Breeds.module.css";
 import icon from "../../images/sprite.svg";
 import { useEffect, useState } from "react";
-import { getImages, sortIncrement } from "../../redux/operation";
+import { getImages } from "../../redux/operation";
 import { useDispatch } from "react-redux";
 import { BreedaaImeges } from "../BreedaaImeges/BreeadImeges";
 import { Link } from "react-router-dom";
@@ -38,8 +38,9 @@ export const Breeds = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getImages(limit));
-    dispatch(sortIncrement(order));
+    dispatch(getImages({ limit, order }));
+    // dispatch(sortIncrement({ limit }));
+    console.log(order);
   }, [dispatch, limit, order]);
 
   const asc = () => {
@@ -87,12 +88,12 @@ export const Breeds = () => {
               <option className={css.optionLimit} value="10">
                 Limit:10
               </option>
-              {/* <option className={css.optionLimit} value="15">
+              <option className={css.optionLimit} value="15">
                 Limit:15
               </option>
               <option className={css.optionLimit} value="20">
                 Limit:20
-              </option> */}
+              </option>
             </select>
             <SortCat asc={asc} desc={desc} />
           </div>

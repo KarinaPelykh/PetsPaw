@@ -1,7 +1,9 @@
 // import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import icon from "../../images/sprite.svg";
 // import { selectorBreeds } from "../../redux/selector";
 import css from "./SortCat.module.css";
+// import { selectorSort } from "../../redux/selector";
 // import { useEffect, useState } from "react";
 // import { sortIncrement } from "../../redux/operation";
 
