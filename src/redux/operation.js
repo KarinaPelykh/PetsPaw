@@ -56,10 +56,12 @@ export const infoCat = createAsyncThunk(
 );
 export const catImgname = createAsyncThunk(
   "cats/catImgname",
-  async (name, { rejectWithValue }) => {
+  async (searchQuery, { rejectWithValue }) => {
+    console.log("searchQuery=======", searchQuery);
     try {
       const { data } = await axios.get(
-        `/images/search?api_key${API_KEY}&breed_ids=${name}&limit=5`
+        // `/images/search?api_key${API_KEY}&breed_ids=${name}&limit=1`
+        `/images/search?breed_ids=${searchQuery}&limit=5&api_key=${API_KEY}`
       );
 
       return data;

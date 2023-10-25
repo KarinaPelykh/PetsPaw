@@ -1,9 +1,9 @@
 import css from "./BreedsForm.module.css";
 import icon from "../../images/sprite.svg";
-// import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { catImgname } from "../../redux/operation";
 import { useState } from "react";
+import PropTypes from "prop-types";
 
 export const BreedsForm = ({ toggle }) => {
   const dicpatch = useDispatch();
@@ -12,7 +12,9 @@ export const BreedsForm = ({ toggle }) => {
   const handelSumit = (e) => {
     e.preventDefault();
     const form = e.target;
+
     const name = form.name.value;
+    console.log(name);
     dicpatch(catImgname(name));
     setBreed_ids("");
   };
@@ -75,4 +77,7 @@ export const BreedsForm = ({ toggle }) => {
       </form>
     </div>
   );
+};
+BreedsForm.propTypes = {
+  toggle: PropTypes.func,
 };

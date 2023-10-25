@@ -67,6 +67,9 @@
   height: 40px;
 }
 .selectLimit {
+  outline: none;
+  border: none;
+  background-color: #f8f8f7;
   margin-top: 0;
   margin-right: 10px;
   padding: 8px 10px;

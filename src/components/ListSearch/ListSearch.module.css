@@ -52,3 +52,9 @@
   object-fit: cover;
   border-radius: 20px;
 }
+.textNAme {
+  margin-top: 25px;
+  text-align: start;
+  font-size: 20px;
+  color: #8c8c8c;
+}

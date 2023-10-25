@@ -7,4 +7,16 @@
   color: #8c8c8c;
   font-size: 16px;
   font-weight: 400;
+  outline: none;
+  border: none;
+  background-color: #f8f8f7;
+}
+select option {
+  margin-top: 10px;
+  background-color: #fff;
+  border: none;
+  border-radius: 20px;
+  padding: 20px;
+  height: auto;
+  width: 300px;
 }

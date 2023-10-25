@@ -3,6 +3,7 @@ import { selectorBreeds } from "../../redux/selector";
 import css from "./Select.module.css";
 import { getCatsImagesByBreed, infoCat } from "../../redux/operation";
 import { useEffect, useState } from "react";
+
 import PropTypes from "prop-types";
 export const Select = ({ onChange }) => {
   const breeds = useSelector(selectorBreeds);
