@@ -1,15 +1,16 @@
 import css from "./Breeds.module.css";
-import icon from "../../images/sprite.svg";
+// import icon from "../../images/sprite.svg";
 import { useEffect, useState } from "react";
 import { getImages } from "../../redux/operation";
 import { useDispatch } from "react-redux";
 import { BreedaaImeges } from "../BreedaaImeges/BreeadImeges";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import { Select } from "../Select/Select";
 import { BreedsForm } from "../BreedsForm/BreedsForm";
 import { SlaiderCat } from "../SlaiderCat/SlaiderCat";
 import { SortCat } from "../SortCat/SortCat";
 import { SearchCat } from "../SearchCat/SearchCat";
+import { Button } from "../Button/Button";
 
 export const Breeds = () => {
   const [limit, setLimit] = useState(5);
@@ -58,20 +59,7 @@ export const Breeds = () => {
       ) : (
         <div className={css.container}>
           <div className={css.cont}>
-            <Link className={css.buttonBack} to="/">
-              <svg
-                style={{
-                  position: "absolute",
-                  top: "10px",
-                  left: "10px",
-                  width: "20px",
-                  height: "20px",
-                  objectFit: "cover",
-                }}
-              >
-                <use xlinkHref={icon + "#icon-arrow-left"}></use>
-              </svg>
-            </Link>
+            <Button />
             <button type="button" className={css.btnBreeds}>
               BREEDS
             </button>

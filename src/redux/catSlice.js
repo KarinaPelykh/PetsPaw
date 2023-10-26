@@ -4,6 +4,7 @@ import {
   getCatsImagesByBreed,
   getImages,
   infoCat,
+  galleriIncrement,
 } from "./operation";
 export const catSlice = createSlice({
   name: "cats",
@@ -12,6 +13,7 @@ export const catSlice = createSlice({
     images: [],
     info: [],
     name: [],
+    gallery: [],
     isLoading: false,
     error: null,
   },
@@ -58,6 +60,11 @@ export const catSlice = createSlice({
       })
       .addCase(catImgname.fulfilled, (state, action) => {
         state.name = action.payload;
+
+        state.isLoading = false;
+      })
+      .addCase(galleriIncrement.fulfilled, (state, action) => {
+        state.gallery = action.payload;
 
         state.isLoading = false;
       });

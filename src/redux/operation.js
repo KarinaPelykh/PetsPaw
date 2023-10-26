@@ -71,14 +71,14 @@ export const catImgname = createAsyncThunk(
   }
 );
 
-// export const sortIncrement = createAsyncThunk(
+// export const galleriIncrement = createAsyncThunk(
 //   "sort/Name",
-//   async ({ order, limit }, { rejectWithValue }) => {
-//     c
+//   async ({ order, limit, type, breead }, { rejectWithValue }) => {
 //     try {
-//       const { data } = await axios.get("/breeds", {
-//         params: { api_key: API_KEY, order, limit },
-//       });
+//       const { data } = await axios.get(
+//         `/breeds?api_key=${API_KEY}&order=${order}&limit=${limit}&mime_types=${type}&breed_ids=${breead}`
+//       );
+
 //       console.log(data);
 
 //       return data;
@@ -87,3 +87,20 @@ export const catImgname = createAsyncThunk(
 //     }
 //   }
 // );
+export const galleriIncrement = createAsyncThunk(
+  "sort/Name",
+  async ({ order, limit, type, breead }, { rejectWithValue }) => {
+    console.log(breead);
+    try {
+      const { data } = await axios.get(
+        `/images/search?api_key=${API_KEY}&order=${order}&limit=${limit}&mime_types=${type}`
+      );
+
+      console.log(data);
+
+      return data;
+    } catch (error) {
+      return rejectWithValue(error.message);
+    }
+  }
+);

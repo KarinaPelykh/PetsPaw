@@ -1,5 +1,5 @@
 // import { useDispatch, useSelector } from "react-redux";
-import { useSelector } from "react-redux";
+// import { useSelector } from "react-redux";
 import icon from "../../images/sprite.svg";
 // import { selectorBreeds } from "../../redux/selector";
 import css from "./SortCat.module.css";

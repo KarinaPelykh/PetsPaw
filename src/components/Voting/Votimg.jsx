@@ -1,11 +1,10 @@
-import { Link } from "react-router-dom";
-import icon from "../../images/sprite.svg";
 import css from "./Voting.module.css";
 import { useSelector } from "react-redux";
 import { selectorBreeds } from "../../redux/selector";
 import { BreedsForm } from "../BreedsForm/BreedsForm";
 import { useState } from "react";
 import { SearchCat } from "../SearchCat/SearchCat";
+import { Button } from "../Button/Button";
 
 export const Voting = () => {
   const [opneComp, setOpenComp] = useState(false);
@@ -29,11 +28,7 @@ export const Voting = () => {
       ) : (
         <div className={css.container}>
           <div className={css.cont}>
-            <Link className={css.buttonBack} to="/">
-              <svg className={css.svgButton}>
-                <use xlinkHref={icon + "#icon-arrow-left"}></use>
-              </svg>
-            </Link>
+            <Button />
             <button type="button" className={css.btnBreeds}>
               VOTING
             </button>

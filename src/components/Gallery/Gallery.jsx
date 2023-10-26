@@ -1,15 +1,22 @@
 import css from "./Gallery.module.css";
 import icon from "../../images/sprite.svg";
-import { Link } from "react-router-dom";
-// import { BreedaaImeges } from "../BreedaaImeges/BreeadImeges";
+
+import { BreedaaImeges } from "../BreedaaImeges/BreeadImeges";
 import { BreedsForm } from "../BreedsForm/BreedsForm";
 import { GallerySelect } from "../GallerySelect/GallerySelect";
 import { useState } from "react";
 import { SearchCat } from "../SearchCat/SearchCat";
+import { Button } from "../Button/Button";
+import { GalleryIameges } from "../GalleryIameges/GalleryIameges";
 
 export const Gallery = () => {
   const [openComp, setOpenComp] = useState(false);
-
+  const [show, setShowing] = useState(false);
+  const handelShow = () => {
+    if (!show) {
+      return setShowing(!show);
+    }
+  };
   const toggle = () => {
     if (!openComp) {
       setOpenComp(!openComp);
@@ -24,20 +31,7 @@ export const Gallery = () => {
         ) : (
           <div className={css.container}>
             <div className={css.cont}>
-              <Link className={css.buttonBack} to="/">
-                <svg
-                  style={{
-                    position: "absolute",
-                    top: "10px",
-                    left: "10px",
-                    width: "20px",
-                    height: "20px",
-                    objectFit: "cover",
-                  }}
-                >
-                  <use xlinkHref={icon + "#icon-arrow-left"}></use>
-                </svg>
-              </Link>
+              <Button />
               <button type="button" className={css.btnBreeds}>
                 GALLERY
               </button>
@@ -51,8 +45,13 @@ export const Gallery = () => {
                 UPLOAD
               </button>
             </div>
-            <GallerySelect />
-            {/* <BreedaaImeges /> */}
+            <GallerySelect prop={handelShow} />
+            {show && <BreedaaImeges />}
+            {!show && (
+              <div style={{ marginTop: "20px" }}>
+                <GalleryIameges />
+              </div>
+            )}
           </div>
         )}
       </section>

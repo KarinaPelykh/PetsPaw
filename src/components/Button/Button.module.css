@@ -1,0 +1,9 @@
+.buttonBack {
+  position: relative;
+  margin-top: 0;
+  margin-right: 10px;
+  width: 40px;
+  border-radius: 10px;
+  height: 40px;
+  background-color: #fbe0dc;
+}
