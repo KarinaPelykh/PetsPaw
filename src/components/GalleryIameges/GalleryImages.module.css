@@ -134,22 +134,20 @@ img {
   background-color: rgba(255, 134, 142, 0.6);
 }
 
-.textOoverley {
-  padding: 5px 42px;
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
   border-radius: 10px;
   font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 24px;
-  letter-spacing: 0.02em;
+  width: 40px;
+  height: 40px;
   color: #ff868e;
 }
 .texBackground {
   display: flex;
   align-items: center;
   text-align: center;
-  background-color: #ffffff;
-  max-width: 180px;
-  height: 50px;
   border-radius: 10px;
 }

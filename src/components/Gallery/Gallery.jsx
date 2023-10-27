@@ -1,22 +1,28 @@
 import css from "./Gallery.module.css";
 import icon from "../../images/sprite.svg";
 
-import { BreedaaImeges } from "../BreedaaImeges/BreeadImeges";
 import { BreedsForm } from "../BreedsForm/BreedsForm";
 import { GallerySelect } from "../GallerySelect/GallerySelect";
 import { useState } from "react";
 import { SearchCat } from "../SearchCat/SearchCat";
 import { Button } from "../Button/Button";
 import { GalleryIameges } from "../GalleryIameges/GalleryIameges";
+import { GalleryBreeds } from "../GalleryBreeds/GalleryBreeds";
 
 export const Gallery = () => {
   const [openComp, setOpenComp] = useState(false);
   const [show, setShowing] = useState(false);
+  const [showSlider, setShowingSlider] = useState(true);
   const handelShow = () => {
     if (!show) {
       return setShowing(!show);
     }
   };
+
+  const handelShowSlider = () => {
+    return setShowingSlider(!showSlider);
+  };
+
   const toggle = () => {
     if (!openComp) {
       setOpenComp(!openComp);
@@ -45,8 +51,11 @@ export const Gallery = () => {
                 UPLOAD
               </button>
             </div>
-            <GallerySelect prop={handelShow} />
-            {show && <BreedaaImeges />}
+            <GallerySelect
+              prop={handelShow}
+              handelShowSlider={handelShowSlider}
+            />
+            {showSlider && <GalleryBreeds />}
             {!show && (
               <div style={{ marginTop: "20px" }}>
                 <GalleryIameges />

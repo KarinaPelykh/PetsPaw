@@ -13,6 +13,8 @@
   height: 40px;
   border-radius: 10px;
   font-size: 16px;
+  outline: none;
+  border: none;
 }
 .selectGallerypage {
   width: 240px;
@@ -20,6 +22,8 @@
   border-radius: 10px;
   font-size: 16px;
   margin-right: 10px;
+  outline: none;
+  border: none;
 }
 .labelSelect {
   font-size: 10px;

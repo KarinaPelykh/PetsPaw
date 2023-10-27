@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { getImages } from "../../redux/operation";
 import { useDispatch } from "react-redux";
 import { BreedaaImeges } from "../BreedaaImeges/BreeadImeges";
-// import { Link } from "react-router-dom";
+
 import { Select } from "../Select/Select";
 import { BreedsForm } from "../BreedsForm/BreedsForm";
 import { SlaiderCat } from "../SlaiderCat/SlaiderCat";

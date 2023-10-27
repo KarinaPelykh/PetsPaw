@@ -3,7 +3,11 @@ import icon from "../../images/sprite.svg";
 import { useDispatch, useSelector } from "react-redux";
 import { selectorBreeds } from "../../redux/selector";
 import { useEffect, useState } from "react";
-import { galleriIncrement, getImages } from "../../redux/operation";
+import {
+  galleriIncrement,
+  getCatsImagesByBreed,
+  getImagesBreeds,
+} from "../../redux/operation";
 import PropTypes from "prop-types";
 export const GallerySelect = ({ prop }) => {
   // const gallery = useSelector(selectorGallery);
@@ -11,7 +15,7 @@ export const GallerySelect = ({ prop }) => {
   const dispatch = useDispatch();
 
   const [order, setOrder] = useState("Random");
-  const [type, setType] = useState("All");
+  const [type, setType] = useState("jpg");
   const [limit, setLimit] = useState(5);
   const [breead, setBreead] = useState("none");
   const hendelOrder = (event) => {
@@ -39,7 +43,8 @@ export const GallerySelect = ({ prop }) => {
   };
 
   useEffect(() => {
-    dispatch(getImages({ limit, order, breead, type }));
+    dispatch(getCatsImagesByBreed(breead));
+    dispatch(getImagesBreeds(breead));
     dispatch(galleriIncrement({ order, type, limit, breead }));
   }, [dispatch, order, type, limit, breead]);
 
@@ -69,7 +74,6 @@ export const GallerySelect = ({ prop }) => {
             {breeds.map((item) => (
               <option value={item.id} key={item.id}>
                 {item.name}
-                {/* {item.id} */}
               </option>
             ))}
           </select>

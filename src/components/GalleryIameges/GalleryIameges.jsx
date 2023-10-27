@@ -1,6 +1,7 @@
 import { useSelector } from "react-redux";
 import { selectorGallery } from "../../redux/selector";
 import css from "./GalleryImages.module.css";
+import icon from "../../images/sprite.svg";
 export const GalleryIameges = () => {
   const gallery = useSelector(selectorGallery);
 
@@ -21,7 +22,16 @@ export const GalleryIameges = () => {
               <img src={item.url} alt={item.id} />
               <div className={css.overley}>
                 <div className={css.texBackground}>
-                  <p className={css.textOoverley}>{item.id}</p>
+                  <button className={css.button}>
+                    <svg
+                      style={{
+                        width: "25px",
+                        height: "25px",
+                      }}
+                    >
+                      <use xlinkHref={icon + "#heart"}></use>
+                    </svg>
+                  </button>
                 </div>
               </div>
             </div>
