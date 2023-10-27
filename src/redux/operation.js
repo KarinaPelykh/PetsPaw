@@ -32,7 +32,7 @@ export const getCatsImagesByBreed = createAsyncThunk(
       const { data } = await axios.get(
         `/images/search? api_key${API_KEY}&breed_id=${breeds_id}&limit=10`
       );
-      console.log("Gallery======", breeds_id);
+
       return data;
     } catch (error) {
       return rejectWithValue(error.message);
@@ -60,7 +60,6 @@ export const catImgname = createAsyncThunk(
     console.log("searchQuery=======", searchQuery);
     try {
       const { data } = await axios.get(
-        // `/images/search?api_key${API_KEY}&breed_ids=${name}&limit=1`
         `/images/search?breed_ids=${searchQuery}&limit=5&api_key=${API_KEY}`
       );
 
@@ -98,6 +97,37 @@ export const getImagesBreeds = createAsyncThunk(
         },
       });
       console.log(data);
+      return data;
+    } catch (error) {
+      return rejectWithValue(error.message);
+    }
+  }
+);
+
+export const getImagesGallery = createAsyncThunk(
+  "cats/getAllGAllery",
+  async (_, { rejectWithValue }) => {
+    try {
+      const { data } = await axios.get("/breeds", {
+        params: {
+          api_key: API_KEY,
+        },
+      });
+      console.log(data);
+      return data;
+    } catch (error) {
+      return rejectWithValue(error.message);
+    }
+  }
+);
+export const ImagesByBreedGAllery = createAsyncThunk(
+  "cats/getImagesGallery",
+  async (breeds_id, { rejectWithValue }) => {
+    try {
+      const { data } = await axios.get(
+        `/images/search? api_key${API_KEY}&breed_id=${breeds_id}&limit=10`
+      );
+      console.log("Gallery======", data);
       return data;
     } catch (error) {
       return rejectWithValue(error.message);

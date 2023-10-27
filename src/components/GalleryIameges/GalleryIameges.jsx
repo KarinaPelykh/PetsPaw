@@ -4,7 +4,7 @@ import css from "./GalleryImages.module.css";
 import icon from "../../images/sprite.svg";
 export const GalleryIameges = () => {
   const gallery = useSelector(selectorGallery);
-
+ 
   if (gallery.lenght === 0) {
     return (
       <div>

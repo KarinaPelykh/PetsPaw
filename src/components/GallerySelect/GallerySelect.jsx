@@ -1,17 +1,17 @@
 import css from "./GallerySelect.module.css";
 import icon from "../../images/sprite.svg";
 import { useDispatch, useSelector } from "react-redux";
-import { selectorBreeds } from "../../redux/selector";
+import { selectorgalleryALL } from "../../redux/selector";
 import { useEffect, useState } from "react";
 import {
   galleriIncrement,
   getCatsImagesByBreed,
-  getImagesBreeds,
+  getImagesGallery,
+  ImagesByBreedGAllery,
 } from "../../redux/operation";
 import PropTypes from "prop-types";
 export const GallerySelect = ({ prop }) => {
-  // const gallery = useSelector(selectorGallery);
-  const breeds = useSelector(selectorBreeds);
+  const breeds = useSelector(selectorgalleryALL);
   const dispatch = useDispatch();
 
   const [order, setOrder] = useState("Random");
@@ -43,8 +43,9 @@ export const GallerySelect = ({ prop }) => {
   };
 
   useEffect(() => {
+    dispatch(getImagesGallery());
     dispatch(getCatsImagesByBreed(breead));
-    dispatch(getImagesBreeds(breead));
+    dispatch(ImagesByBreedGAllery(breead));
     dispatch(galleriIncrement({ order, type, limit, breead }));
   }, [dispatch, order, type, limit, breead]);
 

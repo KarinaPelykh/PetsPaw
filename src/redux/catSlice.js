@@ -5,6 +5,8 @@ import {
   getImages,
   infoCat,
   galleriIncrement,
+  ImagesByBreedGAllery,
+  getImagesGallery,
 } from "./operation";
 export const catSlice = createSlice({
   name: "cats",
@@ -16,6 +18,8 @@ export const catSlice = createSlice({
     gallery: [],
     isLoading: false,
     error: null,
+    breedsGallery: [],
+    galleryBreadAll: [],
   },
 
   extraReducers: (builder) => {
@@ -25,39 +29,18 @@ export const catSlice = createSlice({
         state.breeds = action.payload;
         state.isLoading = false;
       })
-      .addCase(getImages.pending, (state) => {
-        state.isLoading = true;
-        state.error = null; // Clear any previous errors
-      })
-      .addCase(getImages.rejected, (state, action) => {
-        state.isLoading = false;
-        state.error = action.error.message; // Set the error message
-      })
+
       .addCase(getCatsImagesByBreed.fulfilled, (state, action) => {
         state.images = action.payload;
         state.isLoading = false;
       })
-      .addCase(getCatsImagesByBreed.pending, (state) => {
-        state.isLoading = true;
-        state.error = null; // Clear any previous errors
-      })
-      .addCase(getCatsImagesByBreed.rejected, (state, action) => {
-        state.isLoading = false;
-        state.error = action.error.message; // Set the error message
-      })
+
       .addCase(infoCat.fulfilled, (state, action) => {
         state.info = action.payload;
 
         state.isLoading = false;
       })
-      .addCase(infoCat.pending, (state) => {
-        state.isLoading = true;
-        state.error = null; // Clear any previous errors
-      })
-      .addCase(infoCat.rejected, (state, action) => {
-        state.isLoading = false;
-        state.error = action.error.message;
-      })
+
       .addCase(catImgname.fulfilled, (state, action) => {
         state.name = action.payload;
 
@@ -67,7 +50,15 @@ export const catSlice = createSlice({
         state.gallery = action.payload;
 
         state.isLoading = false;
-      });
+      })
+      .addCase(ImagesByBreedGAllery.fulfilled, (state, action) => {
+        state.breedsGallery = action.payload;
+        state.isLoading = false;
+      })
+    .addCase(getImagesGallery.fulfilled, (state, action) => {
+      state.galleryBreadAll = action.payload;
+      state.isLoading = false;
+    });
   },
 });
 export const catReducer = catSlice.reducer;
