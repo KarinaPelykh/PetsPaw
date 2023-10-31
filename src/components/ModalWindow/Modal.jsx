@@ -5,7 +5,7 @@ export const Modal = ({ close, toggleModal }) => {
   const [drag, setDrag] = useState(false);
 
   const [photo, setPhoto] = useState(null);
-
+  console.log(photo);
   const setStarthendel = (e) => {
     e.preventDefault();
     setDrag(true);
@@ -20,6 +20,18 @@ export const Modal = ({ close, toggleModal }) => {
     e.preventDefault();
     const file = [...e.dataTransfer.files];
     setPhoto(file);
+  };
+
+  const openFile = () => {
+    const file = document.getElementById("input");
+    if (file) {
+      file.click();
+    }
+  };
+  const hendelsetPhoto = (e) => {
+    e.preventDefault();
+    const filephoto = e.target.files;
+    setPhoto(filephoto);
   };
   return (
     <div className={css.wrapp}>
@@ -43,13 +55,21 @@ export const Modal = ({ close, toggleModal }) => {
         or face deletion.
       </p>
       <div className={css.thumb}>
-        {drag ? (
+        <input
+          type="file"
+          id="input"
+          accept=".jpg, .jpeg, .png"
+          onChange={(e) => hendelsetPhoto(e)}
+          style={{ display: "none" }}
+        />
+        {drag || photo ? (
           <div
             onDragLeave={(e) => setLeavehendel(e)}
             onDragStart={(e) => setStarthendel(e)}
             onDragOver={(e) => setStarthendel(e)}
             onDrop={(e) => setDropHendel(e)}
           >
+            ;
             {photo ? (
               <img
                 className={css.images}
@@ -82,7 +102,8 @@ export const Modal = ({ close, toggleModal }) => {
           ""
         ) : (
           <p className={css.textImages}>
-            <b>Drag here</b> your file or <b>Click here </b> to upload
+            <b>Drag here</b> your file or ?
+            <b onClick={(e) => openFile(e)}>Click here</b> to upload
           </p>
         )}
       </div>
