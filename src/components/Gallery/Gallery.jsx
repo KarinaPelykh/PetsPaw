@@ -14,12 +14,8 @@ export const Gallery = () => {
   const [openComp, setOpenComp] = useState(false);
   const [show, setShowing] = useState(false);
   const [showSlider, setShowingSlider] = useState(true);
-  // const [open, setOpenModal] = useState(false);
-  const { openModal, close, toggleModal, open } = useToggle();
-  // console.log(openModal);
-  // const hendelopenModal = () => {
-  //   setOpenModal(!openModal);
-  // };
+
+  const { openModal, close, open } = useToggle();
 
   const handelShow = () => {
     if (!show) {
@@ -82,7 +78,7 @@ export const Gallery = () => {
           )}
         </section>
       )}
-      {open && <Modal close={close} toggleModal={toggleModal} />}
+      {open && <Modal close={close} open={open} />}
     </>
   );
 };

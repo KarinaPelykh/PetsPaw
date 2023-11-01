@@ -30,7 +30,7 @@ export const getCatsImagesByBreed = createAsyncThunk(
   async (breeds_id, { rejectWithValue }) => {
     try {
       const { data } = await axios.get(
-        `/images/search? api_key${API_KEY}&breed_id=${breeds_id}&limit=10`
+        `/images/search?api_key=${API_KEY}&breed_id=${breeds_id}&limit=10`
       );
 
       return data;
@@ -125,9 +125,25 @@ export const ImagesByBreedGAllery = createAsyncThunk(
   async (breeds_id, { rejectWithValue }) => {
     try {
       const { data } = await axios.get(
-        `/images/search? api_key${API_KEY}&breed_id=${breeds_id}&limit=10`
+        `/images/search?api_key=${API_KEY}&breed_id=${breeds_id}&limit=10`
       );
       console.log("Gallery======", data);
+      return data;
+    } catch (error) {
+      return rejectWithValue(error.message);
+    }
+  }
+);
+
+export const UploadImages = createAsyncThunk(
+  "upload/images",
+  async (photo, { rejectWithValue }) => {
+    console.log(photo);
+    try {
+      const { data } = await axios.post(
+        `https://api.thecatapi.com/v1/images/upload?api_key=${API_KEY}&file=${photo}`
+      );
+      console.log(data);
       return data;
     } catch (error) {
       return rejectWithValue(error.message);

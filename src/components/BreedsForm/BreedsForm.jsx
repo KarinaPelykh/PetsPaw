@@ -61,14 +61,26 @@ export const BreedsForm = ({ toggle }) => {
           </li>
           <li>
             <button className={css.btn}>
-              <svg style={{ width: "30px", height: "26px" }}>
+              <svg
+                style={{
+                  width: "30px",
+                  height: "26px",
+                  stroke: "#FF868E",
+                  fill: "#fff",
+                }}
+              >
                 <use xlinkHref={icon + "#heart"}></use>
               </svg>
             </button>
           </li>
           <li>
             <button className={css.btn}>
-              <svg style={{ width: "30px", height: "30px" }}>
+              <svg
+                style={{
+                  width: "30px",
+                  height: "30px",
+                }}
+              >
                 <use xlinkHref={icon + "#sad"}></use>
               </svg>
             </button>

@@ -7,6 +7,7 @@ import {
   galleriIncrement,
   ImagesByBreedGAllery,
   getImagesGallery,
+  UploadImages,
 } from "./operation";
 export const catSlice = createSlice({
   name: "cats",
@@ -55,10 +56,17 @@ export const catSlice = createSlice({
         state.breedsGallery = action.payload;
         state.isLoading = false;
       })
-    .addCase(getImagesGallery.fulfilled, (state, action) => {
-      state.galleryBreadAll = action.payload;
-      state.isLoading = false;
-    });
+      .addCase(getImagesGallery.fulfilled, (state, action) => {
+        state.galleryBreadAll = action.payload;
+        state.isLoading = false;
+      })
+      .addCase(UploadImages.fulfilled, () => {
+        console.log("sucssesful");
+      })
+      .addCase(UploadImages.rejected, () => {
+        alert("Sorry! There was a server error,please try to download later ");
+        console.log("recves rejected");
+      });
   },
 });
 export const catReducer = catSlice.reducer;
