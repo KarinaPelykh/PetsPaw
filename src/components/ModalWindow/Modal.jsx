@@ -7,12 +7,31 @@ import { UploadImages } from "../../redux/operation";
 export const Modal = ({ close, open }) => {
   const [drag, setDrag] = useState(false);
   const [photo, setPhoto] = useState(null);
+  const [message, setMessage] = useState(true);
+  const [openMee, setOpen] = useState(false);
+  console.log("message", message);
+  const hendelOpen = () => {
+    setOpen(!openMee);
+  };
+  console.log(message);
   const dispatch = useDispatch();
 
   const hendelUploadPhoto = () => {
-    if (photo) {
-      dispatch(UploadImages(photo));
-    }
+    const formData = new FormData();
+    formData.append("file", photo[0]);
+    console.log(formData);
+    dispatch(UploadImages(formData))
+      .unwrap()
+      .then(() => {
+        setPhoto("");
+        hendelOpen();
+        setMessage(true);
+      })
+      .catch((error) => {
+        hendelOpen();
+        setMessage(false);
+        console.log(error);
+      });
   };
 
   console.log(photo);
@@ -66,7 +85,10 @@ export const Modal = ({ close, open }) => {
           </span>
           or face deletion.
         </p>
-        <div className={css.thumb}>
+        <div
+          className={css.thumb}
+          style={{ background: message ? "#fff" : "#FBE0DC" }}
+        >
           <input
             type="file"
             id="input"
@@ -121,22 +143,69 @@ export const Modal = ({ close, open }) => {
         {photo ? (
           <>
             <p className={css.sin}>Image File Name:{photo[0].name}</p>
-            <button
-              onClick={hendelUploadPhoto}
-              style={{
-                backgroundColor: "#FF868E",
-                width: "172px",
-                height: "40px",
-                color: "white",
-                borderRadius: "10px",
-                marginTop: "20px",
-              }}
-            >
-              UPLOAD PHOTO
-            </button>
+
+            {message ? (
+              <button
+                onClick={hendelUploadPhoto}
+                style={{
+                  backgroundColor: "#FF868E",
+                  width: "172px",
+                  height: "40px",
+                  color: "white",
+                  borderRadius: "10px",
+                  marginTop: "20px",
+                }}
+              >
+                UPLOAD PHOTO
+              </button>
+            ) : (
+              ""
+            )}
           </>
         ) : (
           <p className={css.sin}>No file selected</p>
+        )}
+
+        {openMee && (
+          <div
+            style={{
+              display: "flex",
+              background: "#fff",
+              padding: "18px",
+              borderRadius: "10px",
+              marginTop: " 10px",
+            }}
+          >
+            {message ? (
+              <svg
+                style={{
+                  marginRight: "15px",
+                  width: "20px",
+                  height: "20px",
+                  fill: "green",
+                }}
+              >
+                <use xlinkHref={icon + "#checkmark"}></use>{" "}
+              </svg>
+            ) : (
+              <svg
+                style={{
+                  marginRight: "15px",
+                  width: "20px",
+                  height: "20px",
+                  fill: "red",
+                }}
+              >
+                <use xlinkHref={icon + "#icon-cross"}></use>
+              </svg>
+            )}
+
+            {message ? (
+              <p className={css.sing}>Thanks for the Upload - Cat found!</p>
+            ) : (
+              <p className={css.sing}>No Cat found - try a different one</p>
+            )}
+          </div>
         )}
       </div>
     </div>

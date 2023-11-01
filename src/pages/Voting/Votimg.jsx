@@ -1,10 +1,10 @@
 import css from "./Voting.module.css";
 import { useSelector } from "react-redux";
 import { selectorBreeds } from "../../redux/selector";
-import { BreedsForm } from "../BreedsForm/BreedsForm";
+import { BreedsForm } from "../../components/BreedsForm/BreedsForm";
 import { useState } from "react";
-import { SearchCat } from "../SearchCat/SearchCat";
-import { Button } from "../Button/Button";
+import { SearchCat } from "../../components/SearchCat/SearchCat";
+import { Button } from "../../components/Button/Button";
 
 export const Voting = () => {
   const [opneComp, setOpenComp] = useState(false);

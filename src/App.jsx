@@ -1,10 +1,10 @@
 import "./App.css";
-import { Voting } from "./components/Voting/Votimg";
-import { Breeds } from "./components/Breeds/Breeds";
+import { Voting } from "./pages/Voting/Votimg";
+import { Breeds } from "./pages/Breeds/Breeds";
 import { HomePage } from "./pages/Home/Home";
 import { Routes, Route } from "react-router-dom";
 import { Layout } from "./components/Layout/Layuot";
-import { Gallery } from "./components/Gallery/Gallery";
+import { Gallery } from "./pages/Gallery/Gallery";
 function App() {
   return (
     <>

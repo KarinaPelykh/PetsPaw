@@ -137,13 +137,15 @@ export const ImagesByBreedGAllery = createAsyncThunk(
 
 export const UploadImages = createAsyncThunk(
   "upload/images",
-  async (photo, { rejectWithValue }) => {
-    console.log(photo);
+  async (formData, { rejectWithValue }) => {
+    console.log(formData);
     try {
       const { data } = await axios.post(
-        `https://api.thecatapi.com/v1/images/upload?api_key=${API_KEY}&file=${photo}`
+        `https://api.thecatapi.com/v1/images/upload?api_key=${API_KEY}`,
+        formData
       );
       console.log(data);
+
       return data;
     } catch (error) {
       return rejectWithValue(error.message);

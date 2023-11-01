@@ -33,13 +33,16 @@
 }
 
 .btn {
+  background-color: #ffffff;
   padding: 0;
   margin: 0 10px 0 0;
   width: 60px;
   border-radius: 20px;
   height: 60px;
 }
-
+.btn:hover {
+  background-color: #ff868eac;
+}
 .buttonBack {
   margin-top: 0;
   margin-right: 10px;
@@ -102,4 +105,22 @@
   position: absolute;
   top: 11px;
   left: 408px;
+}
+.svgSmile {
+  width: 30px;
+  height: 29px;
+  fill: #ff868e;
+}
+
+.svgHeart {
+  width: 30px;
+  height: 24px;
+  stroke: #ff868e;
+  stroke-width: 3px;
+  fill: #fff;
+}
+.svgSad {
+  width: 30px;
+  height: 29px;
+  fill: #ff868e;
 }

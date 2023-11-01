@@ -64,7 +64,7 @@ export const catSlice = createSlice({
         console.log("sucssesful");
       })
       .addCase(UploadImages.rejected, () => {
-        alert("Sorry! There was a server error,please try to download later ");
+        // alert("Sorry! There was a server error,please try to download later ");
         console.log("recves rejected");
       });
   },

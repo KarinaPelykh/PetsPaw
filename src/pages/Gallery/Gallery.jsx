@@ -1,14 +1,14 @@
 import css from "./Gallery.module.css";
 import icon from "../../images/sprite.svg";
 
-import { BreedsForm } from "../BreedsForm/BreedsForm";
-import { GallerySelect } from "../GallerySelect/GallerySelect";
+import { BreedsForm } from "../../components/BreedsForm/BreedsForm";
+import { GallerySelect } from "../../components/GallerySelect/GallerySelect";
 import { useState } from "react";
-import { SearchCat } from "../SearchCat/SearchCat";
-import { Button } from "../Button/Button";
-import { GalleryIameges } from "../GalleryIameges/GalleryIameges";
-import { GalleryBreeds } from "../GalleryBreeds/GalleryBreeds";
-import { Modal } from "../ModalWindow/Modal";
+import { SearchCat } from "../../components/SearchCat/SearchCat";
+import { Button } from "../../components/Button/Button";
+import { GalleryIameges } from "../../components/GalleryIameges/GalleryIameges";
+import { GalleryBreeds } from "../../components/GalleryBreeds/GalleryBreeds";
+import { Modal } from "../../components/ModalWindow/Modal";
 import { useToggle } from "../../hooks/useToggle.js";
 export const Gallery = () => {
   const [openComp, setOpenComp] = useState(false);

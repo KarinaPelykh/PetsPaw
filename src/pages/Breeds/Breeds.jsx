@@ -3,14 +3,14 @@ import css from "./Breeds.module.css";
 import { useEffect, useState } from "react";
 import { getImages } from "../../redux/operation";
 import { useDispatch } from "react-redux";
-import { BreedaaImeges } from "../BreedaaImeges/BreeadImeges";
+import { BreedaaImeges } from "../../components/BreedaaImeges/BreeadImeges";
 
-import { Select } from "../Select/Select";
-import { BreedsForm } from "../BreedsForm/BreedsForm";
-import { SlaiderCat } from "../SlaiderCat/SlaiderCat";
-import { SortCat } from "../SortCat/SortCat";
-import { SearchCat } from "../SearchCat/SearchCat";
-import { Button } from "../Button/Button";
+import { Select } from "../../components/Select/Select";
+import { BreedsForm } from "../../components/BreedsForm/BreedsForm";
+import { SlaiderCat } from "../../components/SlaiderCat/SlaiderCat";
+import { SortCat } from "../../components/SortCat/SortCat";
+import { SearchCat } from "../../components/SearchCat/SearchCat";
+import { Button } from "../../components/Button/Button";
 
 export const Breeds = () => {
   const [limit, setLimit] = useState(5);
