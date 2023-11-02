@@ -57,7 +57,6 @@ export const infoCat = createAsyncThunk(
 export const catImgname = createAsyncThunk(
   "cats/catImgname",
   async (searchQuery, { rejectWithValue }) => {
-    console.log("searchQuery=======", searchQuery);
     try {
       const { data } = await axios.get(
         `/images/search?breed_ids=${searchQuery}&limit=5&api_key=${API_KEY}`
@@ -127,7 +126,7 @@ export const ImagesByBreedGAllery = createAsyncThunk(
       const { data } = await axios.get(
         `/images/search?api_key=${API_KEY}&breed_id=${breeds_id}&limit=10`
       );
-      console.log("Gallery======", data);
+      // console.log("Gallery======", data);
       return data;
     } catch (error) {
       return rejectWithValue(error.message);

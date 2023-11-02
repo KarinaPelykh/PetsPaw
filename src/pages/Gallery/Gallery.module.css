@@ -87,6 +87,18 @@
   font-weight: 500;
   width: 143px;
   border-radius: 10px;
-  /* height: 40px; */
+
   padding: 12px 30px;
+}
+.btnUpload:hover {
+  background-color: #ff868e90;
+  color: #fff;
+  .svgUpload {
+    stroke: #fff;
+  }
+}
+.svgUpload {
+  width: 16px;
+  height: 16px;
+  margin-right: 10px;
 }

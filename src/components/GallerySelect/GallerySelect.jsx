@@ -105,11 +105,8 @@ export const GallerySelect = ({ prop }) => {
             </select>
             <button className={css.buttonUdate}>
               <svg
-                style={{
-                  width: "18px",
-                  height: "20px",
-                  marginRight: "10px",
-                }}
+                className={css.svgUpdate}
+               
               >
                 <use xlinkHref={icon + "#icon-update"}></use>
               </svg>

@@ -1,0 +1,28 @@
+.section {
+  margin-left: 157px;
+  position: relative;
+}
+.container {
+  margin-top: 10px;
+  padding: 20px;
+  width: 640px;
+  min-height: 1008px;
+  background-color: #fff;
+  border-radius: 20px;
+}
+
+.btnBreeds {
+  margin-top: 0;
+  margin-right: 10px;
+  background-color: #ff868e;
+  color: #fff;
+  font-size: 20px;
+  width: 143px;
+  border-radius: 10px;
+  height: 40px;
+}
+
+.cont {
+  width: 660px;
+  display: flex;
+}

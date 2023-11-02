@@ -15,13 +15,13 @@ export const GalleryIameges = () => {
     }));
   };
 
-  if (gallery.lenght === 0) {
-    return (
-      <div>
-        <p>Loading</p>
-      </div>
-    );
-  }
+  // if (gallery.lenght === 0) {
+  //   return (
+  //     <div>
+  //       <p>Loading</p>
+  //     </div>
+  //   );
+  // }
   console.log("gallery====", gallery);
   return (
     <ul className={css.list}>

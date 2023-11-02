@@ -52,12 +52,9 @@ export const Gallery = () => {
                   className={css.btnUpload}
                   onClick={openModal}
                 >
-                  <svg
-                    style={{
-                      width: "16px",
-                      height: "16px",
-                      marginRight: "10px",
-                    }}
+                    <svg
+                      className={css.svgUpload}
+                   
                   >
                     <use xlinkHref={icon + "#icon-upload"}></use>
                   </svg>

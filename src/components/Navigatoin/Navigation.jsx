@@ -4,6 +4,7 @@ import cat from "../../images/cat.png";
 import phone from "../../images/phone.png";
 import table from "../../images/table.png";
 import css from "./Navigation.module.css";
+
 export const Navigation = () => {
   return (
     <>

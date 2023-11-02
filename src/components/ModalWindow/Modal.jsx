@@ -147,14 +147,8 @@ export const Modal = ({ close, open }) => {
             {message ? (
               <button
                 onClick={hendelUploadPhoto}
-                style={{
-                  backgroundColor: "#FF868E",
-                  width: "172px",
-                  height: "40px",
-                  color: "white",
-                  borderRadius: "10px",
-                  marginTop: "20px",
-                }}
+                className={css.uploadButton}
+               
               >
                 UPLOAD PHOTO
               </button>

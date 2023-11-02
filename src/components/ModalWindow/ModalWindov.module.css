@@ -45,6 +45,12 @@
   justify-content: center;
   align-items: center;
 }
+.button:hover {
+  background-color: #ff868e90;
+  .svgBut {
+    stroke: #fff;
+  }
+}
 
 .svgBut {
   width: 19px;
@@ -89,6 +95,18 @@
 
   font-size: 20px;
   color: #8c8c8c;
+}
+.uploadButton {
+  background-color: #ff868e;
+  width: 172px;
+  height: 40px;
+  color: white;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+.uploadButton:hover {
+  background-color: #ff868e90;
 }
 .sin {
   font-size: 20px;
