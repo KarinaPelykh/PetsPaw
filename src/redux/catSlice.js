@@ -8,6 +8,7 @@ import {
   ImagesByBreedGAllery,
   getImagesGallery,
   UploadImages,
+  Votes,
 } from "./operation";
 export const catSlice = createSlice({
   name: "cats",
@@ -21,6 +22,7 @@ export const catSlice = createSlice({
     error: null,
     breedsGallery: [],
     galleryBreadAll: [],
+    votin: [],
   },
 
   extraReducers: (builder) => {
@@ -66,6 +68,9 @@ export const catSlice = createSlice({
       .addCase(UploadImages.rejected, () => {
         // alert("Sorry! There was a server error,please try to download later ");
         console.log("recves rejected");
+      })
+      .addCase(Votes.fulfilled, (state, action) => {
+        state.votin = action.payload;
       });
   },
 });

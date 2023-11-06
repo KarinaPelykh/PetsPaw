@@ -13,7 +13,7 @@ import { SearchCat } from "../../components/SearchCat/SearchCat";
 import { Button } from "../../components/Button/Button";
 
 export const Breeds = () => {
-  const [limit, setLimit] = useState(5);
+  const [limit, setLimit] = useState(10);
   const [showSliderCat, setShowSliderCat] = useState(false);
   const [selectedValue, setSelectedValue] = useState(null);
   const [order, setOrder] = useState("ASC");
@@ -60,48 +60,48 @@ export const Breeds = () => {
   return (
     <section className={css.section}>
       <BreedsForm toggle={toggle} props={hendelOpen} />
-      {!isOPen && (
-        <div>
-          {openComp ? (
-            <SearchCat />
-          ) : (
-            <div className={css.container}>
-              <div className={css.cont}>
-                <Button />
-                <button type="button" className={css.btnBreeds}>
-                  BREEDS
-                </button>
-                <Select onChange={handelChangeSelect} />
+      {/* {!isOPen && ( */}
+      <div>
+        {openComp ? (
+          <SearchCat />
+        ) : (
+          <div className={css.container}>
+            <div className={css.cont}>
+              <Button />
+              <button type="button" className={css.btnBreeds}>
+                BREEDS
+              </button>
+              <Select onChange={handelChangeSelect} />
 
-                <select
-                  onChange={hendelImgChange}
-                  defaultValue
-                  className={css.selectLimit}
-                >
-                  <option className={css.optionLimit} value="5">
-                    Limit:5
-                  </option>
-                  <option className={css.optionLimit} value="10">
-                    Limit:10
-                  </option>
-                  <option className={css.optionLimit} value="15">
-                    Limit:15
-                  </option>
-                  <option className={css.optionLimit} value="20">
-                    Limit:20
-                  </option>
-                </select>
-                <SortCat asc={asc} desc={desc} />
-              </div>
-              {selectedValue && showSliderCat ? (
-                <SlaiderCat />
-              ) : (
-                <BreedaaImeges />
-              )}
+              <select
+                onChange={hendelImgChange}
+                defaultValue="10"
+                className={css.selectLimit}
+              >
+                <option className={css.optionLimit} value="5">
+                  Limit:5
+                </option>
+                <option className={css.optionLimit} value="10">
+                  Limit:10
+                </option>
+                <option className={css.optionLimit} value="15">
+                  Limit:15
+                </option>
+                <option className={css.optionLimit} value="20">
+                  Limit:20
+                </option>
+              </select>
+              <SortCat asc={asc} desc={desc} />
             </div>
-          )}
-        </div>
-      )}
+            {selectedValue && showSliderCat ? (
+              <SlaiderCat />
+            ) : (
+              <BreedaaImeges />
+            )}
+          </div>
+        )}
+      </div>
+      {/* )} */}
     </section>
   );
 };

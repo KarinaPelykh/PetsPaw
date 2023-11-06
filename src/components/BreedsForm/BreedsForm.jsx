@@ -5,7 +5,6 @@ import { catImgname } from "../../redux/operation";
 import { useState } from "react";
 import PropTypes from "prop-types";
 import { ButtonReaction } from "../ButtonReaction/ButtonReaction";
-import { Outlet } from "react-router-dom";
 
 export const BreedsForm = ({ toggle, props }) => {
   const dicpatch = useDispatch();
@@ -52,7 +51,6 @@ export const BreedsForm = ({ toggle, props }) => {
         </form>
         <ButtonReaction props={props} />
       </div>
-      <Outlet />
     </>
   );
 };

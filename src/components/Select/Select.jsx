@@ -24,6 +24,7 @@ export const Select = ({ onChange }) => {
 
   return (
     <select
+      defaultValue="All breeds"
       onChange={onChange}
       onClick={handelFilterImgName}
       className={css.select}

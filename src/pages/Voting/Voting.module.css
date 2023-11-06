@@ -8,6 +8,7 @@
   width: 640px;
   background-color: #fff;
   border-radius: 20px;
+  position: relative;
 }
 
 .cont {
@@ -28,6 +29,7 @@
 }
 
 .containerImgCat {
+  position: relative;
   min-width: 647px;
   height: 744px;
   margin-top: 20px;
@@ -35,6 +37,7 @@
 
 .votingImg {
   margin: auto;
-  width: 400px;
-  height: 300px;
+  width: 640px;
+  object-fit: cover;
+  height: 360px;
 }

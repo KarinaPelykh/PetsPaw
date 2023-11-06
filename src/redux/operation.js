@@ -17,7 +17,7 @@ export const getImages = createAsyncThunk(
           api_key: API_KEY,
         },
       });
-      console.log(data);
+
       return data;
     } catch (error) {
       return rejectWithValue(error.message);
@@ -57,9 +57,11 @@ export const infoCat = createAsyncThunk(
 export const catImgname = createAsyncThunk(
   "cats/catImgname",
   async (searchQuery, { rejectWithValue }) => {
+    console.log(searchQuery);
     try {
       const { data } = await axios.get(
         `/images/search?breed_ids=${searchQuery}&limit=5&api_key=${API_KEY}`
+        // `breeds/search?q=${searchQuery}`
       );
 
       return data;
@@ -140,11 +142,33 @@ export const UploadImages = createAsyncThunk(
     console.log(formData);
     try {
       const { data } = await axios.post(
-        `https://api.thecatapi.com/v1/images/upload?api_key=${API_KEY}`,
+        `/images/upload?api_key=${API_KEY}`,
         formData
       );
       console.log(data);
 
+      return data;
+    } catch (error) {
+      return rejectWithValue(error.message);
+    }
+  }
+);
+
+//
+
+export const Votes = createAsyncThunk(
+  "votes/getVotes",
+  async (_, { rejectWithValue }) => {
+    try {
+      const { data } = await axios.get("/votes", {
+        params: {
+          limit: 10,
+
+          api_key:
+            "live_S1lJoq0pONP3VNf88wMyamr5ZGILYlJmgJI6uF5uWfvzCnwb2tkGrgudlKA355Wf",
+        },
+      });
+      console.log(data);
       return data;
     } catch (error) {
       return rejectWithValue(error.message);
