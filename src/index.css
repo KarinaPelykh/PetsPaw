@@ -42,7 +42,22 @@ button {
 .button:last-child {
   margin-right: 0;
 }
+svg {
+  fill: #ff868e;
+}
 a {
   text-decoration: none;
   color: #ff868e;
+}
+.active {
+  background-color: #ff868e;
+  color: #fff;
+  fill: #fff;
+}
+.active svg {
+  fill: #fff;
+}
+
+.buttons:hover:not(.active) {
+  background-color: #fbe0dc;
 }

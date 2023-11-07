@@ -1,42 +1,42 @@
 import css from "./ButtonReaction.module.css";
 import icon from "../../images/sprite.svg";
-// import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import PropTypes from "prop-types";
-export const ButtonReaction = ({ props }) => {
+export const ButtonReaction = () => {
   return (
-    <>
-      <div>
+    <div className={css.wrap}>
+      <div style={{ position: "absolute", top: "0", left: "1080px" }}>
         <ul className={css.list}>
           <li>
-            {/* <Link to="smile"> */}
-            <button onClick={props} className={css.btn}>
+            <NavLink to="smile" className={css.btn}>
+              {/* <button className={css.btn}> */}
               <svg className={css.svgSmile}>
                 <use xlinkHref={icon + "#smile"}></use>
               </svg>
-            </button>
-            {/* </Link> */}
+              {/* </button> */}
+            </NavLink>
           </li>
           <li>
-            {/* <Link to="heart"> */}
-            <button onClick={props} className={css.btn}>
+            <NavLink to="heart" className={css.btn}>
+              {/* <button className={css.btn}> */}
               <svg className={css.svgHeart}>
                 <use xlinkHref={icon + "#heart"}></use>
               </svg>
-            </button>
-            {/* </Link> */}
+              {/* </button> */}
+            </NavLink>
           </li>
           <li>
-            {/* <Link to="sad"> */}
-            <button onClick={props} className={css.btn}>
+            <NavLink to="sad" className={css.btn}>
+              {/* <button className={css.btn}> */}
               <svg className={css.svgSad}>
                 <use xlinkHref={icon + "#sad"}></use>
               </svg>
-            </button>
-            {/* </Link> */}
+              {/* </button> */}
+            </NavLink>
           </li>
         </ul>
       </div>
-    </>
+    </div>
   );
 };
 ButtonReaction.propTypes = {

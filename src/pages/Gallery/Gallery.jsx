@@ -4,7 +4,7 @@ import icon from "../../images/sprite.svg";
 import { BreedsForm } from "../../components/BreedsForm/BreedsForm";
 import { GallerySelect } from "../../components/GallerySelect/GallerySelect";
 import { useState } from "react";
-import { SearchCat } from "../../components/SearchCat/SearchCat";
+import { SearchCat } from "../SearchCat/SearchCat.jsx";
 import { Button } from "../../components/Button/Button";
 import { GalleryIameges } from "../../components/GalleryIameges/GalleryIameges";
 import { GalleryBreeds } from "../../components/GalleryBreeds/GalleryBreeds";
@@ -52,10 +52,7 @@ export const Gallery = () => {
                   className={css.btnUpload}
                   onClick={openModal}
                 >
-                    <svg
-                      className={css.svgUpload}
-                   
-                  >
+                  <svg className={css.svgUpload}>
                     <use xlinkHref={icon + "#icon-upload"}></use>
                   </svg>
                   UPLOAD

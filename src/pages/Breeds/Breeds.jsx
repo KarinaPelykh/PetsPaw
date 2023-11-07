@@ -9,7 +9,7 @@ import { Select } from "../../components/Select/Select";
 import { BreedsForm } from "../../components/BreedsForm/BreedsForm";
 import { SlaiderCat } from "../../components/SlaiderCat/SlaiderCat";
 import { SortCat } from "../../components/SortCat/SortCat";
-import { SearchCat } from "../../components/SearchCat/SearchCat";
+import { SearchCat } from "../SearchCat/SearchCat";
 import { Button } from "../../components/Button/Button";
 
 export const Breeds = () => {
@@ -18,13 +18,7 @@ export const Breeds = () => {
   const [selectedValue, setSelectedValue] = useState(null);
   const [order, setOrder] = useState("ASC");
   const [openComp, setOpenComp] = useState(false);
-  const [isOPen, setIsOPen] = useState(false);
 
-  const hendelOpen = () => {
-    if (!isOPen) {
-      setIsOPen(!isOPen);
-    }
-  };
   const toggle = () => {
     if (!openComp) {
       setOpenComp(!openComp);
@@ -46,7 +40,7 @@ export const Breeds = () => {
 
   useEffect(() => {
     dispatch(getImages({ limit, order }));
-    // dispatch(sortIncrement({ limit }));
+
     console.log(order);
   }, [dispatch, limit, order]);
 
@@ -59,8 +53,8 @@ export const Breeds = () => {
   };
   return (
     <section className={css.section}>
-      <BreedsForm toggle={toggle} props={hendelOpen} />
-      {/* {!isOPen && ( */}
+      <BreedsForm toggle={toggle} />
+
       <div>
         {openComp ? (
           <SearchCat />
@@ -101,7 +95,6 @@ export const Breeds = () => {
           </div>
         )}
       </div>
-      {/* )} */}
     </section>
   );
 };

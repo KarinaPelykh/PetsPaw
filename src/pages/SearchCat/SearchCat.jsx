@@ -1,18 +1,9 @@
 import { Link } from "react-router-dom";
 import css from "./SearchCat.module.css";
 import icon from "../../images/sprite.svg";
-import { ListSearch } from "../ListSearch/ListSearch";
-// import { useState } from "react";
+import { ListSearch } from "../../components/ListSearch/ListSearch";
 
-// import { NameCat } from "../NameCat/NameCat";
 export const SearchCat = () => {
-  // const [open, setOpen] = useState(false);
-
-  // const hendelTextv = () => {
-
-  //   setOpen(!setOpen);
-  // };
-
   return (
     <section className={css.section}>
       <div className={css.container}>

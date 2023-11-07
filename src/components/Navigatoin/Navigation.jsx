@@ -1,14 +1,16 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import icon from "../../images/sprite.svg";
 import cat from "../../images/cat.png";
 import phone from "../../images/phone.png";
 import table from "../../images/table.png";
 import css from "./Navigation.module.css";
+import { ButtonReaction } from "../ButtonReaction/ButtonReaction";
 
 export const Navigation = () => {
   return (
     <>
       <div className={css.wrapper}>
+        <ButtonReaction />
         <svg className={css.logo}>
           <use xlinkHref={icon + "#logo"}></use>
         </svg>
@@ -21,25 +23,25 @@ export const Navigation = () => {
               <img className={css.imagesTable} src={table} alt="table" />
             </div>
 
-            <Link className={css.buttons} to="voting">
+            <NavLink className={css.buttons} to="/voting">
               VOTING
-            </Link>
+            </NavLink>
           </li>
           <li className={css.item}>
             <div className={css.containerIm}>
               <img className={css.imagesCat} src={cat} alt="Cat" />
             </div>
-            <Link className={css.buttons} to="breeds">
+            <NavLink className={css.buttons} to="/breeds">
               BREEDS
-            </Link>
+            </NavLink>
           </li>
           <li className={css.item}>
             <div className={css.containerImPhone}>
               <img className={css.imagesPhone} src={phone} alt="phone" />
             </div>
-            <Link className={css.buttons} to="gallery">
+            <NavLink className={css.buttons} to="/gallery">
               GALLERY
-            </Link>
+            </NavLink>
           </li>
         </ul>
       </div>

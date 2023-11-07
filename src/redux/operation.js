@@ -154,8 +154,6 @@ export const UploadImages = createAsyncThunk(
   }
 );
 
-//
-
 export const Votes = createAsyncThunk(
   "votes/getVotes",
   async (_, { rejectWithValue }) => {
@@ -164,8 +162,7 @@ export const Votes = createAsyncThunk(
         params: {
           limit: 10,
 
-          api_key:
-            "live_S1lJoq0pONP3VNf88wMyamr5ZGILYlJmgJI6uF5uWfvzCnwb2tkGrgudlKA355Wf",
+          api_key: API_KEY,
         },
       });
       console.log(data);

@@ -4,9 +4,8 @@ import { useDispatch } from "react-redux";
 import { catImgname } from "../../redux/operation";
 import { useState } from "react";
 import PropTypes from "prop-types";
-import { ButtonReaction } from "../ButtonReaction/ButtonReaction";
 
-export const BreedsForm = ({ toggle, props }) => {
+export const BreedsForm = ({ toggle }) => {
   const dicpatch = useDispatch();
 
   const [name, setBreed_ids] = useState("");
@@ -27,7 +26,6 @@ export const BreedsForm = ({ toggle, props }) => {
   return (
     <>
       <div style={{ display: "flex" }}>
-        {" "}
         <form onSubmit={handelSumit} className={css.wrapper}>
           <input
             onChange={handelChangeInput}
@@ -49,7 +47,6 @@ export const BreedsForm = ({ toggle, props }) => {
             </svg>
           </button>
         </form>
-        <ButtonReaction props={props} />
       </div>
     </>
   );

@@ -2,7 +2,7 @@ import css from "./Voting.module.css";
 import { useDispatch } from "react-redux";
 import { BreedsForm } from "../../components/BreedsForm/BreedsForm";
 import { useEffect, useState } from "react";
-import { SearchCat } from "../../components/SearchCat/SearchCat";
+import { SearchCat } from "../SearchCat/SearchCat";
 import { Button } from "../../components/Button/Button";
 import { Votes } from "../../redux/operation";
 import { VotinButtonReaction } from "../../components/VotinButtonReaction/VotinButtonReaction";
