@@ -9,6 +9,10 @@ import {
   getImagesGallery,
   UploadImages,
   Votes,
+  VotesPost,
+  Favorite,
+  FavoriteGet,
+  GetVotesPost,
 } from "./operation";
 export const catSlice = createSlice({
   name: "cats",
@@ -23,6 +27,9 @@ export const catSlice = createSlice({
     breedsGallery: [],
     galleryBreadAll: [],
     votin: [],
+    votins: [],
+    favorite: [],
+    favorites: [],
   },
 
   extraReducers: (builder) => {
@@ -66,11 +73,25 @@ export const catSlice = createSlice({
         console.log("sucssesful");
       })
       .addCase(UploadImages.rejected, () => {
-        // alert("Sorry! There was a server error,please try to download later ");
         console.log("recves rejected");
       })
       .addCase(Votes.fulfilled, (state, action) => {
         state.votin = action.payload;
+      })
+      .addCase(VotesPost.fulfilled, (state, action) => {
+        console.log("post sucsusful");
+        state.votin = action.payload;
+      })
+      .addCase(GetVotesPost.fulfilled, (state, action) => {
+        state.votins = action.payload;
+        console.log(state.votin);
+      })
+      .addCase(Favorite.fulfilled, () => {
+        // state.favorite = action.payload;
+      })
+      .addCase(FavoriteGet.fulfilled, (state, action) => {
+        state.favorites = action.payload;
+        console.log(state.favorites);
       });
   },
 });

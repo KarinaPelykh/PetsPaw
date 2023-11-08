@@ -158,17 +158,74 @@ export const Votes = createAsyncThunk(
   "votes/getVotes",
   async (_, { rejectWithValue }) => {
     try {
-      const { data } = await axios.get("/votes", {
-        params: {
-          limit: 10,
-
-          api_key: API_KEY,
-        },
-      });
-      console.log(data);
+      const { data } = await axios.get(
+        `/images/search?api_key=${API_KEY}&limit=25`
+      );
+      // console.log(data);
       return data;
     } catch (error) {
       return rejectWithValue(error.message);
+    }
+  }
+);
+
+export const VotesPost = createAsyncThunk(
+  "votes/post",
+  async ({ value, image_id }, { rejectWithValue }) => {
+    console.log(value, image_id);
+    try {
+      const { data } = await axios.post(`/votes?api_key=${API_KEY}`, {
+        image_id: image_id,
+        value: value,
+      });
+      console.log("votes/post", data);
+      return data;
+    } catch (error) {
+      return rejectWithValue(error.message);
+    }
+  }
+);
+
+export const GetVotesPost = createAsyncThunk(
+  "votes/get",
+  async (_, { rejectWithValue }) => {
+    try {
+      const { data } = await axios.get(
+        `/votes?api_key=${API_KEY}&limit=3&order=desc`
+      );
+      // console.log(data);
+      return data;
+    } catch (error) {
+      return rejectWithValue(error.message);
+    }
+  }
+);
+
+export const Favorite = createAsyncThunk(
+  "favorite/post",
+  async (image_id, { rejectWithValue }) => {
+    try {
+      const { data } = await axios.post(`/favourites?api_key=${API_KEY}`, {
+        image_id,
+      });
+      // console.log(data);
+      return data;
+    } catch (error) {
+      rejectWithValue(error.message);
+    }
+  }
+);
+export const FavoriteGet = createAsyncThunk(
+  "favorite/get",
+  async (_, { rejectWithValue }) => {
+    try {
+      const { data } = await axios.get(
+        `/favourites?api_key=${API_KEY}&limit=3&order=desc`
+      );
+      // console.log(data);
+      return data;
+    } catch (error) {
+      rejectWithValue(error.message);
     }
   }
 );

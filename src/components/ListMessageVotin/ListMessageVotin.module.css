@@ -1,0 +1,26 @@
+.list {
+  margin-top: 60px;
+}
+.item {
+  width: 600px;
+  padding: 20px;
+  display: flex;
+  background-color: #f8f8f7;
+  margin-bottom: 10px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
+.time {
+  background-color: #fff;
+  margin-right: 20px;
+  padding: 3px 10px;
+  border-radius: 5px;
+}
+.text {
+  margin-right: auto;
+}
+.svg {
+  width: 22px;
+  height: 20px;
+}

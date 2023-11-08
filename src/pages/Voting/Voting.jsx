@@ -1,30 +1,24 @@
 import css from "./Voting.module.css";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { BreedsForm } from "../../components/BreedsForm/BreedsForm";
 import { useEffect, useState } from "react";
 import { SearchCat } from "../SearchCat/SearchCat";
 import { Button } from "../../components/Button/Button";
-import { Votes } from "../../redux/operation";
+import { FavoriteGet, Votes, GetVotesPost } from "../../redux/operation";
 import { VotinButtonReaction } from "../../components/VotinButtonReaction/VotinButtonReaction";
+import { selectorVotin } from "../../redux/selector";
+import { ListMessageVotin } from "../../components/ListMessageVotin/ListMessageVotin";
 export const Voting = () => {
-  const [like, setLike] = useState(false);
-  // const [favorite, setFavorite] = useState(false);
-
-  const handelLike = () => {
-    setLike(!like);
-    hendelTime();
-  };
-  const hendelTime = () => {
-    const date = new Date();
-    console.log(date);
-  };
-  // const handelFavorite = () => {};
-
-  // const handelDiclike = () => {};
-  const dicpatch = useDispatch();
+  const dispatch = useDispatch();
   useEffect(() => {
-    dicpatch(Votes());
-  }, [dicpatch]);
+    dispatch(Votes());
+    dispatch(GetVotesPost());
+    dispatch(FavoriteGet());
+  }, [dispatch]);
+
+  const hendelFoto = () => {
+    dispatch(Votes());
+  };
 
   const [opneComp, setOpenComp] = useState(false);
   const toggle = () => {
@@ -32,13 +26,14 @@ export const Voting = () => {
       setOpenComp(!opneComp);
     }
   };
-  // const votin = useSelector(selectorBreeds);
 
-  // if (breeds.length === 0) {
-  //   return (
-  //     <div style={{ marginLeft: "230px", marginTop: "320px" }}>Loading...</div>
-  //   );
-  // }
+  const votin = useSelector(selectorVotin);
+  console.log(votin.image?.url);
+  if (votin.length === 0) {
+    return (
+      <div style={{ marginLeft: "230px", marginTop: "320px" }}>Loading...</div>
+    );
+  }
   return (
     <section className={css.section}>
       <BreedsForm toggle={toggle} />
@@ -53,15 +48,18 @@ export const Voting = () => {
               VOTING
             </button>
           </div>
-
           <div className={css.containerImgCat}>
             <img
               className={css.votingImg}
-              // src={item.image.url}
-              // alt={breeds.name}
+              src={votin[0]?.url}
+              alt={votin.name}
             />
           </div>
-          <VotinButtonReaction props={handelLike} />
+          <VotinButtonReaction
+            image_id={votin[0]?.id}
+            hendelFoto={hendelFoto}
+          />
+          <ListMessageVotin />
         </div>
       )}
     </section>

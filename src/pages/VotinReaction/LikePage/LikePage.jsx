@@ -1,7 +1,12 @@
+import { useSelector } from "react-redux";
 import { BreedsForm } from "../../../components/BreedsForm/BreedsForm";
 import { Button } from "../../../components/Button/Button";
 import css from "./LikePage.module.css";
+import { votinSelector } from "../../../redux/selector";
+
 export const LikePage = () => {
+  const like = useSelector(votinSelector);
+
   return (
     <section className={css.section}>
       <BreedsForm />
@@ -13,6 +18,17 @@ export const LikePage = () => {
             LIKE
           </button>
         </div>
+        <ul className={css.list}>
+          {like.map((item) => {
+            if (item.value === 1) {
+              return (
+                <li className={css.list} key={item.id}>
+                  <img src={item.image.url} />
+                </li>
+              );
+            }
+          })}
+        </ul>
       </div>
     </section>
   );
