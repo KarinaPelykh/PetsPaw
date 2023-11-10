@@ -21,6 +21,14 @@
   padding: 20px;
   animation: animate125 1000ms;
 }
+@media (max-width: 768px) {
+  .wrapp {
+    width: 640px;
+    height: 600px;
+    margin-top: 10px;
+    margin-left: 40px;
+  }
+}
 
 @keyframes animate125 {
   0% {

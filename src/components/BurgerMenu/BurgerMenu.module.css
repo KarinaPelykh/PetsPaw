@@ -7,12 +7,12 @@
   top: 0;
   padding: 20px;
 }
-/* 
-@media (max-width: 768px) {
+
+@media (min-width: 769px) {
   .wraper {
     display: none;
   }
-} */
+}
 .butClose {
   position: absolute;
   width: 50px;

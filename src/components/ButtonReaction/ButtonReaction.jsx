@@ -34,8 +34,8 @@ export const ButtonReaction = () => {
               {/* </button> */}
             </NavLink>
           </li>
-        </ul>
-      </div>
+        </ul>{" "}
+      </div>{" "}
     </div>
   );
 };

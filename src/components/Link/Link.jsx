@@ -3,7 +3,7 @@ import cat from "../../images/cat.png";
 import phone from "../../images/phone.png";
 import table from "../../images/table.png";
 import css from "./Link.module.css";
-export const LinkNav = ({ hendelIsOpen }) => {
+export const LinkNav = () => {
   return (
     <>
       <ul className={css.list}>
@@ -12,7 +12,7 @@ export const LinkNav = ({ hendelIsOpen }) => {
             <img className={css.imagesTable} src={table} alt="table" />
           </div>
 
-          <NavLink onClick={hendelIsOpen} className={css.buttons} to="/voting">
+          <NavLink className={css.buttons} to="/voting">
             VOTING
           </NavLink>
         </li>
@@ -20,7 +20,7 @@ export const LinkNav = ({ hendelIsOpen }) => {
           <div className={css.containerIm}>
             <img className={css.imagesCat} src={cat} alt="Cat" />
           </div>
-          <NavLink onClick={hendelIsOpen} className={css.buttons} to="/breeds">
+          <NavLink className={css.buttons} to="/breeds">
             BREEDS
           </NavLink>
         </li>
@@ -28,7 +28,7 @@ export const LinkNav = ({ hendelIsOpen }) => {
           <div className={css.containerImPhone}>
             <img className={css.imagesPhone} src={phone} alt="phone" />
           </div>
-          <NavLink onClick={hendelIsOpen} className={css.buttons} to="/gallery">
+          <NavLink className={css.buttons} to="/gallery">
             GALLERY
           </NavLink>
         </li>

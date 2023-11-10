@@ -1,10 +1,8 @@
 import css from "./Breeds.module.css";
-// import icon from "../../images/sprite.svg";
 import { useEffect, useState } from "react";
 import { getImages } from "../../redux/operation";
 import { useDispatch } from "react-redux";
 import { BreedaaImeges } from "../../components/BreedaaImeges/BreeadImeges";
-
 import { Select } from "../../components/Select/Select";
 import { BreedsForm } from "../../components/BreedsForm/BreedsForm";
 import { SlaiderCat } from "../../components/SlaiderCat/SlaiderCat";
@@ -54,7 +52,6 @@ export const Breeds = () => {
   return (
     <section className={css.section}>
       <BreedsForm toggle={toggle} />
-
       <div>
         {openComp ? (
           <SearchCat />

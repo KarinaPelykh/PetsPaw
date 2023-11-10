@@ -2,31 +2,24 @@ import icon from "../../images/sprite.svg";
 
 import css from "./Navigation.module.css";
 import { ButtonReaction } from "../ButtonReaction/ButtonReaction";
-import { useState } from "react";
 import { LinkNav } from "../Link/Link";
+import { useLocation } from "react-router-dom";
 
 export const Navigation = () => {
-  // const [open] = useState(false);
-  const [isOpen, setIsOpen] = useState(false);
-  const hendelIsOpen = () => {
-    if (!isOpen) {
-      setIsOpen(!isOpen);
-    }
-  };
+  const location = useLocation();
+  const isHomePage = location.pathname === "/";
 
   return (
     <>
       <div className={css.wrapper}>
-        {isOpen && <ButtonReaction />}
-
+        {!isHomePage && <ButtonReaction />}
         <svg className={css.logo}>
           <use xlinkHref={icon + "#logo"}></use>
         </svg>
         <h1 className={css.title}>Hi!👋</h1>
         <p className={css.text}>Welcome to MacPaw Bootcamp 2023</p>
         <p className={css.texte}>Lets start using The Cat API</p>
-
-        <LinkNav hendelIsOpen={hendelIsOpen} />
+        <LinkNav />
       </div>
     </>
   );

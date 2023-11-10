@@ -44,11 +44,15 @@ export const Voting = () => {
             </button>
           </div>
           <div className={css.containerImgCat}>
-            <img
-              className={css.votingImg}
-              src={votin[0]?.url}
-              alt={votin.name}
-            />
+            {votin ? (
+              <img
+                className={css.votingImg}
+                src={votin[0]?.url}
+                alt={votin.name}
+              />
+            ) : (
+              <p className={css.votingImg}>Loader</p>
+            )}
           </div>
           <VotinButtonReaction
             image_id={votin[0]?.id}

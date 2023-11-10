@@ -9,7 +9,7 @@
   .section {
     margin-left: 0;
     top: 26px;
-    left: 47px;
+    left: 43px;
   }
 }
 .wrapper {
@@ -21,7 +21,9 @@
   margin-top: 10px;
   padding: 20px;
   width: 640px;
-  /* min-height: 1008px; */
+  min-height: 580px;
+
+  /* min-height: 580px; */
   background-color: #fff;
   border-radius: 20px;
 }

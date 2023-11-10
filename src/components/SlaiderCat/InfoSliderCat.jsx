@@ -8,6 +8,10 @@ export const InfoSliderCat = () => {
   }
   const catId = info[0];
   console.log(catId);
+
+  if (catId.breeds.length === 0) {
+    return <p>Error</p>;
+  }
   const {
     breeds: [{ name, temperament, description, origin, life_span, weight }],
   } = catId;
