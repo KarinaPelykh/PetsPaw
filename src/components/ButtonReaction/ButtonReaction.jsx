@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 export const ButtonReaction = () => {
   return (
     <div className={css.wrap}>
-      <div style={{ position: "absolute", top: "0", left: "1080px" }}>
+      <div className={css.box}>
         <ul className={css.list}>
           <li>
             <NavLink to="smile" className={css.btn}>

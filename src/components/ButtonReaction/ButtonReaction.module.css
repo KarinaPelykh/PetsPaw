@@ -2,7 +2,19 @@
   z-index: 2;
   position: relative;
 }
+.box {
+  position: absolute;
+  top: 5px;
+  left: 1124px;
+}
 
+@media (max-width: 768px) {
+  .box {
+    position: absolute;
+    top: -5px;
+    left: 377px;
+  }
+}
 .list {
   display: flex;
 }

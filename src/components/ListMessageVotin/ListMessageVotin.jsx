@@ -6,7 +6,6 @@ export const ListMessageVotin = () => {
   const votinsMesseg = useSelector(selectorVotinImages);
   const favorite = useSelector(selectorFavorite);
   const message = [...votinsMesseg, ...favorite];
-  console.log("message", message);
   return (
     <>
       <ul className={css.list}>

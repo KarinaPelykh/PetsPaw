@@ -114,7 +114,7 @@ export const getImagesGallery = createAsyncThunk(
           api_key: API_KEY,
         },
       });
-      console.log(data);
+      // console.log(data);
       return data;
     } catch (error) {
       return rejectWithValue(error.message);

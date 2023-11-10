@@ -1,8 +1,4 @@
 .wrapper {
-  /* border: 4px #c0222294 solid; */
-
-  width: 446px;
-  height: 544px;
   text-align: start;
 }
 .logo {
@@ -30,72 +26,4 @@
   font-size: 20px;
   margin: 0;
   margin-bottom: 20px;
-}
-
-.list {
-  display: flex;
-  list-style: none;
-  padding: 0;
-}
-.item {
-  margin-right: 16px;
-}
-.item:last-child {
-  margin-right: 0;
-}
-.containerIm {
-  width: 138px;
-  height: 198px;
-  background: #97eab9;
-  border-radius: 20px;
-  /* border: 4px #ffffff94 solid; */
-}
-.imagesCat {
-  padding: 17px 10px;
-  object-fit: contain;
-  width: 117px;
-  height: 163px;
-}
-.containerImTabl {
-  width: 138px;
-  height: 198px;
-  background: #b4b7ff;
-  border-radius: 20px;
-  /* border: 4px #ffffff94 solid; */
-}
-.imagesTable {
-  object-fit: contain;
-  width: 100px;
-  height: 125px;
-  padding: 37px 19px;
-}
-.containerImPhone {
-  width: 138px;
-  height: 198px;
-  background: #ffd280;
-  border-radius: 20px;
-  /* border: 4px #ffffff94 solid; */
-}
-.imagesPhone {
-  object-fit: cover;
-  padding: 5px 13px;
-  width: 112px;
-  height: 190px;
-}
-
-.buttons {
-  font-family: "Jost", sans-serif;
-  font-weight: 500;
-  font-size: 12px;
-  display: flex;
-  width: 138px;
-  height: 36px;
-  color: #ff868e;
-  justify-content: center;
-  border-radius: 10px;
-  cursor: pointer;
-  border: none;
-  margin-top: 10px;
-  background-color: #fff;
-  align-items: center;
 }

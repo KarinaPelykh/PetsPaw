@@ -1,6 +1,17 @@
 .section {
   margin-left: 157px;
   position: relative;
+  position: absolute;
+  top: 35px;
+  left: 635px;
+}
+@media (max-width: 768px) {
+  .section {
+    margin-left: 0;
+    position: absolute;
+    top: 26px;
+    left: 47px;
+  }
 }
 .container {
   margin-top: 10px;
@@ -29,7 +40,6 @@
 }
 /*  */
 
-
 .list {
   margin-top: 20px;
   box-sizing: border-box;
@@ -39,7 +49,7 @@
   grid-gap: 20px;
 }
 
-img {
+.images {
   border-radius: 20px;
   object-fit: cover;
   width: 100%;

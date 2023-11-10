@@ -1,0 +1,31 @@
+.wraper {
+  width: 100%;
+  height: 100%;
+  background: rgb(229, 229, 229);
+  position: fixed;
+  z-index: 222;
+  top: 0;
+  padding: 20px;
+}
+/* 
+@media (max-width: 768px) {
+  .wraper {
+    display: none;
+  }
+} */
+.butClose {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background: #fff;
+  border-radius: 20px;
+  margin-left: 200px;
+}
+.closeSvg {
+  width: 20px;
+  height: 20px;
+}
+.thumb {
+  margin-top: 110px;
+  margin-left: 70px;
+}

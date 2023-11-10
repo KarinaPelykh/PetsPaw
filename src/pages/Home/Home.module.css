@@ -1,18 +1,41 @@
 .sectionHome {
+  display: flex;
   position: relative;
-  z-index: 3;
   margin-left: 40px;
+
+  position: absolute;
+  top: 35px;
+  left: 635px;
+}
+@media (max-width: 768px) {
+  .sectionHome {
+    display: none;
+  }
+}
+
+.wrap {
+  z-index: 10;
 }
 .imgHome {
+  width: 799px;
+  height: 735px;
   position: absolute;
   left: 28px;
   top: -30px;
 }
-.containerGallry {
+/* .containerGallry {
   z-index: 1;
   background-color: #fbe0dc;
   min-width: 680px;
   min-height: 840px;
+  margin: 0 0 0 137px;
+  border-radius: 20px;
+} */
+.containerGallry {
+  /* z-index: 1; */
+  background-color: #fbe0dc;
+  min-width: 680px;
+  min-height: 680px;
   margin: 0 0 0 137px;
   border-radius: 20px;
 }

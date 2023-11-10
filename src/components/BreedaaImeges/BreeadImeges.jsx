@@ -13,7 +13,11 @@ export const BreedaaImeges = () => {
             <li className={css.item} key={item.id}>
               <a className={css.overleyLink}>
                 <div className={css.wrapperLi}>
-                  <img src={item.image.url} alt={item.name} />
+                  <img
+                    className={css.image}
+                    src={item.image.url}
+                    alt={item.name}
+                  />
                   <div className={css.overley}>
                     <div className={css.texBackground}>
                       <p className={css.textOoverley}>{item.name}</p>

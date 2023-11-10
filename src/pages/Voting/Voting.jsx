@@ -28,12 +28,7 @@ export const Voting = () => {
   };
 
   const votin = useSelector(selectorVotin);
-  console.log(votin.image?.url);
-  if (votin.length === 0) {
-    return (
-      <div style={{ marginLeft: "230px", marginTop: "320px" }}>Loading...</div>
-    );
-  }
+
   return (
     <section className={css.section}>
       <BreedsForm toggle={toggle} />

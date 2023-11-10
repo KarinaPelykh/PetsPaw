@@ -3,11 +3,13 @@ import icon from "../../images/sprite.svg";
 import { useDispatch } from "react-redux";
 import { catImgname } from "../../redux/operation";
 import { useState } from "react";
+import { useToggle } from "../../hooks/useToggle";
 import PropTypes from "prop-types";
+import { BurgerMenu } from "../BurgerMenu/BurgerMenu";
 
 export const BreedsForm = ({ toggle }) => {
   const dicpatch = useDispatch();
-
+  const { openModal, close, open } = useToggle();
   const [name, setBreed_ids] = useState("");
   const handelSumit = (e) => {
     e.preventDefault();
@@ -27,6 +29,12 @@ export const BreedsForm = ({ toggle }) => {
     <>
       <div style={{ display: "flex" }}>
         <form onSubmit={handelSumit} className={css.wrapper}>
+          <button onClick={openModal} className={css.burger}>
+            <svg className={css.burgerSVG}>
+              <use xlinkHref={icon + "#burger"}></use>
+            </svg>
+          </button>
+
           <input
             onChange={handelChangeInput}
             className={css.input}
@@ -48,6 +56,7 @@ export const BreedsForm = ({ toggle }) => {
           </button>
         </form>
       </div>
+      {open && <BurgerMenu props={close} />}
     </>
   );
 };

@@ -22,7 +22,7 @@ export const DislikePage = () => {
             if (item.value === -1) {
               return (
                 <li className={css.item} key={item.id}>
-                  <img src={item.image.url} />
+                  <img className={css.images} src={item.image.url} />
                 </li>
               );
             }

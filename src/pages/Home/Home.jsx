@@ -4,8 +4,10 @@ export const HomePage = () => {
   return (
     <>
       <section className={css.sectionHome}>
-        <img className={css.imgHome} src={girl} alt="Girl" />
-        <div className={css.containerGallry}></div>
+        <div className={css.wrap}>
+          <img className={css.imgHome} src={girl} alt="Girl" />
+          <div className={css.containerGallry}> </div>
+        </div>
       </section>
     </>
   );

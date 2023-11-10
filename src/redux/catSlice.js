@@ -80,7 +80,7 @@ export const catSlice = createSlice({
       })
       .addCase(VotesPost.fulfilled, (state, action) => {
         console.log("post sucsusful");
-        state.votin = action.payload;
+        // state.votin = action.payload;
       })
       .addCase(GetVotesPost.fulfilled, (state, action) => {
         state.votins = action.payload;

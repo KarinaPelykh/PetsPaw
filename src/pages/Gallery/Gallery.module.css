@@ -1,12 +1,24 @@
 .section {
   margin-left: 157px;
-}
 
+  position: absolute;
+  top: 35px;
+  left: 635px;
+}
+@media (max-width: 768px) {
+  .section {
+    margin-left: 0;
+
+    top: 26px;
+    left: 47px;
+  }
+}
 .container {
   margin-top: 10px;
   padding: 20px;
   width: 640px;
   min-height: 740px;
+  /* min-height: 580px; */
   background-color: #fff;
   border-radius: 20px;
 }

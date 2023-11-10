@@ -6,8 +6,8 @@ import { useState } from "react";
 export const GalleryIameges = () => {
   const gallery = useSelector(selectorGallery);
 
+  // console.log("gallery====", gallery);
   const [like, setLike] = useState({});
-  console.log(like);
   const hendelLIke = (id) => {
     setLike((prevState) => ({
       ...prevState,
@@ -15,14 +15,13 @@ export const GalleryIameges = () => {
     }));
   };
 
-  console.log("gallery====", gallery);
   return (
     <ul className={css.list}>
       {gallery.map((item) => (
         <li className={css.item} key={item.id}>
           <a className={css.overleyLink}>
             <div className={css.wrapperLi}>
-              <img src={item.url} alt={item.id} />
+              <img className={css.images} src={item.url} alt={item.id} />
               <div className={css.overley}>
                 <div className={css.texBackground}>
                   <button

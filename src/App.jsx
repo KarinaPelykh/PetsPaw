@@ -1,4 +1,3 @@
-import "./App.css";
 import { Voting } from "./pages/Voting/Voting";
 import { Breeds } from "./pages/Breeds/Breeds";
 import { HomePage } from "./pages/Home/Home";

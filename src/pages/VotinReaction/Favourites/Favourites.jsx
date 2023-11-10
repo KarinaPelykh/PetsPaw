@@ -22,7 +22,7 @@ export const Favourites = () => {
             if (item.value !== 1 && item.value !== -1) {
               return (
                 <li className={css.list} key={item.id}>
-                  <img src={item.image.url} />
+                  <img  className={css.images} src={item.image.url} />
                 </li>
               );
             }

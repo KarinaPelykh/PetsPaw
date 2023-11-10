@@ -6,7 +6,7 @@
   grid-gap: 20px;
 }
 
-img {
+.images {
   border-radius: 20px;
   object-fit: cover;
   width: 100%;
