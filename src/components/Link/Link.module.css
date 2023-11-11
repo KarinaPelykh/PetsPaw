@@ -1,8 +1,12 @@
-
 .list {
   display: flex;
   list-style: none;
   padding: 0;
+}
+@media (max-width: 669px) {
+  .list {
+    display: block;
+  }
 }
 .item {
   margin-right: 16px;
@@ -10,12 +14,23 @@
 .item:last-child {
   margin-right: 0;
 }
+
+@media (max-width: 669px) {
+  .item {
+    margin-right: 0;
+  }
+}
 .containerIm {
   width: 138px;
   height: 198px;
   background: #97eab9;
   border-radius: 20px;
+}
 
+@media (max-width: 669px) {
+  .containerIm {
+    display: none;
+  }
 }
 .imagesCat {
   padding: 17px 10px;
@@ -29,6 +44,12 @@
   background: #b4b7ff;
   border-radius: 20px;
 }
+
+@media (max-width: 669px) {
+  .containerImTabl {
+    display: none;
+  }
+}
 .imagesTable {
   object-fit: contain;
   width: 100px;
@@ -40,6 +61,12 @@
   height: 198px;
   background: #ffd280;
   border-radius: 20px;
+}
+
+@media (max-width: 669px) {
+  .containerImPhone {
+    display: none;
+  }
 }
 .imagesPhone {
   object-fit: cover;
@@ -64,4 +91,8 @@
   background-color: #fff;
   align-items: center;
 }
-
+@media (max-width: 669px) {
+  .buttons {
+    width: 100%;
+  }
+}

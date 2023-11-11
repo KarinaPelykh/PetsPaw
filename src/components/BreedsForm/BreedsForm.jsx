@@ -27,7 +27,7 @@ export const BreedsForm = ({ toggle }) => {
 
   return (
     <>
-      <div style={{ display: "flex" }}>
+      <div className={css.thumb}>
         <form onSubmit={handelSumit} className={css.wrapper}>
           <button onClick={openModal} className={css.burger}>
             <svg className={css.burgerSVG}>

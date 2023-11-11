@@ -8,6 +8,15 @@
   width: 248px;
   height: 80px;
 }
+@media (max-width: 375px) {
+  .wrapper {
+    top: 200px;
+    left: 150px;
+
+    width: 186px;
+    height: 60px;
+  }
+}
 .buttonSmile {
   border: 4px solid #ffffff;
   width: 83px;

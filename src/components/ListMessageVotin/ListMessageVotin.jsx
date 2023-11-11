@@ -17,9 +17,9 @@ export const ListMessageVotin = () => {
 
             <p className={css.text}>
               Image ID: <b>{image_id}</b> was added to
-              <span style={{ marginRight: "10px" }}>
+              <span style={{ marginRight: "15px" }}>
                 {value === 1 && "Like"}
-                {value !== 1 && "Dislike"}
+                {value === -1 && "Dislike"}
                 {value !== -1 && value !== 1 && "Favorite"}
               </span>
             </p>

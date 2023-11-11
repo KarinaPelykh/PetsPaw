@@ -8,11 +8,22 @@
   left: 1124px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 769px) {
   .box {
     position: absolute;
     top: -5px;
     left: 377px;
+  }
+}
+@media (max-width: 670px) {
+  .box {
+    left: 468px;
+  }
+}
+@media (max-width: 375px) {
+  .box {
+    top: -5px;
+    left: 277px;
   }
 }
 .list {
@@ -32,18 +43,6 @@
   justify-content: center;
   align-items: center;
 }
-/* .btn:hover {
-  background-color: #ff868e90;
-  .svgSad {
-    fill: #fff;
-  }
-  .svgSmile {
-    fill: #fff;
-  }
-  .svgHeart {
-    stroke: #fff;
-  }
-} */
 
 .svgSmile {
   width: 30px;

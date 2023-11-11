@@ -1,11 +1,28 @@
-.section {
-  margin-left: 157px;
+.thumb {
+  display: flex;
+}
+@media (max-width: 669px) {
+  .thumb {
+    display: block;
+  }
 }
 .wrapper {
   position: relative;
   display: flex;
   width: 479px;
 }
+
+@media (max-width: 670px) {
+  .wrapper {
+    display: block;
+  }
+}
+@media (max-width: 375px) {
+  .wrapper {
+    display: block;
+  }
+}
+
 .container {
   margin-top: 10px;
   padding: 20px;
@@ -28,6 +45,20 @@
   font-size: 20px;
 }
 
+@media (max-width: 669px) {
+  .input {
+    width: 650px;
+    margin-right: 0;
+    margin-top: 10px;
+  }
+}
+@media (max-width: 375px) {
+  .input {
+    width: 450px;
+    margin-right: 0;
+    margin-top: 10px;
+  }
+}
 .buttonBack {
   margin-top: 0;
   margin-right: 10px;
@@ -92,6 +123,22 @@
   top: 11px;
   left: 408px;
 }
+@media (max-width: 670px) {
+  .btnSerch {
+    top: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: 320px;
+    margin-left: 295px;
+  }
+}
+@media (max-width: 375px) {
+  .btnSerch {
+    margin-left: 100px;
+  }
+}
+
 .btnSerch:hover {
   background-color: #ff868e90;
   .svgSearch {
