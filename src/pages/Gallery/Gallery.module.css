@@ -8,9 +8,17 @@
 @media (max-width: 768px) {
   .section {
     margin-left: 0;
-
+    position: absolute;
     top: 26px;
     left: 43px;
+  }
+}
+
+@media (max-width: 669px) {
+  .section {
+    top: 20px;
+    left: 20px;
+    background-color: #e5e5e5;
   }
 }
 .container {
@@ -21,6 +29,18 @@
   /* min-height: 580px; */
   background-color: #fff;
   border-radius: 20px;
+}
+
+@media (max-width: 669px) {
+  .container {
+    min-height: 633px;
+  }
+}
+@media (max-width: 378px) {
+  .container {
+    width: auto;
+    min-height: 633px;
+  }
 }
 .wrapper {
   display: flex;
@@ -85,6 +105,12 @@
   width: 650px;
   display: flex;
 }
+@media (max-width: 378px) {
+  .cont {
+    width: auto;
+    display: block;
+  }
+}
 .icon {
   display: flex;
   justify-content: center;
@@ -101,6 +127,14 @@
   border-radius: 10px;
 
   padding: 12px 30px;
+}
+
+@media (max-width: 378px) {
+  .btnUpload {
+    margin-top: 10px;
+
+    width: 100%;
+  }
 }
 .btnUpload:hover {
   background-color: #ff868e90;

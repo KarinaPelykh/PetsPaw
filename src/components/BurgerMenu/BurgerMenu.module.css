@@ -5,6 +5,7 @@
   position: fixed;
   z-index: 222;
   top: 0;
+  left: 0;
   padding: 20px;
 }
 
@@ -21,6 +22,11 @@
   border-radius: 20px;
   margin-left: 200px;
 }
+@media (max-width: 376px) {
+  .butClose {
+    margin-left: 160px;
+  }
+}
 .closeSvg {
   width: 20px;
   height: 20px;
@@ -28,4 +34,11 @@
 .thumb {
   margin-top: 110px;
   margin-left: 70px;
+
+  margin-right: 84px;
+}
+@media (max-width: 376px) {
+  .thumb {
+    margin-right: 84px;
+  }
 }

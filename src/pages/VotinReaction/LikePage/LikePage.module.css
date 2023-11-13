@@ -13,8 +13,17 @@
 @media (max-width: 768px) {
   .section {
     margin-left: 0;
+    position: absolute;
     top: 26px;
-    left: 47px;
+    left: 43px;
+  }
+}
+
+@media (max-width: 669px) {
+  .section {
+    top: 20px;
+    left: 20px;
+    background-color: #e5e5e5;
   }
 }
 .container {

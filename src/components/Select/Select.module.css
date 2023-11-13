@@ -11,6 +11,13 @@
   border: none;
   background-color: #f8f8f7;
 }
+@media (max-width: 378px) {
+  .select {
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+}
 select option {
   margin-top: 10px;
   background-color: #fff;

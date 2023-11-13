@@ -42,21 +42,24 @@ export const Gallery = () => {
           ) : (
             <div className={css.container}>
               <div className={css.cont}>
-                <Button />
-                <button type="button" className={css.btnBreeds}>
-                  GALLERY
-                </button>
-
-                <button
-                  type="button"
-                  className={css.btnUpload}
-                  onClick={openModal}
-                >
-                  <svg className={css.svgUpload}>
-                    <use xlinkHref={icon + "#icon-upload"}></use>
-                  </svg>
-                  UPLOAD
-                </button>
+                <div style={{ display: "flex" }}>
+                  <Button />
+                  <button type="button" className={css.btnBreeds}>
+                    GALLERY
+                  </button>
+                </div>
+                <div>
+                  <button
+                    type="button"
+                    className={css.btnUpload}
+                    onClick={openModal}
+                  >
+                    <svg className={css.svgUpload}>
+                      <use xlinkHref={icon + "#icon-upload"}></use>
+                    </svg>
+                    UPLOAD
+                  </button>
+                </div>
               </div>
               <GallerySelect
                 prop={handelShow}

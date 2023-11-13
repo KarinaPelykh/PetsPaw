@@ -6,7 +6,6 @@ import { useState } from "react";
 export const GalleryIameges = () => {
   const gallery = useSelector(selectorGallery);
 
-  // console.log("gallery====", gallery);
   const [like, setLike] = useState({});
   const hendelLIke = (id) => {
     setLike((prevState) => ({

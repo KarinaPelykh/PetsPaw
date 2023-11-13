@@ -1,4 +1,4 @@
-.wrappSelect {
+/* .wrappSelect {
   margin-top: 20px;
   width: 600px;
   height: 156px;
@@ -26,6 +26,59 @@
   border: none;
 }
 .labelSelect {
+  font-size: 10px;
+  color: #8c8c8c;
+  margin-right: 238px;
+  margin-top: 10px;
+}
+.buttonUdate {
+  width: 40px;
+  height: 40px;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 10px 11px;
+}
+.buttonUdate:hover {
+  background-color: #ff868e90;
+  .svgUpdate {
+    stroke: #fff;
+  }
+}
+.svgUpdate {
+  width: 18px;
+  height: 20px;
+  margin-right: 10px;
+} */
+
+.wrappSelect {
+  margin-top: 20px;
+  width: 600px;
+  height: 156px;
+  background-color: #f8f8f7;
+  border-radius: 20px;
+  /* display: flex; */
+  padding: 20px;
+  gap: 20px;
+}
+.selectGallery {
+  width: 290px;
+  height: 40px;
+  border-radius: 10px;
+  font-size: 16px;
+  outline: none;
+  border: none;
+}
+.selectGallerypage {
+  width: 240px;
+  height: 40px;
+  border-radius: 10px;
+  font-size: 16px;
+  margin-right: 10px;
+  outline: none;
+  border: none;
+}
+.labelSelect {
+  display: flex;
   font-size: 10px;
   color: #8c8c8c;
   margin-right: 238px;

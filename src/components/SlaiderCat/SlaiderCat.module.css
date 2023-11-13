@@ -14,6 +14,18 @@
   border-radius: 20px;
 }
 
+@media (max-width: 669px) {
+  .container {
+    min-height: 633px;
+  }
+}
+@media (max-width: 378px) {
+  .container {
+    width: auto;
+    min-height: 633px;
+    top: -160px;
+  }
+}
 .buttonBack {
   position: relative;
   margin-top: 0;

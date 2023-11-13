@@ -119,14 +119,7 @@ export const Modal = ({ close, open }) => {
               onDragStart={(e) => setStarthendel(e)}
               onDragOver={(e) => setStarthendel(e)}
             >
-              <svg
-                style={{
-                  width: "200px",
-                  height: "200px",
-                  fill: "#FF868E",
-                  marginTop: "60px",
-                }}
-              >
+              <svg className={css.svgIMag}>
                 <use xlinkHref={icon + "#uploadImg"}></use>
               </svg>
             </div>
@@ -145,11 +138,7 @@ export const Modal = ({ close, open }) => {
             <p className={css.sin}>Image File Name:{photo[0].name}</p>
 
             {message ? (
-              <button
-                onClick={hendelUploadPhoto}
-                className={css.uploadButton}
-               
-              >
+              <button onClick={hendelUploadPhoto} className={css.uploadButton}>
                 UPLOAD PHOTO
               </button>
             ) : (
