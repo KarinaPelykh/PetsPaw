@@ -9,11 +9,11 @@ export const SelectIages = () => {
   const images = useSelector(selectorImages);
   const imageStyles = [
     {
-      width: "640px",
-      height: "360px",
-      marginTop: "20px",
-      borderRadius: "20px",
-      objectFit: "cover",
+      // minWidth: "640px",
+      // height: "360px",
+      // marginTop: "20px",
+      // borderRadius: "20px",
+      // objectFit: "cover",
     },
   ];
   return (
@@ -28,6 +28,7 @@ export const SelectIages = () => {
       {images.map((item, index) => (
         <SwiperSlide key={item.id}>
           <img
+            className="swiper-css-img"
             style={imageStyles[index % imageStyles.length]}
             src={item.url}
             alt={item.name}

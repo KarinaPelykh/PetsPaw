@@ -29,7 +29,6 @@ export const ListSearch = () => {
         </>
       ) : (
         <>
-          {" "}
           <p className={css.textNAme}>
             Search results for:<b>{}</b>
           </p>
@@ -41,7 +40,7 @@ export const ListSearch = () => {
             ))}
           </ul>
         </>
-      )}{" "}
+      )}
     </>
   );
 };

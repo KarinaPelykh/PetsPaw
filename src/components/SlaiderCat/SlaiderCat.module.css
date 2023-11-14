@@ -21,7 +21,8 @@
 }
 @media (max-width: 378px) {
   .container {
-    width: auto;
+    width: 100%;
+    /* width: auto; */
     min-height: 633px;
     top: -160px;
   }
@@ -59,6 +60,11 @@
   width: 650px;
   display: flex;
 }
+@media (max-width: 378px) {
+  .cont {
+    width: auto;
+  }
+}
 .icon {
   display: flex;
   justify-content: center;
@@ -73,5 +79,11 @@
 .inner {
   width: 640px;
   height: 360px;
-  padding: 20px;
+}
+@media (max-width: 378px) {
+  .inner {
+    width: 380px;
+    height: 250px;
+    padding: 0;
+  }
 }

@@ -1,8 +1,3 @@
-.wrapper {
-  position: relative;
-  display: flex;
-  width: 680px;
-}
 .container {
   margin-top: 10px;
   padding: 20px;
@@ -11,7 +6,17 @@
   background-color: #fff;
   border-radius: 20px;
 }
-
+@media (max-width: 669px) {
+  .container {
+    min-height: 633px;
+  }
+}
+@media (max-width: 378px) {
+  .container {
+    width: auto;
+    min-height: 633px;
+  }
+}
 .btn {
   padding: 0;
   margin: 0 10px 0 0;

@@ -22,7 +22,7 @@
 @media (max-width: 669px) {
   .section {
     top: 20px;
-    left: 20px;
+    left: 11px;
     background-color: #e5e5e5;
   }
 }
@@ -34,7 +34,17 @@
   background-color: #fff;
   border-radius: 20px;
 }
-
+@media (max-width: 669px) {
+  .container {
+    min-height: 633px;
+  }
+}
+@media (max-width: 377px) {
+  .container {
+    width: auto;
+    min-height: 633px;
+  }
+}
 .btnBreeds {
   margin-top: 0;
   margin-right: 10px;

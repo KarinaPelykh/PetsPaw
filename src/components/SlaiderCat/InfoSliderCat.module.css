@@ -10,12 +10,19 @@
   flex-wrap: wrap;
   padding: 36px;
 }
+@media (max-width: 378px) {
+  .infoSection {
+    width: 320px;
+  }
+}
+
 .wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 20px;
 }
+
 .title {
   padding: 5px 40px;
   font-size: 36px;
@@ -31,6 +38,11 @@
   align-items: center;
   justify-content: center;
 }
+@media (max-width: 378px) {
+  .title {
+    left: 70px;
+  }
+}
 .text {
   margin-top: 10px;
   font-size: 20px;
@@ -45,6 +57,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+@media (max-width: 378px) {
+  .wrapperInfo {
+    display: block;
+  }
 }
 .container {
   width: 270px;

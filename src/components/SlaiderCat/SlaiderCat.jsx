@@ -21,11 +21,13 @@ export const SlaiderCat = () => {
           </button>
         </div>
         <div className={css.containerSwipertImg}>
-          <div className={css.inner}>
-            <SelectIages />
+          <div>
+            <div className={css.inner}>
+              <SelectIages />
+            </div>
+            <InfoSliderCat />
           </div>
         </div>
-        <InfoSliderCat />
       </div>
     </>
   );

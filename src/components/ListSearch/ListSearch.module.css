@@ -39,9 +39,14 @@
   gap: 10px;
   column-gap: 10px;
 }
+@media (max-width: 378px) {
+  .listCat {
+    display: block;
+  }
+}
 
 .itemCAT {
-  object-fit: contain;
+  width: 430px;
 }
 
 .ImagesCat {

@@ -14,3 +14,19 @@
     color: #ff868e;
   }
 }
+.swiper-css-img {
+  min-width: 640px;
+  height: 360px;
+  margin-top: 20px;
+  border-radius: 20px;
+  object-fit: cover;
+}
+
+@media (max-width: 378px) {
+  .swiper-css-img {
+    min-width: 320px;
+    height: 230px;
+    border-radius: 20px;
+    object-fit: cover;
+  }
+}
