@@ -66,11 +66,7 @@ export const Gallery = () => {
                 handelShowSlider={handelShowSlider}
               />
               {showSlider && <GalleryBreeds />}
-              {!show && (
-                // <div style={{ marginTop: "20px", width: "430px" }}>
-                <GalleryIameges />
-                // {/* </div> */}
-              )}
+              {!show && <GalleryIameges />}
             </div>
           )}
         </section>

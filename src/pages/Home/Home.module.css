@@ -23,16 +23,8 @@
   left: 28px;
   top: -30px;
 }
-/* .containerGallry {
-  z-index: 1;
-  background-color: #fbe0dc;
-  min-width: 680px;
-  min-height: 840px;
-  margin: 0 0 0 137px;
-  border-radius: 20px;
-} */
+
 .containerGallry {
-  /* z-index: 1; */
   background-color: #fbe0dc;
   min-width: 680px;
   min-height: 680px;

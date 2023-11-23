@@ -91,6 +91,11 @@
     margin-left: 570px;
   }
 }
+@media (max-width: 375px) {
+  .button {
+    margin-left: 369px;
+  }
+}
 .svgIMag {
   width: 200p;
   height: 200px;
@@ -150,9 +155,15 @@
   border-radius: 20px;
   margin-bottom: 20px;
 }
-@media (max-width: 376px) {
+@media (max-width: 376px) and (min-width: 375px) {
   .thumb {
     width: 528px;
+    height: 250px;
+  }
+}
+@media (max-width: 375px) {
+  .thumb {
+    width: 349px;
     height: 250px;
   }
 }
@@ -168,6 +179,11 @@
 
   font-size: 20px;
   color: #8c8c8c;
+}
+@media (max-width: 375px) {
+  .textImages {
+    left: 6px;
+  }
 }
 .uploadButton {
   background-color: #ff868e;

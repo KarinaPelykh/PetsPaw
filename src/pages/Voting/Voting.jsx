@@ -8,6 +8,7 @@ import { FavoriteGet, Votes, GetVotesPost } from "../../redux/operation";
 import { VotinButtonReaction } from "../../components/VotinButtonReaction/VotinButtonReaction";
 import { selectorVotin } from "../../redux/selector";
 import { ListMessageVotin } from "../../components/ListMessageVotin/ListMessageVotin";
+
 export const Voting = () => {
   const dispatch = useDispatch();
   useEffect(() => {
@@ -58,6 +59,7 @@ export const Voting = () => {
             image_id={votin[0]?.id}
             hendelFoto={hendelFoto}
           />
+
           <ListMessageVotin />
         </div>
       )}
