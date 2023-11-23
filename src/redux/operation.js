@@ -61,7 +61,6 @@ export const catImgname = createAsyncThunk(
     try {
       const { data } = await axios.get(
         `/images/search?breed_ids=${searchQuery}&limit=5&api_key=${API_KEY}`
-        // `breeds/search?q=${searchQuery}`
       );
 
       return data;
@@ -114,7 +113,7 @@ export const getImagesGallery = createAsyncThunk(
           api_key: API_KEY,
         },
       });
-      // console.log(data);
+
       return data;
     } catch (error) {
       return rejectWithValue(error.message);
@@ -128,7 +127,7 @@ export const ImagesByBreedGAllery = createAsyncThunk(
       const { data } = await axios.get(
         `/images/search?api_key=${API_KEY}&breed_id=${breeds_id}&limit=10`
       );
-      // console.log("Gallery======", data);
+
       return data;
     } catch (error) {
       return rejectWithValue(error.message);
@@ -161,7 +160,7 @@ export const Votes = createAsyncThunk(
       const { data } = await axios.get(
         `/images/search?api_key=${API_KEY}&limit=25`
       );
-      // console.log(data);
+
       return data;
     } catch (error) {
       return rejectWithValue(error.message);
@@ -193,7 +192,7 @@ export const GetVotesPost = createAsyncThunk(
       const { data } = await axios.get(
         `/votes?api_key=${API_KEY}&limit=3&order=desc`
       );
-      // console.log(data);
+
       return data;
     } catch (error) {
       return rejectWithValue(error.message);
@@ -208,7 +207,7 @@ export const Favorite = createAsyncThunk(
       const { data } = await axios.post(`/favourites?api_key=${API_KEY}`, {
         image_id,
       });
-      // console.log(data);
+
       return data;
     } catch (error) {
       rejectWithValue(error.message);
@@ -222,7 +221,7 @@ export const FavoriteGet = createAsyncThunk(
       const { data } = await axios.get(
         `/favourites?api_key=${API_KEY}&limit=3&order=desc`
       );
-      // console.log(data);
+
       return data;
     } catch (error) {
       rejectWithValue(error.message);

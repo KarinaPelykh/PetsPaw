@@ -10,3 +10,4 @@ export const NotFond = () => {
     </div>
   );
 };
+// export default NotFond;

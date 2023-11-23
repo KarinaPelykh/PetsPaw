@@ -8,6 +8,7 @@ import { FavoriteGet, Votes, GetVotesPost } from "../../redux/operation";
 import { VotinButtonReaction } from "../../components/VotinButtonReaction/VotinButtonReaction";
 import { selectorVotin } from "../../redux/selector";
 import { ListMessageVotin } from "../../components/ListMessageVotin/ListMessageVotin";
+import { Oval } from "react-loader-spinner";
 
 export const Voting = () => {
   const dispatch = useDispatch();
@@ -45,14 +46,34 @@ export const Voting = () => {
             </button>
           </div>
           <div className={css.containerImgCat}>
-            {votin ? (
+            {votin[0] ? (
               <img
                 className={css.votingImg}
                 src={votin[0]?.url}
                 alt={votin.name}
               />
             ) : (
-              <p className={css.votingImg}>Loader</p>
+              <div
+                style={{
+                  justifyContent: "center",
+                  marginTop: "200px",
+                  marginLeft: "300px",
+                  marginBottom: "200px",
+                }}
+              >
+                <Oval
+                  height={80}
+                  width={80}
+                  color="#ff868e"
+                  wrapperStyle={{}}
+                  wrapperClass=""
+                  visible={true}
+                  ariaLabel="oval-loading"
+                  secondaryColor="#ff868e"
+                  strokeWidth={2}
+                  strokeWidthSecondary={2}
+                />
+              </div>
             )}
           </div>
           <VotinButtonReaction
@@ -66,3 +87,4 @@ export const Voting = () => {
     </section>
   );
 };
+// export default Voting;

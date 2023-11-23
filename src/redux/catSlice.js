@@ -14,6 +14,16 @@ import {
   FavoriteGet,
   GetVotesPost,
 } from "./operation";
+
+const pending = (state) => {
+  state.isLoading = true;
+  state.error = "";
+};
+
+const rejected = (state, action) => {
+  state.isLoading = false;
+  state.error = action.payload;
+};
 export const catSlice = createSlice({
   name: "cats",
   initialState: {
@@ -37,37 +47,27 @@ export const catSlice = createSlice({
 
       .addCase(getImages.fulfilled, (state, action) => {
         state.breeds = action.payload;
-        state.isLoading = false;
       })
 
       .addCase(getCatsImagesByBreed.fulfilled, (state, action) => {
         state.images = action.payload;
-        state.isLoading = false;
       })
 
       .addCase(infoCat.fulfilled, (state, action) => {
         state.info = action.payload;
-
-        state.isLoading = false;
       })
 
       .addCase(catImgname.fulfilled, (state, action) => {
         state.name = action.payload;
-
-        state.isLoading = false;
       })
       .addCase(galleriIncrement.fulfilled, (state, action) => {
         state.gallery = action.payload;
-
-        state.isLoading = false;
       })
       .addCase(ImagesByBreedGAllery.fulfilled, (state, action) => {
         state.breedsGallery = action.payload;
-        state.isLoading = false;
       })
       .addCase(getImagesGallery.fulfilled, (state, action) => {
         state.galleryBreadAll = action.payload;
-        state.isLoading = false;
       })
       .addCase(UploadImages.fulfilled, () => {
         console.log("sucssesful");
@@ -78,9 +78,8 @@ export const catSlice = createSlice({
       .addCase(Votes.fulfilled, (state, action) => {
         state.votin = action.payload;
       })
-      .addCase(VotesPost.fulfilled, (state, action) => {
+      .addCase(VotesPost.fulfilled, () => {
         console.log("post sucsusful");
-        // state.votin = action.payload;
       })
       .addCase(GetVotesPost.fulfilled, (state, action) => {
         state.votins = action.payload;
@@ -91,8 +90,10 @@ export const catSlice = createSlice({
       })
       .addCase(FavoriteGet.fulfilled, (state, action) => {
         state.favorites = action.payload;
-        console.log(state.favorites);
-      });
+      })
+
+      .addMatcher((action) => action.type.endsWith("/pending"), pending)
+      .addMatcher((action) => action.type.endsWith("/rejected"), rejected);
   },
 });
 export const catReducer = catSlice.reducer;

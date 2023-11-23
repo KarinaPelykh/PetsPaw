@@ -9,15 +9,7 @@ export const BreedaaImeges = () => {
   return (
     <>
       {breeds.length === 0 ? (
-        <div
-          style={{
-            width: "500px",
-            justifyContent: "center",
-            marginTop: "200px",
-            marginLeft: "300px",
-            marginBottom: "200px",
-          }}
-        >
+        <div className={css.loader}>
           <Oval
             height={80}
             width={80}

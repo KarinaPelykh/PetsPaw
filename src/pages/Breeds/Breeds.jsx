@@ -102,3 +102,4 @@ export const Breeds = () => {
     </section>
   );
 };
+// export default Breeds;

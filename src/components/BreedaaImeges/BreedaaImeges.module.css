@@ -1,3 +1,17 @@
+.loader {
+  justify-content: center;
+  margin-top: 200px;
+  margin-left: 300px;
+  margin-bottom: 200px;
+}
+@media (max-width: 375px) {
+  .loader {
+    margin-top: 200px;
+    margin-left: 200px;
+    margin-bottom: 200px;
+  }
+}
+
 .imgCat {
   min-width: 660px;
   margin-top: 20px;
