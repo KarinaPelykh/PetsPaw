@@ -41,6 +41,16 @@
     margin-left: 40px;
   }
 }
+@media (max-width: 750px) and (min-width: 668px) {
+  .wrapp {
+    margin-left: 30px;
+  }
+}
+@media (max-width: 668px) and (min-width: 377px) {
+  .wrapp {
+    margin-left: 10px;
+  }
+}
 @media (max-width: 376px) {
   .wrapp {
     width: 100%;
@@ -109,10 +119,20 @@
   color: #1d1d1d;
   margin-bottom: 10px;
 }
+@media (max-width: 376px) {
+  .title {
+    margin-right: 97px;
+  }
+}
 .text {
   font-size: 20px;
   color: #8c8c8c;
   margin-bottom: 20px;
+}
+@media (max-width: 376px) {
+  .text {
+    margin-right: 90px;
+  }
 }
 .link {
   color: #ff868e;
@@ -164,6 +184,11 @@
 .sin {
   font-size: 20px;
   color: #8c8c8c;
+}
+@media (max-width: 376px) {
+  .sin {
+    margin-right: 119px;
+  }
 }
 b {
   color: #000;

@@ -83,7 +83,7 @@
   grid-row: 12;
   grid-column: 3;
 }
-/*  */
+
 .item:first-child img {
   height: 300px;
 }

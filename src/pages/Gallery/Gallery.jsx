@@ -67,9 +67,9 @@ export const Gallery = () => {
               />
               {showSlider && <GalleryBreeds />}
               {!show && (
-                <div style={{ marginTop: "20px" }}>
-                  <GalleryIameges />
-                </div>
+                // <div style={{ marginTop: "20px", width: "430px" }}>
+                <GalleryIameges />
+                // {/* </div> */}
               )}
             </div>
           )}

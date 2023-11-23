@@ -5,6 +5,13 @@
   grid-auto-rows: 200px;
   grid-gap: 20px;
 }
+@media (max-width: 376px) {
+  .listBreed {
+    width: 430px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
 .images {
   border-radius: 20px;
   object-fit: cover;

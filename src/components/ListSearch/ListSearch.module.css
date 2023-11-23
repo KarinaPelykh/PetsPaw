@@ -45,10 +45,6 @@
   }
 }
 
-.itemCAT {
-  width: 430px;
-}
-
 .ImagesCat {
   width: 300px;
   height: 300px;
@@ -56,6 +52,13 @@
   max-width: 100%;
   object-fit: cover;
   border-radius: 20px;
+}
+@media (max-width: 377px) {
+  .ImagesCat {
+    width: 430px;
+    height: auto;
+    margin-top: 20px;
+  }
 }
 .textNAme {
   margin-top: 25px;

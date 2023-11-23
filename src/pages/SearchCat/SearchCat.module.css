@@ -49,3 +49,8 @@
   width: 650px;
   display: flex;
 }
+@media (max-width: 378px) {
+  .cont {
+    width: auto;
+  }
+}

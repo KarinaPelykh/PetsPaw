@@ -36,7 +36,7 @@
     min-height: 633px;
   }
 }
-@media (max-width: 378px) {
+@media (max-width: 375px) {
   .container {
     width: auto;
     min-height: 633px;
@@ -92,6 +92,11 @@
   height: 40px;
   margin-right: 291px;
 }
+@media (max-width: 377px) {
+  .btnBreeds {
+    margin-right: 0;
+  }
+}
 .buttonFilter {
   margin-top: 0;
   margin-right: 10px;
@@ -108,6 +113,7 @@
 @media (max-width: 378px) {
   .cont {
     width: auto;
+
     display: block;
   }
 }
