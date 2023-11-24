@@ -4,22 +4,21 @@ import PropTypes from "prop-types";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { UploadImages } from "../../redux/operation";
-export const Modal = ({ close, open }) => {
+export const Modal = ({ close }) => {
   const [drag, setDrag] = useState(false);
   const [photo, setPhoto] = useState(null);
   const [message, setMessage] = useState(true);
   const [openMee, setOpen] = useState(false);
-  console.log("message", message);
+
   const hendelOpen = () => {
     setOpen(!openMee);
   };
-  console.log(message);
+
   const dispatch = useDispatch();
 
   const hendelUploadPhoto = () => {
     const formData = new FormData();
     formData.append("file", photo[0]);
-    console.log(formData);
     dispatch(UploadImages(formData))
       .unwrap()
       .then(() => {
@@ -33,8 +32,6 @@ export const Modal = ({ close, open }) => {
         console.log(error);
       });
   };
-
-  console.log(photo);
 
   const setStarthendel = (e) => {
     e.preventDefault();

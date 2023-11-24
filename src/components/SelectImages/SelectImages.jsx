@@ -7,15 +7,7 @@ import "./swiper-css.css";
 
 export const SelectIages = () => {
   const images = useSelector(selectorImages);
-  const imageStyles = [
-    {
-      // minWidth: "640px",
-      // height: "360px",
-      // marginTop: "20px",
-      // borderRadius: "20px",
-      // objectFit: "cover",
-    },
-  ];
+
   return (
     <Swiper
       loop={true}
@@ -25,14 +17,9 @@ export const SelectIages = () => {
       grabCursor={true}
       className="swiper-css"
     >
-      {images.map((item, index) => (
+      {images.map((item) => (
         <SwiperSlide key={item.id}>
-          <img
-            className="swiper-css-img"
-            style={imageStyles[index % imageStyles.length]}
-            src={item.url}
-            alt={item.name}
-          />
+          <img className="swiper-css-img" src={item.url} alt={item.name} />
         </SwiperSlide>
       ))}
     </Swiper>

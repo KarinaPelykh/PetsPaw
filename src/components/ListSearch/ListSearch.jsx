@@ -4,7 +4,6 @@ import css from "./ListSearch.module.css";
 
 export const ListSearch = () => {
   const images = useSelector(selectorName);
-  console.log(images);
 
   return (
     <>
@@ -16,13 +15,7 @@ export const ListSearch = () => {
               <br /> enter the first 4 letters of the breed name.
             </p>
             <img
-              style={{
-                position: "absolute",
-                top: "240px",
-                left: " 198px",
-                width: "200px",
-                height: "200px",
-              }}
+              className={css.img}
               src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhpc-IGtxvZSt1iSsCyci10D2tZ6WBbWywJw&usqp=CAU"
             />
           </div>

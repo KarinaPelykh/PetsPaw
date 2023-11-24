@@ -1,6 +1,8 @@
 import { LinkNav } from "../Link/Link";
 import css from "./BurgerMenu.module.css";
 import icon from "../../images/sprite.svg";
+import PropTypes from "prop-types";
+
 export const BurgerMenu = ({ props }) => {
   return (
     <div className={css.wraper}>
@@ -14,4 +16,7 @@ export const BurgerMenu = ({ props }) => {
       </div>
     </div>
   );
+};
+BurgerMenu.propTypes = {
+  props: PropTypes.func,
 };

@@ -85,3 +85,9 @@
     height: 160px;
   }
 }
+.loader {
+  justify-content: center;
+  margin-top: 200px;
+  margin-left: 300px;
+  margin-bottom: 200px;
+}

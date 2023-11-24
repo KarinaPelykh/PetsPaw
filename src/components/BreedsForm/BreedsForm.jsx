@@ -16,7 +16,6 @@ export const BreedsForm = ({ toggle }) => {
     const form = e.target;
 
     const name = form.name.value;
-    console.log(name);
     dicpatch(catImgname(name));
     setBreed_ids("");
   };

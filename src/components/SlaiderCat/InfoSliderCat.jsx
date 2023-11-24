@@ -7,7 +7,6 @@ export const InfoSliderCat = () => {
     return <div>Loading...</div>;
   }
   const catId = info[0];
-  console.log(catId);
 
   if (catId.breeds.length === 0) {
     return <p>Error</p>;

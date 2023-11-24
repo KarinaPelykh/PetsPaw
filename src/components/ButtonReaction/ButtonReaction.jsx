@@ -9,29 +9,23 @@ export const ButtonReaction = () => {
         <ul className={css.list}>
           <li>
             <NavLink to="smile" className={css.btn}>
-              {/* <button className={css.btn}> */}
               <svg className={css.svgSmile}>
                 <use xlinkHref={icon + "#smile"}></use>
               </svg>
-              {/* </button> */}
             </NavLink>
           </li>
           <li>
             <NavLink to="heart" className={css.btn}>
-              {/* <button className={css.btn}> */}
               <svg className={css.svgHeart}>
                 <use xlinkHref={icon + "#heart"}></use>
               </svg>
-              {/* </button> */}
             </NavLink>
           </li>
           <li>
             <NavLink to="sad" className={css.btn}>
-              {/* <button className={css.btn}> */}
               <svg className={css.svgSad}>
                 <use xlinkHref={icon + "#sad"}></use>
               </svg>
-              {/* </button> */}
             </NavLink>
           </li>
         </ul>{" "}

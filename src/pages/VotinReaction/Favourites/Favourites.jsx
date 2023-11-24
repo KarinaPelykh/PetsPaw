@@ -8,7 +8,6 @@ import { SearchCat } from "../../SearchCat/SearchCat";
 
 export const Favourites = () => {
   const favorite = useSelector(votinSelector);
-  console.log(favorite);
 
   const [opneComp, setOpenComp] = useState(false);
   const toggle = () => {

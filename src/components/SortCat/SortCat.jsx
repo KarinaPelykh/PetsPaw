@@ -1,5 +1,5 @@
 import icon from "../../images/sprite.svg";
-
+import PropTypes from "prop-types";
 import css from "./SortCat.module.css";
 
 export const SortCat = ({ asc, desc }) => {
@@ -17,4 +17,8 @@ export const SortCat = ({ asc, desc }) => {
       </button>
     </>
   );
+};
+SortCat.propTypes = {
+  asc: PropTypes.func,
+  desc: PropTypes.func,
 };

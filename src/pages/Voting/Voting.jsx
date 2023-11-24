@@ -53,14 +53,7 @@ export const Voting = () => {
                 alt={votin.name}
               />
             ) : (
-              <div
-                style={{
-                  justifyContent: "center",
-                  marginTop: "200px",
-                  marginLeft: "300px",
-                  marginBottom: "200px",
-                }}
-              >
+              <div className={css.loader} style={{}}>
                 <Oval
                   height={80}
                   width={80}

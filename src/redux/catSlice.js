@@ -70,20 +70,17 @@ export const catSlice = createSlice({
         state.galleryBreadAll = action.payload;
       })
       .addCase(UploadImages.fulfilled, () => {
-        console.log("sucssesful");
+        // console.log("sucssesful");
       })
-      .addCase(UploadImages.rejected, () => {
-        console.log("recves rejected");
-      })
+
       .addCase(Votes.fulfilled, (state, action) => {
         state.votin = action.payload;
       })
       .addCase(VotesPost.fulfilled, () => {
-        console.log("post sucsusful");
+        // console.log("post sucsusful");
       })
       .addCase(GetVotesPost.fulfilled, (state, action) => {
         state.votins = action.payload;
-        console.log(state.votin);
       })
       .addCase(Favorite.fulfilled, () => {
         // state.favorite = action.payload;

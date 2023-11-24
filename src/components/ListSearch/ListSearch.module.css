@@ -14,16 +14,6 @@
 
 .box {
   position: relative;
-  /* border-radius: 20px;
-  position: relative;
-  overflow: hidden;
-
-  transition-property: background-color;
-  transition-duration: 1000ms;
-  transition-timing-function: linear;
-  width: 408px;
-  height: 357px;
-  margin: 129px;*/
 }
 
 .box:hover .text {
@@ -65,4 +55,11 @@
   text-align: start;
   font-size: 20px;
   color: #8c8c8c;
+}
+.img {
+  position: absolute;
+  top: 240px;
+  left: 198px;
+  width: 00px;
+  height: 200px;
 }

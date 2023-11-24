@@ -1,7 +1,7 @@
 import css from "./VotinButtonReaction.module.css";
 import icon from "../../images/sprite.svg";
-// import { useState } from "react";
 import { useDispatch } from "react-redux";
+import PropTypes from "prop-types";
 import {
   Favorite,
   FavoriteGet,
@@ -13,7 +13,6 @@ export const VotinButtonReaction = ({ image_id, hendelFoto }) => {
   const dispatch = useDispatch();
 
   const handelVote = (value) => {
-    console.log("handelVote", value);
     dispatch(VotesPost({ value, image_id }));
     dispatch(GetVotesPost());
     hendelFoto();
@@ -58,4 +57,8 @@ export const VotinButtonReaction = ({ image_id, hendelFoto }) => {
       </button>
     </div>
   );
+};
+VotinButtonReaction.propTypes = {
+  image_id: PropTypes.number,
+  hendelFoto: PropTypes.func,
 };

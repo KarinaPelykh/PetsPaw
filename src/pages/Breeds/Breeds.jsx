@@ -26,7 +26,6 @@ export const Breeds = () => {
   const handelChangeSelect = (value) => {
     setShowSliderCat(true);
     setSelectedValue(value);
-    console.log(value);
   };
 
   const hendelImgChange = (event) => {
@@ -38,8 +37,6 @@ export const Breeds = () => {
 
   useEffect(() => {
     dispatch(getImages({ limit, order }));
-
-    console.log(order);
   }, [dispatch, limit, order]);
 
   const asc = () => {
