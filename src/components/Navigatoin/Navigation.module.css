@@ -1,18 +1,18 @@
 .wrapper {
-  max-height: 100vh;
+  height: 100vh;
   text-align: start;
-  padding: 30px 30px 30px 147px;
+  padding: 20px;
 }
 
-@media (min-width: 669px) and (max-width: 768px) {
+@media (min-width: 669px) {
   .wrapper {
     padding: 30px 188px 30px 147px;
   }
 }
 
-@media (max-width: 669px) {
+@media (min-width: 1440px) {
   .wrapper {
-    padding: 20px;
+    padding: 30px 30px 30px 147px;
   }
 }
 

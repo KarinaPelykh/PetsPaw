@@ -33,26 +33,27 @@ export const BreedsForm = ({ toggle }) => {
               <use xlinkHref={icon + "#burger"}></use>
             </svg>
           </button>
-
-          <input
-            onChange={handelChangeInput}
-            className={css.input}
-            type="name"
-            name="name"
-            value={name}
-            id="cat-name"
-            placeholder="Search for breeds by name"
-          />
-          <button
-            onClick={toggle}
-            disabled={name === ""}
-            type="submit"
-            className={css.btnSerch}
-          >
-            <svg className={css.svgSearch}>
-              <use xlinkHref={icon + "#icon-search"}></use>
-            </svg>
-          </button>
+          <label className={css.label}>
+            <input
+              onChange={handelChangeInput}
+              className={css.input}
+              type="name"
+              name="name"
+              value={name}
+              id="cat-name"
+              placeholder="Search for breeds by name"
+            />
+            <button
+              onClick={toggle}
+              disabled={name === ""}
+              type="submit"
+              className={css.btnSerch}
+            >
+              <svg className={css.svgSearch}>
+                <use xlinkHref={icon + "#icon-search"}></use>
+              </svg>
+            </button>
+          </label>
         </form>
       </div>
       {open && <BurgerMenu props={close} />}

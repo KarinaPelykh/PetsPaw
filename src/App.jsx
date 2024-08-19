@@ -31,18 +31,3 @@ function App() {
 }
 
 export default App;
-
-// import { lazy } from "react";
-// const Layout = lazy(() => import("./components/Layout/Layuot"));
-// const HomePage = lazy(() => import("./pages/Home/Home"));
-// const Breeds = lazy(() => import("./pages/Breeds/Breeds"));
-// const Gallery = lazy(() => import("./pages/Gallery/Gallery"));
-// const Voting = lazy(() => import("./pages/Voting/Voting"));
-// const Favourites = lazy(() =>
-//   import("./pages/VotinReaction/Favourites/Favourites")
-// );
-// const DislikePage = lazy(() =>
-//   import("./pages/VotinReaction/DislikePage/DisLikePage")
-// );
-// const LikePage = lazy(() => import("./pages/VotinReaction/LikePage/LikePage"));
-// const NotFond = lazy(() => import("./pages/NotFound/NotFound"));

@@ -1,29 +1,35 @@
 .wrap {
-  z-index: 2;
-  position: relative;
+  /* position: relative; */
 }
 .box {
+  z-index: 2;
   position: absolute;
-  top: 5px;
-  left: 1124px;
+  top: 20px;
+  right: 0px;
+}
+@media (min-width: 1440px) {
+  .box {
+    top: 35px;
+    right: 55px;
+  }
 }
 
 @media (max-width: 769px) {
   .box {
-    position: absolute;
-    top: -5px;
-    left: 377px;
+    /* position: absolute;
+    top: -5px; */
+    /* left: 377px; */
   }
 }
 @media (max-width: 670px) {
   .box {
-    left: 468px;
+    /* left: 468px; */
   }
 }
 @media (max-width: 375px) {
   .box {
-    top: -5px;
-    left: 277px;
+    /* top: -5px; */
+    /* left: 277px; */
   }
 }
 .list {

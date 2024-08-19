@@ -42,7 +42,11 @@ export const Gallery = () => {
           ) : (
             <div className={css.container}>
               <div className={css.cont}>
-                <div style={{ display: "flex" }}>
+                <div
+                  style={{
+                    display: "flex",
+                  }}
+                >
                   <Button />
                   <button type="button" className={css.btnBreeds}>
                     GALLERY
@@ -75,4 +79,3 @@ export const Gallery = () => {
     </>
   );
 };
-// export default Gallery;

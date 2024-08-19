@@ -1,11 +1,28 @@
 .section {
-  margin-left: 157px;
-
+  height: 100vh;
+  padding: 20px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background-color: #e5e5e5;
+  /* margin-left: 157px;
   position: absolute;
   top: 35px;
-  left: 635px;
+  left: 635px; */
 }
-@media (max-width: 768px) {
+@media (min-width: 768px) {
+  /* .section {
+    top: 15px;
+    left: 80%;
+  } */
+}
+@media (min-width: 1440px) {
+  .section {
+    top: 15px;
+    left: 50%;
+  }
+}
+/*@media (max-width: 768px) {
   .section {
     margin-left: 0;
     position: absolute;
@@ -20,18 +37,24 @@
     left: 11px;
     background-color: #e5e5e5;
   }
-}
+} */
 .container {
-  margin-top: 10px;
-  padding: 20px;
-  width: 640px;
-  min-height: 740px;
-  /* min-height: 580px; */
   background-color: #fff;
   border-radius: 20px;
+  padding: 20px;
+  margin-top: 10px;
+  /* width: 300px; */
+  min-height: 633px;
 }
 
-@media (max-width: 669px) {
+@media (min-width: 768px) {
+  .container {
+    width: 640px;
+    min-height: 740px;
+  }
+}
+
+/* @media (max-width: 669px) {
   .container {
     min-height: 633px;
   }
@@ -39,16 +62,15 @@
 @media (max-width: 375px) {
   .container {
     width: auto;
-    min-height: 633px;
   }
-}
+} */
 .wrapper {
   display: flex;
   width: 680px;
   position: relative;
 }
 
-.input {
+/* .input {
   width: 470px;
   height: 60px;
   border: none;
@@ -58,21 +80,21 @@
   padding-left: 20px;
   margin-right: 10px;
   font-size: 20px;
-}
+} */
 
-.list {
+/* .list {
   display: flex;
-}
+} */
 
-.btn {
+/* .btn {
   padding: 0;
   margin: 0 10px 0 0;
   width: 60px;
   border-radius: 20px;
   height: 60px;
-}
+} */
 
-.buttonBack {
+/* .buttonBack {
   position: relative;
   margin-top: 0;
   margin-right: 10px;
@@ -80,41 +102,37 @@
   border-radius: 10px;
   height: 40px;
   background-color: #fbe0dc;
-}
+} */
 .btnBreeds {
   margin-top: 0;
-  margin-right: 10px;
+
   background-color: #ff868e;
   color: #fff;
   font-size: 20px;
   width: 143px;
   border-radius: 10px;
   height: 40px;
-  margin-right: 291px;
 }
-@media (max-width: 377px) {
+@media (min-width: 768px) {
   .btnBreeds {
-    margin-right: 0;
+    margin-right: 291px;
   }
 }
-.buttonFilter {
+/* .buttonFilter {
   margin-top: 0;
   margin-right: 10px;
 
   width: 40px;
   border-radius: 10px;
   height: 40px;
-}
+} */
 
-.cont {
-  width: 650px;
-  display: flex;
-}
-@media (max-width: 378px) {
+@media (min-width: 768px) {
   .cont {
-    width: auto;
-
-    display: block;
+    width: 650px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 }
 .icon {
@@ -123,23 +141,23 @@
   align-items: center;
 }
 .btnUpload {
+  width: 100%;
   margin-top: 0;
-  margin-right: 10px;
   background-color: #fbe0dc;
   color: #ff868e;
   font-size: 12px;
   font-weight: 500;
-  width: 143px;
+  margin-top: 10px;
   border-radius: 10px;
 
   padding: 12px 30px;
 }
 
-@media (max-width: 378px) {
+@media (min-width: 768px) {
   .btnUpload {
-    margin-top: 10px;
-
-    width: 100%;
+    margin-top: 0;
+    width: 143px;
+    margin-right: 10px;
   }
 }
 .btnUpload:hover {
