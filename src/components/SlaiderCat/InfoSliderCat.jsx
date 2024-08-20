@@ -3,6 +3,8 @@ import { selectorInfo } from "../../redux/selector";
 import css from "./InfoSliderCat.module.css";
 export const InfoSliderCat = () => {
   const info = useSelector(selectorInfo);
+  console.log(info);
+
   if (!info.length) {
     return <div>Loading...</div>;
   }

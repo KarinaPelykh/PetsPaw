@@ -1,39 +1,19 @@
-.wrap {
-  /* position: relative; */
-}
-.box {
-  z-index: 2;
-  position: absolute;
-  top: 20px;
-  right: 0px;
-}
-@media (min-width: 1440px) {
+@media (max-width: 769px) {
   .box {
-    top: 35px;
-    right: 55px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
   }
 }
 
-@media (max-width: 769px) {
-  .box {
-    /* position: absolute;
-    top: -5px; */
-    /* left: 377px; */
-  }
-}
-@media (max-width: 670px) {
-  .box {
-    /* left: 468px; */
-  }
-}
-@media (max-width: 375px) {
-  .box {
-    /* top: -5px; */
-    /* left: 277px; */
-  }
-}
 .list {
   display: flex;
+}
+.list li {
+  margin: 0 10px 0 0;
+}
+.list li:last-child {
+  margin-right: 0;
 }
 
 .btn {
@@ -41,7 +21,6 @@
   height: 60px;
   background-color: #ffffff;
   padding: 0;
-  margin: 0 10px 0 0;
 
   border-radius: 20px;
 

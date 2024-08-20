@@ -2,24 +2,13 @@
   position: relative;
   border: solid 2px rgba(251, 224, 220, 1);
   border-radius: 20px;
-  min-height: 204px;
+
   margin-top: 51px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
+
   padding: 36px;
-}
-@media (max-width: 378px) {
-  .infoSection {
-    width: 320px;
-  }
 }
 
 .wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   margin-bottom: 20px;
 }
 
@@ -28,19 +17,22 @@
   font-size: 36px;
   font-weight: 500;
   background-color: #fff;
-  z-index: 3;
   position: absolute;
   top: -25px;
-  left: 206px;
-  width: 193px;
+  left: 20px;
   height: 62px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-@media (max-width: 378px) {
+/* @media (min-width: 374px) {
   .title {
-    left: 70px;
+    left: 80px;
+  }
+} */
+@media (min-width: 768px) {
+  .title {
+    left: 206px;
   }
 }
 .text {
@@ -53,18 +45,15 @@
   align-items: center;
   justify-content: center;
 }
-.wrapperInfo {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-@media (max-width: 378px) {
+
+@media (min-width: 768px) {
   .wrapperInfo {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
 .container {
-  width: 270px;
   margin-right: 20px;
 }
 .desc {
@@ -75,9 +64,7 @@
 .style {
   margin-bottom: 10px;
 }
-.section {
-  width: 270px;
-}
+
 .list {
   text-align: start;
 }

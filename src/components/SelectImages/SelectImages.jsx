@@ -11,7 +11,7 @@ export const SelectIages = () => {
   return (
     <Swiper
       loop={true}
-      spaceBetween={10}
+      spaceBetween={1}
       navigation={true}
       modules={[Navigation, Thumbs]}
       grabCursor={true}

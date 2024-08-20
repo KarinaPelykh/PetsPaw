@@ -6,6 +6,7 @@ import { useState } from "react";
 import { useToggle } from "../../hooks/useToggle";
 import PropTypes from "prop-types";
 import { BurgerMenu } from "../BurgerMenu/BurgerMenu";
+import { ButtonReaction } from "../ButtonReaction/ButtonReaction";
 
 export const BreedsForm = ({ toggle }) => {
   const dicpatch = useDispatch();
@@ -55,6 +56,7 @@ export const BreedsForm = ({ toggle }) => {
             </button>
           </label>
         </form>
+        <ButtonReaction />
       </div>
       {open && <BurgerMenu props={close} />}
     </>
