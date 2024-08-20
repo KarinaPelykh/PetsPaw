@@ -34,7 +34,6 @@ export const Voting = () => {
   return (
     <section className={css.section}>
       <BreedsForm toggle={toggle} />
-
       {opneComp ? (
         <SearchCat />
       ) : (
@@ -80,4 +79,3 @@ export const Voting = () => {
     </section>
   );
 };
-// export default Voting;

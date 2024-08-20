@@ -31,10 +31,6 @@
 }
 .list {
   box-sizing: border-box;
-  /* display: grid;
-  grid-template-columns: repeat(1, auto);
-  grid-auto-rows: 140px;
-  grid-gap: 20px; */
 }
 @media (min-width: 768px) {
   .list {

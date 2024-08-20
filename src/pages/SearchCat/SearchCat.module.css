@@ -1,14 +1,16 @@
-.container {
+.section {
   margin-top: 10px;
   padding: 20px;
-  width: 640px;
+
   min-height: 1008px;
-  background-color: #fff;
+
   border-radius: 20px;
+  background-color: #fff;
 }
-@media (max-width: 669px) {
-  .container {
-    min-height: 633px;
+
+@media (min-width: 669px) {
+  .section {
+    width: 640px;
   }
 }
 @media (max-width: 378px) {
@@ -46,12 +48,12 @@
 }
 
 .cont {
-  width: 650px;
+  width: auto;
   display: flex;
 }
-@media (max-width: 378px) {
+@media (min-width: 768px) {
   .cont {
-    width: auto;
+    width: 650px;
   }
 }
 .buttonBackSvg {

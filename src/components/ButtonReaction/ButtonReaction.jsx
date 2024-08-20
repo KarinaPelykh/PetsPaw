@@ -8,21 +8,21 @@ export const ButtonReaction = () => {
       <div className={css.box}>
         <ul className={css.list}>
           <li>
-            <NavLink to="smile" className={css.btn}>
+            <NavLink to="/smile" className={css.btn}>
               <svg className={css.svgSmile}>
                 <use xlinkHref={icon + "#smile"}></use>
               </svg>
             </NavLink>
           </li>
           <li>
-            <NavLink to="heart" className={css.btn}>
+            <NavLink to="/heart" className={css.btn}>
               <svg className={css.svgHeart}>
                 <use xlinkHref={icon + "#heart"}></use>
               </svg>
             </NavLink>
           </li>
           <li>
-            <NavLink to="sad" className={css.btn}>
+            <NavLink to="/sad" className={css.btn}>
               <svg className={css.svgSad}>
                 <use xlinkHref={icon + "#sad"}></use>
               </svg>

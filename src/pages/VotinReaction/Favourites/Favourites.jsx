@@ -45,4 +45,3 @@ export const Favourites = () => {
     </div>
   );
 };
-// export default Favourites;

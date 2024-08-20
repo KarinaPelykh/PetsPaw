@@ -15,39 +15,32 @@
 .box {
   position: relative;
 }
-
 .box:hover .text {
   transform: scale(1.5);
   color: #ff868e;
 }
 
-.listCat {
-  margin-top: 20px;
-  margin-left: 15px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  column-gap: 10px;
-}
-@media (max-width: 378px) {
+@media (min-width: 768px) {
   .listCat {
-    display: block;
+    margin-top: 20px;
+    margin-left: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    column-gap: 10px;
   }
 }
-
 .ImagesCat {
-  width: 300px;
-  height: 300px;
+  width: 100%;
+  height: auto;
   display: block;
-  max-width: 100%;
   object-fit: cover;
   border-radius: 20px;
 }
-@media (max-width: 377px) {
+@media (min-width: 768px) {
   .ImagesCat {
-    width: 430px;
-    height: auto;
-    margin-top: 20px;
+    width: 300px;
+    height: 300px;
   }
 }
 .textNAme {

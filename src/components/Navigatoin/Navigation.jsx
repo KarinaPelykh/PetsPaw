@@ -1,7 +1,6 @@
 import icon from "../../images/sprite.svg";
 
 import css from "./Navigation.module.css";
-// import { ButtonReaction } from "../ButtonReaction/ButtonReaction";
 import { LinkNav } from "../Link/Link";
 import { useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
@@ -24,8 +23,6 @@ export const Navigation = () => {
     <>
       {size < 1439 && !isHomePage ? null : (
         <div className={css.wrapper}>
-          {/* {!isHomePage && <ButtonReaction />} */}
-
           <svg className={css.logo}>
             <use xlinkHref={icon + "#logo"}></use>
           </svg>

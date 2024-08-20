@@ -1,43 +1,33 @@
-.section {
-  margin-left: 157px;
-  position: relative;
-  position: absolute;
-  top: 35px;
-  left: 635px;
+section {
+  padding: 20px;
 }
-@media (max-width: 768px) {
+@media (min-width: 768px) {
   .section {
-    margin-left: 0;
-    position: absolute;
-    top: 26px;
-    left: 43px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 }
-
-@media (max-width: 669px) {
+@media (min-width: 1440px) {
   .section {
-    top: 20px;
-    left: 11px;
-    background-color: #e5e5e5;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-top: 15px;
+    margin-right: 33px;
   }
 }
 .container {
   margin-top: 10px;
   padding: 20px;
-  width: 640px;
   background-color: #fff;
   border-radius: 20px;
   position: relative;
 }
-@media (max-width: 377px) {
+@media (min-width: 768px) {
   .container {
-    width: auto;
-    min-height: 633px;
-  }
-}
-@media (max-width: 669px) {
-  .container {
-    min-height: 633px;
+    width: 640px;
   }
 }
 
@@ -60,29 +50,30 @@
 
 .containerImgCat {
   position: relative;
-  min-width: 647px;
   margin-top: 20px;
 }
-@media (max-width: 669px) {
-  .containerImgCat {
-    position: relative;
-    min-width: 360px;
-    margin-top: 20px;
-  }
-}
+
 .votingImg {
   margin: auto;
-  width: 640px;
+  width: 100%;
   object-fit: cover;
   border-radius: 20px;
-  height: 360px;
+  height: 250px;
 }
-@media (max-width: 375px) {
+@media (min-width: 375px) {
   .votingImg {
-    width: 360px;
-    object-fit: cover;
-    border-radius: 20px;
-    height: 160px;
+    height: 200px;
+  }
+}
+
+@media (min-width: 425px) {
+  .votingImg {
+    height: 250px;
+  }
+}
+@media (min-width: 768px) {
+  .votingImg {
+    height: 300px;
   }
 }
 .loader {

@@ -43,4 +43,3 @@ export const DislikePage = () => {
     </div>
   );
 };
-// export default DislikePage;
